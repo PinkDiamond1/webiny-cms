@@ -1,0 +1,22 @@
+{
+    "kind": "update",
+    "startTime": 1657181070,
+    "message": "chore: initialize .gitignore",
+    "environment": {
+        "exec.kind": "cli",
+        "git.author": "Emanuele Colonnelli",
+        "git.author.email": "emanuele.colonnelli@gmail.com",
+        "git.committer": "Emanuele Colonnelli",
+        "git.committer.email": "emanuele.colonnelli@gmail.com",
+        "git.dirty": "true",
+        "git.head": "effccbc356f6de526e49889f7400f6dd83b35f75",
+        "git.headName": "refs/heads/master"
+    },
+    "config": {},
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1657181102,
+    "resourceChanges": {
+        "create": 6
+    }
+}
