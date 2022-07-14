@@ -88,9 +88,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idAddress"], ["variant"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idAddress"
     }),
     new CmsModelPlugin({
@@ -109,9 +109,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idBalance"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idBalance"
     }),
     new CmsModelPlugin({
@@ -167,9 +167,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idChip"], ["variant"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idChip"
     }),
     new CmsModelPlugin({
@@ -206,9 +206,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idDateText"], ["time"], ["show_timestamp"], ["datetime_format"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDateText"
     }),
     new CmsModelPlugin({
@@ -251,9 +251,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idDropDown"], ["options"], ["selected_index"], ["drop_up"], ["disabled"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDropDown"
     }),
     new CmsModelPlugin({
@@ -302,9 +302,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idGauge"], ["max_value"], ["min_value"], ["value"], ["width"], ["tooltip"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idGauge"
     }),
     new CmsModelPlugin({
@@ -452,9 +452,17 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [
+            ["idIcon"],
+            ["name"],
+            ["size"],
+            ["variant"],
+            ["tooltip"],
+            ["viewbox"],
+            ["tooltip_visible"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idIcon"
     }),
     new CmsModelPlugin({
@@ -516,9 +524,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idLoadingIndicator"], ["variant"], ["duration"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idLoadingIndicator"
     }),
     new CmsModelPlugin({
@@ -537,9 +545,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idLogo"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idLogo"
     }),
     new CmsModelPlugin({
@@ -607,9 +615,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idProgressBar"], ["variant"], ["steps"], ["step"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idProgressBar"
     }),
     new CmsModelPlugin({
@@ -658,9 +666,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idQrCode"], ["value"], ["width"], ["qr_color"], ["bg_color"], ["align"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idQrCode"
     }),
     new CmsModelPlugin({
@@ -749,9 +757,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idRichText"], ["markdown"], ["size"], ["align"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idRichText"
     }),
     new CmsModelPlugin({
@@ -866,9 +874,21 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [
+            ["idSkeletonLoader"],
+            ["variant"],
+            ["extra_small_screen_height"],
+            ["small_screen_height"],
+            ["medium_screen_height"],
+            ["large_screen_height"],
+            ["extra_large_screen_height"],
+            ["jumbo_screen_height"],
+            ["width"],
+            ["pulse"],
+            ["rounded"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idSkeletonLoader"
     }),
     new CmsModelPlugin({
@@ -911,9 +931,9 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idSlider"], ["min"], ["max"], ["value"], ["id"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idSlider"
     }),
     new CmsModelPlugin({
@@ -996,9 +1016,19 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [
+            ["idTextField"],
+            ["value"],
+            ["disabled"],
+            ["multiline"],
+            ["placeholder"],
+            ["state"],
+            ["id"],
+            ["name"],
+            ["focused"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idTextField"
     }),
     new CmsModelPlugin({
@@ -1125,9 +1155,22 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [
+            ["idToggle"],
+            ["variant"],
+            ["type"],
+            ["name"],
+            ["checked"],
+            ["id"],
+            ["value"],
+            ["group"],
+            ["disabled"],
+            ["selected"],
+            ["on_icon"],
+            ["off_icon"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idToggle"
     }),
     new CmsModelPlugin({
@@ -1180,11 +1223,12 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
+        layout: [["idTruncateText"], ["width"], ["title"], ["text"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idTruncateText"
     }),
+
     new CmsModelPlugin({
         name: "Alert",
         modelId: "alert",
@@ -1262,9 +1306,17 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [
+            ["idAlert"],
+            ["value"],
+            ["id"],
+            ["dismissable"],
+            ["variant"],
+            ["modal"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idAlert"
     }),
     new CmsModelPlugin({
@@ -1289,9 +1341,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idBreadcrumb"], ["href"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idBreadcrumb"
     }),
     new CmsModelPlugin({
@@ -1436,9 +1488,23 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [
+            ["idButton"],
+            ["id"],
+            ["value"],
+            ["variant"],
+            ["size"],
+            ["outline"],
+            ["circle"],
+            ["block"],
+            ["href"],
+            ["active"],
+            ["disabled"],
+            ["label"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idButton"
     }),
     new CmsModelPlugin({
@@ -1475,9 +1541,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idChart"], ["type"], ["data"], ["aspect_ratio"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idChart"
     }),
     new CmsModelPlugin({
@@ -1532,9 +1598,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idContent"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idContent"
     }),
     new CmsModelPlugin({
@@ -1638,9 +1704,19 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [
+            ["idControl"],
+            ["type"],
+            ["state"],
+            ["id"],
+            ["label"],
+            ["message"],
+            ["width"],
+            ["name"],
+            ["group"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idControl"
     }),
     new CmsModelPlugin({
@@ -1713,9 +1789,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idCtaList"], ["variant"], ["type"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idCtaList"
     }),
     new CmsModelPlugin({
@@ -1764,9 +1840,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idDetailList"], ["split"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDetailList"
     }),
     new CmsModelPlugin({
@@ -1800,9 +1876,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idDisclaimerList"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDisclaimerList"
     }),
     new CmsModelPlugin({
@@ -1839,9 +1915,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idFileUpload"], ["id"], ["name"], ["uploaded"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idFileUpload"
     }),
     new CmsModelPlugin({
@@ -1924,9 +2000,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idGroup"], ["align"], ["grid"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idGroup"
     }),
     new CmsModelPlugin({
@@ -2030,9 +2106,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idHeading"], ["size"], ["variant"], ["align"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idHeading"
     }),
     new CmsModelPlugin({
@@ -2063,9 +2139,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idItem"], ["icon_name"], ["icon_viewbox"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idItem"
     }),
     new CmsModelPlugin({
@@ -2084,9 +2160,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idLabel"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idLabel"
     }),
     new CmsModelPlugin({
@@ -2179,9 +2255,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idMediaContent"], ["reverse"], ["align"], ["valign"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idMediaContent"
     }),
     new CmsModelPlugin({
@@ -2244,9 +2320,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idMenu"], ["orientation"], ["id"], ["name"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idMenu"
     }),
     new CmsModelPlugin({
@@ -2323,9 +2399,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idMnemonic"], ["seed"], ["type"], ["length"], ["disabled"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idMnemonic"
     }),
     new CmsModelPlugin({
@@ -2383,9 +2459,16 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [
+            ["idPagination"],
+            ["ref"],
+            ["items"],
+            ["items_per_page"],
+            ["page_number"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idPagination"
     }),
     new CmsModelPlugin({
@@ -2425,9 +2508,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idPasswordStrength"], ["password"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idPasswordStrength"
     }),
     new CmsModelPlugin({
@@ -2467,9 +2550,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idStatistic"], ["title"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idStatistic"
     }),
     new CmsModelPlugin({
@@ -2525,9 +2608,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idStepList"], ["variant"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idStepList"
     }),
     new CmsModelPlugin({
@@ -2570,9 +2653,9 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
+        layout: [["idWord"], ["value"], ["index"], ["disabled"], ["id"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWord"
     }),
 
@@ -2613,9 +2696,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idAccordion"], ["multiselect"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idAccordion"
     }),
     new CmsModelPlugin({
@@ -2634,9 +2717,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idActions"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idActions"
     }),
     new CmsModelPlugin({
@@ -2667,9 +2750,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idAppsMenu"], ["apps"], ["app_name"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idAppsMenu"
     }),
     new CmsModelPlugin({
@@ -2807,9 +2890,17 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idCard"],
+            ["variant"],
+            ["state"],
+            ["href"],
+            ["disabled"],
+            ["overflow"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idCard"
     }),
     new CmsModelPlugin({
@@ -2834,9 +2925,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idCategoryMenu"], ["category"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idCategoryMenu"
     }),
     new CmsModelPlugin({
@@ -2909,9 +3000,20 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idCookieBanner"],
+            ["id"],
+            ["cookie_name"],
+            ["dark_mode_cookie_name"],
+            ["cookie_config"],
+            ["accept_label"],
+            ["settings_label"],
+            ["show_banner"],
+            ["show_settings"],
+            ["close_scrim"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idCookieBanner"
     }),
     new CmsModelPlugin({
@@ -2984,9 +3086,17 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idDatum"],
+            ["variant"],
+            ["data_key"],
+            ["hidden"],
+            ["colspan"],
+            ["id"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDatum"
     }),
     new CmsModelPlugin({
@@ -3029,9 +3139,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idErrorBlock"], ["code"], ["message"], ["stack"], ["dev"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idErrorBlock"
     }),
     new CmsModelPlugin({
@@ -3100,9 +3210,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idFooter"], ["type"], ["social"], ["categories"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idFooter"
     }),
     new CmsModelPlugin({
@@ -3163,9 +3273,16 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idForm"],
+            ["submit_handler"],
+            ["schema"],
+            ["fields"],
+            ["submitted"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idForm"
     }),
     new CmsModelPlugin({
@@ -3208,9 +3325,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idHero"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idHero"
     }),
     new CmsModelPlugin({
@@ -3259,9 +3376,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idItem"], ["id"], ["title"], ["expanded"], ["disabled"], ["ref"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idItem"
     }),
     new CmsModelPlugin({
@@ -3286,9 +3403,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idLegalMenu"], ["orientation"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idLegalMenu"
     }),
     new CmsModelPlugin({
@@ -3313,9 +3430,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idLinksMenu"], ["links"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idLinksMenu"
     }),
     new CmsModelPlugin({
@@ -3340,9 +3457,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idMaximal"], ["categories"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idMaximal"
     }),
     new CmsModelPlugin({
@@ -3373,9 +3490,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idMinimal"], ["copyright"], ["social"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idMinimal"
     }),
     new CmsModelPlugin({
@@ -3448,9 +3565,18 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idNavbar"],
+            ["title"],
+            ["apps"],
+            ["links"],
+            ["app_name"],
+            ["cookie_config"],
+            ["id"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idNavbar"
     }),
     new CmsModelPlugin({
@@ -3469,9 +3595,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idNewsletter"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idNewsletter"
     }),
     new CmsModelPlugin({
@@ -3529,9 +3655,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idRow"], ["type"], ["hidden"], ["variant"], ["id"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idRow"
     }),
     new CmsModelPlugin({
@@ -3586,9 +3712,15 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idSearchList"],
+            ["data"],
+            ["field_button"],
+            ["data_search_results"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idSearchList"
     }),
     new CmsModelPlugin({
@@ -3619,9 +3751,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idSocialMediaMenu"], ["orientation"], ["social"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idSocialMediaMenu"
     }),
     new CmsModelPlugin({
@@ -3646,9 +3778,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idStep"], ["number"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idStep"
     }),
     new CmsModelPlugin({
@@ -3741,9 +3873,17 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [
+            ["idTable"],
+            ["data"],
+            ["settings"],
+            ["mobile_breakpoint"],
+            ["duration"],
+            ["data_rows"],
+            ["__CHILDREN__"]
+        ],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idTable"
     }),
     new CmsModelPlugin({
@@ -3789,9 +3929,9 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
+        layout: [["idWizard"], ["step_count"], ["__CHILDREN__"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWizard"
     }),
 
@@ -3834,9 +3974,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idBuyHomepage"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idBuyHomepage"
     }),
     new CmsModelPlugin({
@@ -3878,9 +4018,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idDefault"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDefault"
     }),
     new CmsModelPlugin({
@@ -3922,9 +4062,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idDevopsCentered"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDevopsCentered"
     }),
     new CmsModelPlugin({
@@ -3966,9 +4106,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idDevopsDashboard"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idDevopsDashboard"
     }),
     new CmsModelPlugin({
@@ -4010,9 +4150,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idExplorerCharts"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idExplorerCharts"
     }),
     new CmsModelPlugin({
@@ -4054,9 +4194,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idExplorerDetail"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idExplorerDetail"
     }),
     new CmsModelPlugin({
@@ -4098,9 +4238,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idExplorerHomepage"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idExplorerHomepage"
     }),
     new CmsModelPlugin({
@@ -4142,9 +4282,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idExplorerList"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idExplorerList"
     }),
     new CmsModelPlugin({
@@ -4186,9 +4326,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idExtensionDefault"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idExtensionDefault"
     }),
     new CmsModelPlugin({
@@ -4230,9 +4370,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idWalletDashboard"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWalletDashboard"
     }),
     new CmsModelPlugin({
@@ -4274,9 +4414,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idWalletHomepage"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWalletHomepage"
     }),
     new CmsModelPlugin({
@@ -4318,9 +4458,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idWalletOption"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWalletOption"
     }),
     new CmsModelPlugin({
@@ -4362,9 +4502,9 @@ export default [
             id: "templates",
             name: "Templates"
         },
-        layout: [],
+        layout: [["idWalletWizard"], ["is_loading"], ["is_error"]],
         locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
+        tenant: "root",
         titleFieldId: "idWalletWizard"
     })
 ];

@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-13T12:28:42.243575+02:00",
+                "time": "2022-07-14T11:52:23.323538+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:YcwKXcOyAEQ=:v1:TOyqmtVKIkY+lvd+:Dwy9vX6pv0T5woxs2CtB+tTCOliPUA=="
+                    "salt": "v1:zYIiMvg560M=:v1:7BB3fR9X0GXttweB:eySFefjpt2ACS2GIn2AUnXovi1u8Hg=="
                 }
             },
             "resources": [
@@ -74,98 +74,6 @@
                     },
                     "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
                     "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::core::aws:s3/bucket:Bucket::fm-bucket",
-                    "custom": true,
-                    "id": "fm-bucket-52a6577",
-                    "type": "aws:s3/bucket:Bucket",
-                    "inputs": {
-                        "__defaults": [
-                            "bucket"
-                        ],
-                        "acl": "private",
-                        "bucket": "fm-bucket-52a6577",
-                        "corsRules": [
-                            {
-                                "__defaults": [],
-                                "allowedHeaders": [
-                                    "*"
-                                ],
-                                "allowedMethods": [
-                                    "POST",
-                                    "GET"
-                                ],
-                                "allowedOrigins": [
-                                    "*"
-                                ],
-                                "maxAgeSeconds": 3000
-                            }
-                        ],
-                        "forceDestroy": true,
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
-                    },
-                    "outputs": {
-                        "accelerationStatus": "",
-                        "acl": "private",
-                        "arn": "arn:aws:s3:::fm-bucket-52a6577",
-                        "bucket": "fm-bucket-52a6577",
-                        "bucketDomainName": "fm-bucket-52a6577.s3.amazonaws.com",
-                        "bucketRegionalDomainName": "fm-bucket-52a6577.s3.eu-central-1.amazonaws.com",
-                        "corsRules": [
-                            {
-                                "allowedHeaders": [
-                                    "*"
-                                ],
-                                "allowedMethods": [
-                                    "POST",
-                                    "GET"
-                                ],
-                                "allowedOrigins": [
-                                    "*"
-                                ],
-                                "exposeHeaders": [],
-                                "maxAgeSeconds": 3000
-                            }
-                        ],
-                        "forceDestroy": true,
-                        "grants": [],
-                        "hostedZoneId": "Z21DNDUVLTQW6Q",
-                        "id": "fm-bucket-52a6577",
-                        "lifecycleRules": [],
-                        "loggings": [],
-                        "objectLockConfiguration": null,
-                        "region": "eu-central-1",
-                        "replicationConfiguration": null,
-                        "requestPayer": "BucketOwner",
-                        "serverSideEncryptionConfiguration": null,
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "versioning": {
-                            "enabled": false,
-                            "mfaDelete": false
-                        },
-                        "website": null
-                    },
-                    "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
-                    "propertyDependencies": {
-                        "acl": null,
-                        "corsRules": null,
-                        "forceDestroy": null,
-                        "tags": null
-                    },
                     "sequenceNumber": 1
                 },
                 {
@@ -289,6 +197,98 @@
                         "globalSecondaryIndexes": null,
                         "hashKey": null,
                         "rangeKey": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::core::aws:s3/bucket:Bucket::fm-bucket",
+                    "custom": true,
+                    "id": "fm-bucket-52a6577",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "private",
+                        "bucket": "fm-bucket-52a6577",
+                        "corsRules": [
+                            {
+                                "__defaults": [],
+                                "allowedHeaders": [
+                                    "*"
+                                ],
+                                "allowedMethods": [
+                                    "POST",
+                                    "GET"
+                                ],
+                                "allowedOrigins": [
+                                    "*"
+                                ],
+                                "maxAgeSeconds": 3000
+                            }
+                        ],
+                        "forceDestroy": true,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::fm-bucket-52a6577",
+                        "bucket": "fm-bucket-52a6577",
+                        "bucketDomainName": "fm-bucket-52a6577.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "fm-bucket-52a6577.s3.eu-central-1.amazonaws.com",
+                        "corsRules": [
+                            {
+                                "allowedHeaders": [
+                                    "*"
+                                ],
+                                "allowedMethods": [
+                                    "POST",
+                                    "GET"
+                                ],
+                                "allowedOrigins": [
+                                    "*"
+                                ],
+                                "exposeHeaders": [],
+                                "maxAgeSeconds": 3000
+                            }
+                        ],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z21DNDUVLTQW6Q",
+                        "id": "fm-bucket-52a6577",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "eu-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": null
+                    },
+                    "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "corsRules": null,
+                        "forceDestroy": null,
                         "tags": null
                     },
                     "sequenceNumber": 1
@@ -525,7 +525,7 @@
                         "callbackUrls": [],
                         "clientSecret": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:H9oR8JyZYIUF8BE8:HLaKr7ZCibcpy0+FrcXjLqP4"
+                            "ciphertext": "v1:rDU0S08B10SaqUr3:t/QKwypPxe/+VmVwlJIBj6Tv"
                         },
                         "defaultRedirectUri": "",
                         "enablePropagateAdditionalUserContextData": false,

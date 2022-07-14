@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-13T12:45:19.426733+02:00",
+                "time": "2022-07-14T13:51:55.258824+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:XQWXI6D2BW8=:v1:XKOyuPsZ0JdeZMmp:Fv9M2fjQukmqzIjunRfbCSAD6KJ4WA=="
+                    "salt": "v1:NOziFU3EBS4=:v1:zVmzaof6gTnnhH0S:MnBN4Fo/SEr4AwtsBi+76MQzVTSHLw=="
                 }
             },
             "resources": [
@@ -46,52 +46,47 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue",
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
                     "custom": true,
-                    "id": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
-                    "type": "aws:sqs/queue:Queue",
+                    "id": "app-64d8f8e",
+                    "type": "aws:s3/bucket:Bucket",
                     "inputs": {
                         "__defaults": [
-                            "contentBasedDeduplication",
-                            "delaySeconds",
-                            "maxMessageSize",
-                            "messageRetentionSeconds",
-                            "name",
-                            "receiveWaitTimeSeconds"
+                            "bucket"
                         ],
-                        "contentBasedDeduplication": false,
-                        "delaySeconds": 0,
-                        "fifoQueue": true,
-                        "maxMessageSize": 262144,
-                        "messageRetentionSeconds": 345600,
-                        "name": "ps-render-queue-89c1c33.fifo",
-                        "receiveWaitTimeSeconds": 0,
+                        "acl": "public-read",
+                        "bucket": "app-64d8f8e",
+                        "forceDestroy": true,
                         "tags": {
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms",
                             "__defaults": []
                         },
-                        "visibilityTimeoutSeconds": 300
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html"
+                        }
                     },
                     "outputs": {
-                        "arn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
-                        "contentBasedDeduplication": false,
-                        "deduplicationScope": "queue",
-                        "delaySeconds": 0,
-                        "fifoQueue": true,
-                        "fifoThroughputLimit": "perQueue",
-                        "id": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
-                        "kmsDataKeyReusePeriodSeconds": 300,
-                        "kmsMasterKeyId": "",
-                        "maxMessageSize": 262144,
-                        "messageRetentionSeconds": 345600,
-                        "name": "ps-render-queue-89c1c33.fifo",
-                        "namePrefix": "",
-                        "policy": "",
-                        "receiveWaitTimeSeconds": 0,
-                        "redriveAllowPolicy": "",
-                        "redrivePolicy": "",
-                        "sqsManagedSseEnabled": false,
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::app-64d8f8e",
+                        "bucket": "app-64d8f8e",
+                        "bucketDomainName": "app-64d8f8e.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "app-64d8f8e.s3.eu-central-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z21DNDUVLTQW6Q",
+                        "id": "app-64d8f8e",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "eu-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
                         "tags": {
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms"
@@ -100,15 +95,26 @@
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms"
                         },
-                        "url": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
-                        "visibilityTimeoutSeconds": 300
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website.eu-central-1.amazonaws.com",
+                        "websiteEndpoint": "app-64d8f8e.s3-website.eu-central-1.amazonaws.com"
                     },
                     "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
                     "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
                     "propertyDependencies": {
-                        "fifoQueue": null,
+                        "acl": null,
+                        "forceDestroy": null,
                         "tags": null,
-                        "visibilityTimeoutSeconds": null
+                        "website": null
                     },
                     "sequenceNumber": 1
                 },
@@ -186,47 +192,52 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "urn": "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue",
                     "custom": true,
-                    "id": "app-64d8f8e",
-                    "type": "aws:s3/bucket:Bucket",
+                    "id": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
+                    "type": "aws:sqs/queue:Queue",
                     "inputs": {
                         "__defaults": [
-                            "bucket"
+                            "contentBasedDeduplication",
+                            "delaySeconds",
+                            "maxMessageSize",
+                            "messageRetentionSeconds",
+                            "name",
+                            "receiveWaitTimeSeconds"
                         ],
-                        "acl": "public-read",
-                        "bucket": "app-64d8f8e",
-                        "forceDestroy": true,
+                        "contentBasedDeduplication": false,
+                        "delaySeconds": 0,
+                        "fifoQueue": true,
+                        "maxMessageSize": 262144,
+                        "messageRetentionSeconds": 345600,
+                        "name": "ps-render-queue-89c1c33.fifo",
+                        "receiveWaitTimeSeconds": 0,
                         "tags": {
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms",
                             "__defaults": []
                         },
-                        "website": {
-                            "__defaults": [],
-                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
-                            "indexDocument": "index.html"
-                        }
+                        "visibilityTimeoutSeconds": 300
                     },
                     "outputs": {
-                        "accelerationStatus": "",
-                        "acl": "public-read",
-                        "arn": "arn:aws:s3:::app-64d8f8e",
-                        "bucket": "app-64d8f8e",
-                        "bucketDomainName": "app-64d8f8e.s3.amazonaws.com",
-                        "bucketRegionalDomainName": "app-64d8f8e.s3.eu-central-1.amazonaws.com",
-                        "corsRules": [],
-                        "forceDestroy": true,
-                        "grants": [],
-                        "hostedZoneId": "Z21DNDUVLTQW6Q",
-                        "id": "app-64d8f8e",
-                        "lifecycleRules": [],
-                        "loggings": [],
-                        "objectLockConfiguration": null,
-                        "region": "eu-central-1",
-                        "replicationConfiguration": null,
-                        "requestPayer": "BucketOwner",
-                        "serverSideEncryptionConfiguration": null,
+                        "arn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
+                        "contentBasedDeduplication": false,
+                        "deduplicationScope": "queue",
+                        "delaySeconds": 0,
+                        "fifoQueue": true,
+                        "fifoThroughputLimit": "perQueue",
+                        "id": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
+                        "kmsDataKeyReusePeriodSeconds": 300,
+                        "kmsMasterKeyId": "",
+                        "maxMessageSize": 262144,
+                        "messageRetentionSeconds": 345600,
+                        "name": "ps-render-queue-89c1c33.fifo",
+                        "namePrefix": "",
+                        "policy": "",
+                        "receiveWaitTimeSeconds": 0,
+                        "redriveAllowPolicy": "",
+                        "redrivePolicy": "",
+                        "sqsManagedSseEnabled": false,
                         "tags": {
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms"
@@ -235,26 +246,15 @@
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms"
                         },
-                        "versioning": {
-                            "enabled": false,
-                            "mfaDelete": false
-                        },
-                        "website": {
-                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
-                            "indexDocument": "index.html",
-                            "redirectAllRequestsTo": "",
-                            "routingRules": ""
-                        },
-                        "websiteDomain": "s3-website.eu-central-1.amazonaws.com",
-                        "websiteEndpoint": "app-64d8f8e.s3-website.eu-central-1.amazonaws.com"
+                        "url": "https://sqs.eu-central-1.amazonaws.com/932784301473/ps-render-queue-89c1c33.fifo",
+                        "visibilityTimeoutSeconds": 300
                     },
                     "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
                     "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
                     "propertyDependencies": {
-                        "acl": null,
-                        "forceDestroy": null,
+                        "fifoQueue": null,
                         "tags": null,
-                        "website": null
+                        "visibilityTimeoutSeconds": null
                     },
                     "sequenceNumber": 1
                 },
@@ -875,6 +875,45 @@
                     "sequenceNumber": 1
                 },
                 {
+                    "urn": "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                    "custom": true,
+                    "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                    "type": "aws:iam/policy:Policy",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "path"
+                        ],
+                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
+                        "name": "ps-lambda-policy-40cc5b1",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21\",\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-52a6577/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
+                        "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "name": "ps-lambda-policy-40cc5b1",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21\",\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-52a6577/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}",
+                        "policyId": "ANPA5SLSG4WQWOESCDPWL",
+                        "tags": {},
+                        "tagsAll": {}
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "description": null,
+                        "policy": [
+                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
                     "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule",
                     "custom": true,
                     "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57/ps-flush-event-rule-2b27ea6",
@@ -919,6 +958,173 @@
                     "propertyDependencies": {
                         "eventBusName": null,
                         "eventPattern": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                    "custom": true,
+                    "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
+                    "type": "aws:cloudwatch/eventRule:EventRule",
+                    "inputs": {
+                        "__defaults": [
+                            "isEnabled",
+                            "name"
+                        ],
+                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
+                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
+                        "isEnabled": true,
+                        "name": "ps-render-subscriber-event-rule-2e8f4dc",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
+                        "description": "",
+                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
+                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
+                        "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
+                        "isEnabled": true,
+                        "name": "ps-render-subscriber-event-rule-2e8f4dc",
+                        "namePrefix": "",
+                        "roleArn": "",
+                        "scheduleExpression": "",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "eventBusName": null,
+                        "eventPattern": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role",
+                    "custom": true,
+                    "id": "ps-render-lambda-role-3edaa94",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-lambda-role-3edaa94",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/ps-render-lambda-role-3edaa94",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-07T08:10:25Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "ps-render-lambda-role-3edaa94",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-lambda-role-3edaa94",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQ5NUDLBNTZ"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-a37da28",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "ps-flush-lambda-role-a37da28",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-07T08:10:25Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "ps-flush-lambda-role-a37da28",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "ps-flush-lambda-role-a37da28",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQTCUACTJKG"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
                         "tags": null
                     },
                     "sequenceNumber": 1
@@ -983,153 +1189,6 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
-                    "custom": true,
-                    "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
-                    "type": "aws:cloudwatch/eventRule:EventRule",
-                    "inputs": {
-                        "__defaults": [
-                            "isEnabled",
-                            "name"
-                        ],
-                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
-                        "isEnabled": true,
-                        "name": "ps-render-subscriber-event-rule-2e8f4dc",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
-                    },
-                    "outputs": {
-                        "arn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
-                        "description": "",
-                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
-                        "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
-                        "isEnabled": true,
-                        "name": "ps-render-subscriber-event-rule-2e8f4dc",
-                        "namePrefix": "",
-                        "roleArn": "",
-                        "scheduleExpression": "",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        }
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "eventBusName": null,
-                        "eventPattern": null,
-                        "tags": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
-                    "custom": true,
-                    "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                    "type": "aws:iam/policy:Policy",
-                    "inputs": {
-                        "__defaults": [
-                            "name",
-                            "path"
-                        ],
-                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
-                        "name": "ps-lambda-policy-40cc5b1",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21\",\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-52a6577/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}"
-                    },
-                    "outputs": {
-                        "arn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
-                        "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "name": "ps-lambda-policy-40cc5b1",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21\",\"arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-52a6577/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}",
-                        "policyId": "ANPA5SLSG4WQWOESCDPWL",
-                        "tags": {},
-                        "tagsAll": {}
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "description": null,
-                        "policy": [
-                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role",
-                    "custom": true,
-                    "id": "ps-flush-lambda-role-a37da28",
-                    "type": "aws:iam/role:Role",
-                    "inputs": {
-                        "__defaults": [
-                            "forceDetachPolicies",
-                            "maxSessionDuration",
-                            "name",
-                            "path"
-                        ],
-                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
-                        "forceDetachPolicies": false,
-                        "maxSessionDuration": 3600,
-                        "name": "ps-flush-lambda-role-a37da28",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
-                    },
-                    "outputs": {
-                        "arn": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
-                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
-                        "createDate": "2022-07-07T08:10:25Z",
-                        "description": "",
-                        "forceDetachPolicies": false,
-                        "id": "ps-flush-lambda-role-a37da28",
-                        "inlinePolicies": [
-                            {
-                                "name": "",
-                                "policy": ""
-                            }
-                        ],
-                        "managedPolicyArns": [],
-                        "maxSessionDuration": 3600,
-                        "name": "ps-flush-lambda-role-a37da28",
-                        "namePrefix": "",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "uniqueId": "AROA5SLSG4WQTCUACTJKG"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "assumeRolePolicy": null,
-                        "tags": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
                     "urn": "urn:pulumi:dev::website::aws:dynamodb/tableItem:TableItem::psSettings",
                     "custom": true,
                     "id": "webiny-c770c21|PK||PS#SETTINGS||SK||default|",
@@ -1166,526 +1225,6 @@
                         ],
                         "rangeKey": null,
                         "tableName": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role",
-                    "custom": true,
-                    "id": "ps-render-lambda-role-3edaa94",
-                    "type": "aws:iam/role:Role",
-                    "inputs": {
-                        "__defaults": [
-                            "forceDetachPolicies",
-                            "maxSessionDuration",
-                            "name",
-                            "path"
-                        ],
-                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
-                        "forceDetachPolicies": false,
-                        "maxSessionDuration": 3600,
-                        "name": "ps-render-lambda-role-3edaa94",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
-                    },
-                    "outputs": {
-                        "arn": "arn:aws:iam::932784301473:role/ps-render-lambda-role-3edaa94",
-                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
-                        "createDate": "2022-07-07T08:10:25Z",
-                        "description": "",
-                        "forceDetachPolicies": false,
-                        "id": "ps-render-lambda-role-3edaa94",
-                        "inlinePolicies": [
-                            {
-                                "name": "",
-                                "policy": ""
-                            }
-                        ],
-                        "managedPolicyArns": [],
-                        "maxSessionDuration": 3600,
-                        "name": "ps-render-lambda-role-3edaa94",
-                        "namePrefix": "",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "uniqueId": "AROA5SLSG4WQ5NUDLBNTZ"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "assumeRolePolicy": null,
-                        "tags": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda",
-                    "custom": true,
-                    "id": "ps-render-subscriber-lambda-6955af4",
-                    "type": "aws:lambda/function:Function",
-                    "inputs": {
-                        "__defaults": [
-                            "name",
-                            "packageType",
-                            "publish",
-                            "reservedConcurrentExecutions"
-                        ],
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
-                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
-                                }
-                            },
-                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
-                        },
-                        "description": "Subscribes to render events on event bus",
-                        "environment": {
-                            "__defaults": [],
-                            "variables": {
-                                "DB_TABLE": "webiny-c770c21",
-                                "DEBUG": "true",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_PROJECT_NAME": "dusk-cms",
-                                "__defaults": []
-                            }
-                        },
-                        "handler": "handler.handler",
-                        "memorySize": 512,
-                        "name": "ps-render-subscriber-lambda-6955af4",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-b99a492",
-                        "runtime": "nodejs14.x",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        },
-                        "timeout": 30,
-                        "vpcConfig": {
-                            "__defaults": [],
-                            "securityGroupIds": [],
-                            "subnetIds": []
-                        }
-                    },
-                    "outputs": {
-                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
-                        "architectures": [
-                            "x86_64"
-                        ],
-                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
-                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
-                                }
-                            },
-                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
-                        },
-                        "codeSigningConfigArn": "",
-                        "deadLetterConfig": null,
-                        "description": "Subscribes to render events on event bus",
-                        "environment": {
-                            "variables": {
-                                "DB_TABLE": "webiny-c770c21",
-                                "DEBUG": "true",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_PROJECT_NAME": "dusk-cms"
-                            }
-                        },
-                        "ephemeralStorage": {
-                            "size": 512
-                        },
-                        "fileSystemConfig": null,
-                        "handler": "handler.handler",
-                        "id": "ps-render-subscriber-lambda-6955af4",
-                        "imageConfig": null,
-                        "imageUri": "",
-                        "invokeArn": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4/invocations",
-                        "kmsKeyArn": "",
-                        "lastModified": "2022-07-07T08:10:48.957+0000",
-                        "layers": [],
-                        "memorySize": 512,
-                        "name": "ps-render-subscriber-lambda-6955af4",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "qualifiedArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4:$LATEST",
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-b99a492",
-                        "runtime": "nodejs14.x",
-                        "signingJobArn": "",
-                        "signingProfileVersionArn": "",
-                        "sourceCodeHash": "AConlf6a+1H9iBFraX6cHDM9tfCfsiTFCGC1Ia5gUXk=",
-                        "sourceCodeSize": 34279,
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "timeout": 30,
-                        "tracingConfig": {
-                            "mode": "PassThrough"
-                        },
-                        "version": "$LATEST",
-                        "vpcConfig": null
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "code": null,
-                        "description": null,
-                        "environment": null,
-                        "handler": null,
-                        "memorySize": null,
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                        ],
-                        "runtime": null,
-                        "tags": null,
-                        "timeout": null,
-                        "vpcConfig": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-execution-role",
-                    "custom": true,
-                    "id": "ps-render-subscriber-role-b99a492-20220707081026803800000005",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-                        "role": "ps-render-subscriber-role-b99a492"
-                    },
-                    "outputs": {
-                        "id": "ps-render-subscriber-role-b99a492-20220707081026803800000005",
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-                        "role": "ps-render-subscriber-role-b99a492"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": null,
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-policy",
-                    "custom": true,
-                    "id": "ps-render-subscriber-role-b99a492-20220707081050547400000006",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-render-subscriber-role-b99a492"
-                    },
-                    "outputs": {
-                        "id": "ps-render-subscriber-role-b99a492-20220707081050547400000006",
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-render-subscriber-role-b99a492"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
-                        ],
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-policy",
-                    "custom": true,
-                    "id": "ps-flush-lambda-role-a37da28-20220707081050553900000007",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-flush-lambda-role-a37da28"
-                    },
-                    "outputs": {
-                        "id": "ps-flush-lambda-role-a37da28-20220707081050553900000007",
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-flush-lambda-role-a37da28"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
-                        ],
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-execution-role",
-                    "custom": true,
-                    "id": "ps-flush-lambda-role-a37da28-20220707081026775500000003",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-                        "role": "ps-flush-lambda-role-a37da28"
-                    },
-                    "outputs": {
-                        "id": "ps-flush-lambda-role-a37da28-20220707081026775500000003",
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-                        "role": "ps-flush-lambda-role-a37da28"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": null,
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda",
-                    "custom": true,
-                    "id": "ps-flush-lambda-a4deef8",
-                    "type": "aws:lambda/function:Function",
-                    "inputs": {
-                        "__defaults": [
-                            "name",
-                            "packageType",
-                            "publish",
-                            "reservedConcurrentExecutions"
-                        ],
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
-                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
-                                }
-                            },
-                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
-                        },
-                        "description": "Subscribes to flush events on event bus",
-                        "environment": {
-                            "__defaults": [],
-                            "variables": {
-                                "DB_TABLE": "webiny-c770c21",
-                                "DEBUG": "true",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_PROJECT_NAME": "dusk-cms",
-                                "__defaults": []
-                            }
-                        },
-                        "handler": "handler.handler",
-                        "memorySize": 512,
-                        "name": "ps-flush-lambda-a4deef8",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
-                        "runtime": "nodejs14.x",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        },
-                        "timeout": 30,
-                        "vpcConfig": {
-                            "__defaults": [],
-                            "securityGroupIds": [],
-                            "subnetIds": []
-                        }
-                    },
-                    "outputs": {
-                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
-                        "architectures": [
-                            "x86_64"
-                        ],
-                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8",
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
-                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
-                                }
-                            },
-                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
-                        },
-                        "codeSigningConfigArn": "",
-                        "deadLetterConfig": null,
-                        "description": "Subscribes to flush events on event bus",
-                        "environment": {
-                            "variables": {
-                                "DB_TABLE": "webiny-c770c21",
-                                "DEBUG": "true",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_PROJECT_NAME": "dusk-cms"
-                            }
-                        },
-                        "ephemeralStorage": {
-                            "size": 512
-                        },
-                        "fileSystemConfig": null,
-                        "handler": "handler.handler",
-                        "id": "ps-flush-lambda-a4deef8",
-                        "imageConfig": null,
-                        "imageUri": "",
-                        "invokeArn": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8/invocations",
-                        "kmsKeyArn": "",
-                        "lastModified": "2022-07-07T08:10:43.353+0000",
-                        "layers": [],
-                        "memorySize": 512,
-                        "name": "ps-flush-lambda-a4deef8",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "qualifiedArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8:$LATEST",
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
-                        "runtime": "nodejs14.x",
-                        "signingJobArn": "",
-                        "signingProfileVersionArn": "",
-                        "sourceCodeHash": "POMR/wW+ajn6SP3e2B7/imxEbxaZbYptdOYVXgAkgvY=",
-                        "sourceCodeSize": 35607,
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "timeout": 30,
-                        "tracingConfig": {
-                            "mode": "PassThrough"
-                        },
-                        "version": "$LATEST",
-                        "vpcConfig": null
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "code": null,
-                        "description": null,
-                        "environment": null,
-                        "handler": null,
-                        "memorySize": null,
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
-                        ],
-                        "runtime": null,
-                        "tags": null,
-                        "timeout": null,
-                        "vpcConfig": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-policy",
-                    "custom": true,
-                    "id": "ps-render-lambda-role-3edaa94-20220707081050561300000008",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-render-lambda-role-3edaa94"
-                    },
-                    "outputs": {
-                        "id": "ps-render-lambda-role-3edaa94-20220707081050561300000008",
-                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
-                        "role": "ps-render-lambda-role-3edaa94"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
-                        ],
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-execution-role",
-                    "custom": true,
-                    "id": "ps-render-lambda-role-3edaa94-20220707081026778900000004",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
-                        "role": "ps-render-lambda-role-3edaa94"
-                    },
-                    "outputs": {
-                        "id": "ps-render-lambda-role-3edaa94-20220707081026778900000004",
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
-                        "role": "ps-render-lambda-role-3edaa94"
-                    },
-                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
-                    "propertyDependencies": {
-                        "policyArn": null,
-                        "role": [
-                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
-                        ]
                     },
                     "sequenceNumber": 1
                 },
@@ -1838,87 +1377,462 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventTarget:EventTarget::ps-render-subscriber-event-target",
+                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda",
                     "custom": true,
-                    "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57-ps-render-subscriber-event-rule-2e8f4dc-ps-render-subscriber-event-target-1135550",
-                    "type": "aws:cloudwatch/eventTarget:EventTarget",
+                    "id": "ps-flush-lambda-a4deef8",
+                    "type": "aws:lambda/function:Function",
                     "inputs": {
                         "__defaults": [
-                            "targetId"
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
                         ],
-                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
-                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "rule": "ps-render-subscriber-event-rule-2e8f4dc",
-                        "targetId": "ps-render-subscriber-event-target-1135550"
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
+                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
+                                }
+                            },
+                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
+                        },
+                        "description": "Subscribes to flush events on event bus",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "DB_TABLE": "webiny-c770c21",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "memorySize": 512,
+                        "name": "ps-flush-lambda-a4deef8",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 30,
+                        "vpcConfig": {
+                            "__defaults": [],
+                            "securityGroupIds": [],
+                            "subnetIds": []
+                        }
                     },
                     "outputs": {
-                        "__meta": "{\"schema_version\":\"1\"}",
-                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
-                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "httpTarget": null,
-                        "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57-ps-render-subscriber-event-rule-2e8f4dc-ps-render-subscriber-event-target-1135550",
-                        "input": "",
-                        "inputPath": "",
-                        "roleArn": "",
-                        "rule": "ps-render-subscriber-event-rule-2e8f4dc",
-                        "targetId": "ps-render-subscriber-event-target-1135550"
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
+                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
+                                }
+                            },
+                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Subscribes to flush events on event bus",
+                        "environment": {
+                            "variables": {
+                                "DB_TABLE": "webiny-c770c21",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "ps-flush-lambda-a4deef8",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-07T08:10:43.353+0000",
+                        "layers": [],
+                        "memorySize": 512,
+                        "name": "ps-flush-lambda-a4deef8",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-flush-lambda-a4deef8:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-a37da28",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "POMR/wW+ajn6SP3e2B7/imxEbxaZbYptdOYVXgAkgvY=",
+                        "sourceCodeSize": 35607,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 30,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
                     },
                     "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
-                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
                     ],
                     "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
                     "propertyDependencies": {
-                        "arn": [
-                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
                         ],
-                        "eventBusName": null,
-                        "rule": [
-                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null,
+                        "vpcConfig": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda",
+                    "custom": true,
+                    "id": "ps-render-subscriber-lambda-6955af4",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
+                        ],
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
+                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
+                                }
+                            },
+                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
+                        },
+                        "description": "Subscribes to render events on event bus",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "DB_TABLE": "webiny-c770c21",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "memorySize": 512,
+                        "name": "ps-render-subscriber-lambda-6955af4",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-b99a492",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 30,
+                        "vpcConfig": {
+                            "__defaults": [],
+                            "securityGroupIds": [],
+                            "subnetIds": []
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
+                                    "path": "/Users/projs/projects/dusk/cms/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
+                                }
+                            },
+                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Subscribes to render events on event bus",
+                        "environment": {
+                            "variables": {
+                                "DB_TABLE": "webiny-c770c21",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "ps-render-subscriber-lambda-6955af4",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-07T08:10:48.957+0000",
+                        "layers": [],
+                        "memorySize": 512,
+                        "name": "ps-render-subscriber-lambda-6955af4",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-b99a492",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "AConlf6a+1H9iBFraX6cHDM9tfCfsiTFCGC1Ia5gUXk=",
+                        "sourceCodeSize": 34279,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 30,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ],
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null,
+                        "vpcConfig": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-execution-role",
+                    "custom": true,
+                    "id": "ps-render-lambda-role-3edaa94-20220707081026778900000004",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
+                        "role": "ps-render-lambda-role-3edaa94"
+                    },
+                    "outputs": {
+                        "id": "ps-render-lambda-role-3edaa94-20220707081026778900000004",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
+                        "role": "ps-render-lambda-role-3edaa94"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
                         ]
                     },
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:lambda/permission:Permission::ps-render-subscriber-event-permission",
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-policy",
                     "custom": true,
-                    "id": "ps-render-subscriber-event-permission-1f019f7",
-                    "type": "aws:lambda/permission:Permission",
+                    "id": "ps-render-lambda-role-3edaa94-20220707081050561300000008",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
                     "inputs": {
-                        "__defaults": [
-                            "statementId"
-                        ],
-                        "action": "lambda:InvokeFunction",
-                        "function": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
-                        "principal": "events.amazonaws.com",
-                        "sourceArn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
-                        "statementId": "ps-render-subscriber-event-permission-1f019f7"
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-render-lambda-role-3edaa94"
                     },
                     "outputs": {
-                        "action": "lambda:InvokeFunction",
-                        "function": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
-                        "id": "ps-render-subscriber-event-permission-1f019f7",
-                        "principal": "events.amazonaws.com",
-                        "qualifier": "",
-                        "sourceArn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
-                        "statementId": "ps-render-subscriber-event-permission-1f019f7",
-                        "statementIdPrefix": ""
+                        "id": "ps-render-lambda-role-3edaa94-20220707081050561300000008",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-render-lambda-role-3edaa94"
                     },
                     "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
-                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
                     ],
                     "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
                     "propertyDependencies": {
-                        "action": null,
-                        "function": [
-                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
                         ],
-                        "principal": null,
-                        "sourceArn": [
-                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/eventSourceMapping:EventSourceMapping::ps-render-event-source-mapping",
+                    "custom": true,
+                    "id": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f",
+                    "type": "aws:lambda/eventSourceMapping:EventSourceMapping",
+                    "inputs": {
+                        "__defaults": [
+                            "enabled"
+                        ],
+                        "batchSize": 1,
+                        "enabled": true,
+                        "eventSourceArn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
+                        "functionName": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817"
+                    },
+                    "outputs": {
+                        "batchSize": 1,
+                        "bisectBatchOnFunctionError": false,
+                        "destinationConfig": null,
+                        "enabled": true,
+                        "eventSourceArn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
+                        "filterCriteria": null,
+                        "functionArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817",
+                        "functionName": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817",
+                        "functionResponseTypes": [],
+                        "id": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f",
+                        "lastModified": "2022-07-07T08:11:05Z",
+                        "lastProcessingResult": "",
+                        "maximumBatchingWindowInSeconds": 0,
+                        "maximumRecordAgeInSeconds": 0,
+                        "maximumRetryAttempts": 0,
+                        "parallelizationFactor": 0,
+                        "queues": [],
+                        "selfManagedEventSource": null,
+                        "sourceAccessConfigurations": [],
+                        "startingPosition": "",
+                        "startingPositionTimestamp": "",
+                        "state": "Enabled",
+                        "stateTransitionReason": "USER_INITIATED",
+                        "topics": [],
+                        "tumblingWindowInSeconds": 0,
+                        "uuid": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda",
+                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "batchSize": null,
+                        "eventSourceArn": [
+                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        ],
+                        "functionName": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-execution-role",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-a37da28-20220707081026775500000003",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-flush-lambda-role-a37da28"
+                    },
+                    "outputs": {
+                        "id": "ps-flush-lambda-role-a37da28-20220707081026775500000003",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-flush-lambda-role-a37da28"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-policy",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-a37da28-20220707081050553900000007",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-flush-lambda-role-a37da28"
+                    },
+                    "outputs": {
+                        "id": "ps-flush-lambda-role-a37da28-20220707081050553900000007",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-flush-lambda-role-a37da28"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
                         ]
                     },
                     "sequenceNumber": 1
@@ -2010,60 +1924,146 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::website::aws:lambda/eventSourceMapping:EventSourceMapping::ps-render-event-source-mapping",
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-policy",
                     "custom": true,
-                    "id": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f",
-                    "type": "aws:lambda/eventSourceMapping:EventSourceMapping",
+                    "id": "ps-render-subscriber-role-b99a492-20220707081050547400000006",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
                     "inputs": {
-                        "__defaults": [
-                            "enabled"
-                        ],
-                        "batchSize": 1,
-                        "enabled": true,
-                        "eventSourceArn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
-                        "functionName": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817"
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-render-subscriber-role-b99a492"
                     },
                     "outputs": {
-                        "batchSize": 1,
-                        "bisectBatchOnFunctionError": false,
-                        "destinationConfig": null,
-                        "enabled": true,
-                        "eventSourceArn": "arn:aws:sqs:eu-central-1:932784301473:ps-render-queue-89c1c33.fifo",
-                        "filterCriteria": null,
-                        "functionArn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817",
-                        "functionName": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-lambda-6fb1817",
-                        "functionResponseTypes": [],
-                        "id": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f",
-                        "lastModified": "2022-07-07T08:11:05Z",
-                        "lastProcessingResult": "",
-                        "maximumBatchingWindowInSeconds": 0,
-                        "maximumRecordAgeInSeconds": 0,
-                        "maximumRetryAttempts": 0,
-                        "parallelizationFactor": 0,
-                        "queues": [],
-                        "selfManagedEventSource": null,
-                        "sourceAccessConfigurations": [],
-                        "startingPosition": "",
-                        "startingPositionTimestamp": "",
-                        "state": "Enabled",
-                        "stateTransitionReason": "USER_INITIATED",
-                        "topics": [],
-                        "tumblingWindowInSeconds": 0,
-                        "uuid": "43bfbd3d-14a3-48a5-b686-7d59b09f1a3f"
+                        "id": "ps-render-subscriber-role-b99a492-20220707081050547400000006",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-40cc5b1",
+                        "role": "ps-render-subscriber-role-b99a492"
                     },
                     "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda",
-                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
                     ],
                     "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
                     "propertyDependencies": {
-                        "batchSize": null,
-                        "eventSourceArn": [
-                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
                         ],
-                        "functionName": [
-                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda"
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-execution-role",
+                    "custom": true,
+                    "id": "ps-render-subscriber-role-b99a492-20220707081026803800000005",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-render-subscriber-role-b99a492"
+                    },
+                    "outputs": {
+                        "id": "ps-render-subscriber-role-b99a492-20220707081026803800000005",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-render-subscriber-role-b99a492"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/permission:Permission::ps-render-subscriber-event-permission",
+                    "custom": true,
+                    "id": "ps-render-subscriber-event-permission-1f019f7",
+                    "type": "aws:lambda/permission:Permission",
+                    "inputs": {
+                        "__defaults": [
+                            "statementId"
+                        ],
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
+                        "principal": "events.amazonaws.com",
+                        "sourceArn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
+                        "statementId": "ps-render-subscriber-event-permission-1f019f7"
+                    },
+                    "outputs": {
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
+                        "id": "ps-render-subscriber-event-permission-1f019f7",
+                        "principal": "events.amazonaws.com",
+                        "qualifier": "",
+                        "sourceArn": "arn:aws:events:eu-central-1:932784301473:rule/event-bus-ff04f57/ps-render-subscriber-event-rule-2e8f4dc",
+                        "statementId": "ps-render-subscriber-event-permission-1f019f7",
+                        "statementIdPrefix": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "action": null,
+                        "function": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        ],
+                        "principal": null,
+                        "sourceArn": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventTarget:EventTarget::ps-render-subscriber-event-target",
+                    "custom": true,
+                    "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57-ps-render-subscriber-event-rule-2e8f4dc-ps-render-subscriber-event-target-1135550",
+                    "type": "aws:cloudwatch/eventTarget:EventTarget",
+                    "inputs": {
+                        "__defaults": [
+                            "targetId"
+                        ],
+                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
+                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
+                        "rule": "ps-render-subscriber-event-rule-2e8f4dc",
+                        "targetId": "ps-render-subscriber-event-target-1135550"
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "arn": "arn:aws:lambda:eu-central-1:932784301473:function:ps-render-subscriber-lambda-6955af4",
+                        "eventBusName": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
+                        "httpTarget": null,
+                        "id": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57-ps-render-subscriber-event-rule-2e8f4dc-ps-render-subscriber-event-target-1135550",
+                        "input": "",
+                        "inputPath": "",
+                        "roleArn": "",
+                        "rule": "ps-render-subscriber-event-rule-2e8f4dc",
+                        "targetId": "ps-render-subscriber-event-target-1135550"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::d524e731-aa58-4c6f-a12c-e8bbe5da1e4c",
+                    "propertyDependencies": {
+                        "arn": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        ],
+                        "eventBusName": null,
+                        "rule": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
                         ]
                     },
                     "sequenceNumber": 1
