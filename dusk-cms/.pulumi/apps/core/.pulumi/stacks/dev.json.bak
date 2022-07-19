@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-14T11:52:23.323538+02:00",
+                "time": "2022-07-19T15:28:15.011007+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:zYIiMvg560M=:v1:7BB3fR9X0GXttweB:eySFefjpt2ACS2GIn2AUnXovi1u8Hg=="
+                    "salt": "v1:F+t4VkP4U4k=:v1:pjFbthAkGGdInr/p:NJ1m4KP67t355mKhqjz7GV9I5gIWAw=="
                 }
             },
             "resources": [
@@ -20,9 +20,9 @@
                     "custom": false,
                     "type": "pulumi:pulumi:Stack",
                     "outputs": {
-                        "cognitoAppClientId": "1n5ijihgv95v5ue1gt8dcbh5oh",
-                        "cognitoUserPoolArn": "arn:aws:cognito-idp:eu-central-1:932784301473:userpool/eu-central-1_FvgEzRN9c",
-                        "cognitoUserPoolId": "eu-central-1_FvgEzRN9c",
+                        "cognitoAppClientId": "2hfut2dcbl3vg3eec8dttj7um4",
+                        "cognitoUserPoolArn": "arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x",
+                        "cognitoUserPoolId": "us-east-1_riv0Xok8x",
                         "cognitoUserPoolPasswordPolicy": {
                             "minimumLength": 8,
                             "requireLowercase": false,
@@ -31,11 +31,11 @@
                             "requireUppercase": false,
                             "temporaryPasswordValidityDays": 7
                         },
-                        "eventBusArn": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "fileManagerBucketId": "fm-bucket-52a6577",
-                        "primaryDynamodbTableArn": "arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21",
+                        "eventBusArn": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "fileManagerBucketId": "fm-bucket-5dcd190",
+                        "primaryDynamodbTableArn": "arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6",
                         "primaryDynamodbTableHashKey": "PK",
-                        "primaryDynamodbTableName": "webiny-c770c21",
+                        "primaryDynamodbTableName": "webiny-af7d6a6",
                         "primaryDynamodbTableRangeKey": "SK"
                     },
                     "sequenceNumber": 1
@@ -43,7 +43,7 @@
                 {
                     "urn": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2",
                     "custom": true,
-                    "id": "f4477cd1-8525-4e86-b78d-82a6944c6ed8",
+                    "id": "c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
                     "type": "pulumi:providers:aws",
                     "inputs": {
                         "version": "5.9.2"
@@ -57,161 +57,36 @@
                 {
                     "urn": "urn:pulumi:dev::core::aws:cloudwatch/eventBus:EventBus::event-bus",
                     "custom": true,
-                    "id": "event-bus-ff04f57",
+                    "id": "event-bus-15fcf72",
                     "type": "aws:cloudwatch/eventBus:EventBus",
                     "inputs": {
                         "__defaults": [
                             "name"
                         ],
-                        "name": "event-bus-ff04f57"
+                        "name": "event-bus-15fcf72"
                     },
                     "outputs": {
-                        "arn": "arn:aws:events:eu-central-1:932784301473:event-bus/event-bus-ff04f57",
-                        "id": "event-bus-ff04f57",
-                        "name": "event-bus-ff04f57",
+                        "arn": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "id": "event-bus-15fcf72",
+                        "name": "event-bus-15fcf72",
                         "tags": {},
                         "tagsAll": {}
                     },
                     "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::core::aws:dynamodb/table:Table::webiny",
-                    "custom": true,
-                    "id": "webiny-c770c21",
-                    "type": "aws:dynamodb/table:Table",
-                    "inputs": {
-                        "__defaults": [
-                            "name"
-                        ],
-                        "attributes": [
-                            {
-                                "__defaults": [],
-                                "name": "PK",
-                                "type": "S"
-                            },
-                            {
-                                "__defaults": [],
-                                "name": "SK",
-                                "type": "S"
-                            },
-                            {
-                                "__defaults": [],
-                                "name": "GSI1_PK",
-                                "type": "S"
-                            },
-                            {
-                                "__defaults": [],
-                                "name": "GSI1_SK",
-                                "type": "S"
-                            }
-                        ],
-                        "billingMode": "PAY_PER_REQUEST",
-                        "globalSecondaryIndexes": [
-                            {
-                                "__defaults": [],
-                                "hashKey": "GSI1_PK",
-                                "name": "GSI1",
-                                "projectionType": "ALL",
-                                "rangeKey": "GSI1_SK"
-                            }
-                        ],
-                        "hashKey": "PK",
-                        "name": "webiny-c770c21",
-                        "rangeKey": "SK",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
-                    },
-                    "outputs": {
-                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":600000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
-                        "arn": "arn:aws:dynamodb:eu-central-1:932784301473:table/webiny-c770c21",
-                        "attributes": [
-                            {
-                                "name": "GSI1_PK",
-                                "type": "S"
-                            },
-                            {
-                                "name": "GSI1_SK",
-                                "type": "S"
-                            },
-                            {
-                                "name": "PK",
-                                "type": "S"
-                            },
-                            {
-                                "name": "SK",
-                                "type": "S"
-                            }
-                        ],
-                        "billingMode": "PAY_PER_REQUEST",
-                        "globalSecondaryIndexes": [
-                            {
-                                "hashKey": "GSI1_PK",
-                                "name": "GSI1",
-                                "nonKeyAttributes": [],
-                                "projectionType": "ALL",
-                                "rangeKey": "GSI1_SK",
-                                "readCapacity": 0,
-                                "writeCapacity": 0
-                            }
-                        ],
-                        "hashKey": "PK",
-                        "id": "webiny-c770c21",
-                        "localSecondaryIndexes": [],
-                        "name": "webiny-c770c21",
-                        "pointInTimeRecovery": {
-                            "enabled": false
-                        },
-                        "rangeKey": "SK",
-                        "readCapacity": 0,
-                        "replicas": [],
-                        "serverSideEncryption": null,
-                        "streamArn": "",
-                        "streamEnabled": false,
-                        "streamLabel": "",
-                        "streamViewType": "",
-                        "tableClass": "",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "ttl": {
-                            "attributeName": "",
-                            "enabled": false
-                        },
-                        "writeCapacity": 0
-                    },
-                    "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
-                    "propertyDependencies": {
-                        "attributes": null,
-                        "billingMode": null,
-                        "globalSecondaryIndexes": null,
-                        "hashKey": null,
-                        "rangeKey": null,
-                        "tags": null
-                    },
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
                     "sequenceNumber": 1
                 },
                 {
                     "urn": "urn:pulumi:dev::core::aws:s3/bucket:Bucket::fm-bucket",
                     "custom": true,
-                    "id": "fm-bucket-52a6577",
+                    "id": "fm-bucket-5dcd190",
                     "type": "aws:s3/bucket:Bucket",
                     "inputs": {
                         "__defaults": [
                             "bucket"
                         ],
                         "acl": "private",
-                        "bucket": "fm-bucket-52a6577",
+                        "bucket": "fm-bucket-5dcd190",
                         "corsRules": [
                             {
                                 "__defaults": [],
@@ -238,10 +113,10 @@
                     "outputs": {
                         "accelerationStatus": "",
                         "acl": "private",
-                        "arn": "arn:aws:s3:::fm-bucket-52a6577",
-                        "bucket": "fm-bucket-52a6577",
-                        "bucketDomainName": "fm-bucket-52a6577.s3.amazonaws.com",
-                        "bucketRegionalDomainName": "fm-bucket-52a6577.s3.eu-central-1.amazonaws.com",
+                        "arn": "arn:aws:s3:::fm-bucket-5dcd190",
+                        "bucket": "fm-bucket-5dcd190",
+                        "bucketDomainName": "fm-bucket-5dcd190.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "fm-bucket-5dcd190.s3.amazonaws.com",
                         "corsRules": [
                             {
                                 "allowedHeaders": [
@@ -260,12 +135,12 @@
                         ],
                         "forceDestroy": true,
                         "grants": [],
-                        "hostedZoneId": "Z21DNDUVLTQW6Q",
-                        "id": "fm-bucket-52a6577",
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "fm-bucket-5dcd190",
                         "lifecycleRules": [],
                         "loggings": [],
                         "objectLockConfiguration": null,
-                        "region": "eu-central-1",
+                        "region": "us-east-1",
                         "replicationConfiguration": null,
                         "requestPayer": "BucketOwner",
                         "serverSideEncryptionConfiguration": null,
@@ -284,7 +159,7 @@
                         "website": null
                     },
                     "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
                     "propertyDependencies": {
                         "acl": null,
                         "corsRules": null,
@@ -296,7 +171,7 @@
                 {
                     "urn": "urn:pulumi:dev::core::aws:cognito/userPool:UserPool::user-pool",
                     "custom": true,
-                    "id": "eu-central-1_FvgEzRN9c",
+                    "id": "us-east-1_riv0Xok8x",
                     "type": "aws:cognito/userPool:UserPool",
                     "inputs": {
                         "__defaults": [
@@ -320,7 +195,7 @@
                             "__defaults": []
                         },
                         "mfaConfiguration": "OFF",
-                        "name": "user-pool-b7aec3d",
+                        "name": "user-pool-f56d972",
                         "passwordPolicy": {
                             "__defaults": [],
                             "minimumLength": 8,
@@ -394,11 +269,11 @@
                         "aliasAttributes": [
                             "preferred_username"
                         ],
-                        "arn": "arn:aws:cognito-idp:eu-central-1:932784301473:userpool/eu-central-1_FvgEzRN9c",
+                        "arn": "arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x",
                         "autoVerifiedAttributes": [
                             "email"
                         ],
-                        "creationDate": "2022-07-07T08:04:49Z",
+                        "creationDate": "2022-07-15T08:15:43Z",
                         "customDomain": "",
                         "deviceConfiguration": null,
                         "domain": "",
@@ -409,13 +284,13 @@
                             "replyToEmailAddress": "",
                             "sourceArn": ""
                         },
-                        "endpoint": "cognito-idp.eu-central-1.amazonaws.com/eu-central-1_FvgEzRN9c",
+                        "endpoint": "cognito-idp.us-east-1.amazonaws.com/us-east-1_riv0Xok8x",
                         "estimatedNumberOfUsers": 0,
-                        "id": "eu-central-1_FvgEzRN9c",
+                        "id": "us-east-1_riv0Xok8x",
                         "lambdaConfig": null,
-                        "lastModifiedDate": "2022-07-07T08:04:49Z",
+                        "lastModifiedDate": "2022-07-15T08:15:43Z",
                         "mfaConfiguration": "OFF",
-                        "name": "user-pool-b7aec3d",
+                        "name": "user-pool-f56d972",
                         "passwordPolicy": {
                             "minimumLength": 8,
                             "requireLowercase": false,
@@ -486,7 +361,7 @@
                         }
                     },
                     "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
                     "propertyDependencies": {
                         "adminCreateUserConfig": null,
                         "aliasAttributes": null,
@@ -503,18 +378,143 @@
                     "sequenceNumber": 1
                 },
                 {
+                    "urn": "urn:pulumi:dev::core::aws:dynamodb/table:Table::webiny",
+                    "custom": true,
+                    "id": "webiny-af7d6a6",
+                    "type": "aws:dynamodb/table:Table",
+                    "inputs": {
+                        "__defaults": [
+                            "name"
+                        ],
+                        "attributes": [
+                            {
+                                "__defaults": [],
+                                "name": "PK",
+                                "type": "S"
+                            },
+                            {
+                                "__defaults": [],
+                                "name": "SK",
+                                "type": "S"
+                            },
+                            {
+                                "__defaults": [],
+                                "name": "GSI1_PK",
+                                "type": "S"
+                            },
+                            {
+                                "__defaults": [],
+                                "name": "GSI1_SK",
+                                "type": "S"
+                            }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "globalSecondaryIndexes": [
+                            {
+                                "__defaults": [],
+                                "hashKey": "GSI1_PK",
+                                "name": "GSI1",
+                                "projectionType": "ALL",
+                                "rangeKey": "GSI1_SK"
+                            }
+                        ],
+                        "hashKey": "PK",
+                        "name": "webiny-af7d6a6",
+                        "rangeKey": "SK",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":600000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                        "arn": "arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6",
+                        "attributes": [
+                            {
+                                "name": "GSI1_PK",
+                                "type": "S"
+                            },
+                            {
+                                "name": "GSI1_SK",
+                                "type": "S"
+                            },
+                            {
+                                "name": "PK",
+                                "type": "S"
+                            },
+                            {
+                                "name": "SK",
+                                "type": "S"
+                            }
+                        ],
+                        "billingMode": "PAY_PER_REQUEST",
+                        "globalSecondaryIndexes": [
+                            {
+                                "hashKey": "GSI1_PK",
+                                "name": "GSI1",
+                                "nonKeyAttributes": [],
+                                "projectionType": "ALL",
+                                "rangeKey": "GSI1_SK",
+                                "readCapacity": 0,
+                                "writeCapacity": 0
+                            }
+                        ],
+                        "hashKey": "PK",
+                        "id": "webiny-af7d6a6",
+                        "localSecondaryIndexes": [],
+                        "name": "webiny-af7d6a6",
+                        "pointInTimeRecovery": {
+                            "enabled": false
+                        },
+                        "rangeKey": "SK",
+                        "readCapacity": 0,
+                        "replicas": [],
+                        "serverSideEncryption": null,
+                        "streamArn": "",
+                        "streamEnabled": false,
+                        "streamLabel": "",
+                        "streamViewType": "",
+                        "tableClass": "",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "ttl": {
+                            "attributeName": "",
+                            "enabled": false
+                        },
+                        "writeCapacity": 0
+                    },
+                    "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
+                    "propertyDependencies": {
+                        "attributes": null,
+                        "billingMode": null,
+                        "globalSecondaryIndexes": null,
+                        "hashKey": null,
+                        "rangeKey": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
                     "urn": "urn:pulumi:dev::core::aws:cognito/userPoolClient:UserPoolClient::user-pool-client",
                     "custom": true,
-                    "id": "1n5ijihgv95v5ue1gt8dcbh5oh",
+                    "id": "2hfut2dcbl3vg3eec8dttj7um4",
                     "type": "aws:cognito/userPoolClient:UserPoolClient",
                     "inputs": {
                         "__defaults": [
                             "name",
                             "refreshTokenValidity"
                         ],
-                        "name": "user-pool-client-b905f8c",
+                        "name": "user-pool-client-39ace08",
                         "refreshTokenValidity": 30,
-                        "userPoolId": "eu-central-1_FvgEzRN9c"
+                        "userPoolId": "us-east-1_riv0Xok8x"
                     },
                     "outputs": {
                         "accessTokenValidity": 0,
@@ -525,29 +525,29 @@
                         "callbackUrls": [],
                         "clientSecret": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:rDU0S08B10SaqUr3:t/QKwypPxe/+VmVwlJIBj6Tv"
+                            "ciphertext": "v1:J6RCRhSI0k0Y2gjP:eYlJk8tE2iD0oh4k/SMP4WgX"
                         },
                         "defaultRedirectUri": "",
                         "enablePropagateAdditionalUserContextData": false,
                         "enableTokenRevocation": true,
                         "explicitAuthFlows": [],
-                        "id": "1n5ijihgv95v5ue1gt8dcbh5oh",
+                        "id": "2hfut2dcbl3vg3eec8dttj7um4",
                         "idTokenValidity": 0,
                         "logoutUrls": [],
-                        "name": "user-pool-client-b905f8c",
+                        "name": "user-pool-client-39ace08",
                         "preventUserExistenceErrors": "",
                         "readAttributes": [],
                         "refreshTokenValidity": 30,
                         "supportedIdentityProviders": [],
                         "tokenValidityUnits": null,
-                        "userPoolId": "eu-central-1_FvgEzRN9c",
+                        "userPoolId": "us-east-1_riv0Xok8x",
                         "writeAttributes": []
                     },
                     "parent": "urn:pulumi:dev::core::pulumi:pulumi:Stack::core-dev",
                     "dependencies": [
                         "urn:pulumi:dev::core::aws:cognito/userPool:UserPool::user-pool"
                     ],
-                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::f4477cd1-8525-4e86-b78d-82a6944c6ed8",
+                    "provider": "urn:pulumi:dev::core::pulumi:providers:aws::default_5_9_2::c5f57d8e-d2b0-4879-83d1-a498d1f70e15",
                     "propertyDependencies": {
                         "userPoolId": [
                             "urn:pulumi:dev::core::aws:cognito/userPool:UserPool::user-pool"
