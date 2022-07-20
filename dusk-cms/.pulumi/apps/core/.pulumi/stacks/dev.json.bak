@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-19T15:28:15.011007+02:00",
+                "time": "2022-07-20T16:29:48.86828+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:F+t4VkP4U4k=:v1:pjFbthAkGGdInr/p:NJ1m4KP67t355mKhqjz7GV9I5gIWAw=="
+                    "salt": "v1:nMeLcmJ0Q2o=:v1:LPJ0CKvX7yfbFBvg:nqrqYwlDTVcxu+JjyVK0PS1H/2WgCA=="
                 }
             },
             "resources": [
@@ -525,7 +525,7 @@
                         "callbackUrls": [],
                         "clientSecret": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:J6RCRhSI0k0Y2gjP:eYlJk8tE2iD0oh4k/SMP4WgX"
+                            "ciphertext": "v1:zHJhZpbL3iv12e5b:gxnUn1TPqCV3t2N/r0obnWkI"
                         },
                         "defaultRedirectUri": "",
                         "enablePropagateAdditionalUserContextData": false,

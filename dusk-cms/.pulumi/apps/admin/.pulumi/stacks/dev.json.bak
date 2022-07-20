@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-19T15:29:36.784582+02:00",
+                "time": "2022-07-20T16:19:26.663417+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:Peyyksvy158=:v1:Uu7jhVM88Jto5NzO:SGKaJm2gr5JKdLiSomlIvrI+fu4Ddw=="
+                    "salt": "v1:0bh5KSB2cPU=:v1:9XRU8mWFNVYTIDrG:oaCr6f1UA+aqEyzGAMjOdbJn3+qnqQ=="
                 }
             },
             "resources": [

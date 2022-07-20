@@ -4,14 +4,14 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-19T15:35:18.08979+02:00",
+                "time": "2022-07-20T16:32:08.081939+02:00",
                 "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
                 "version": "v3.35.3"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:hhFLpujdsho=:v1:7l0pVXk9i3dHuEYq:4K+N2d9ilDvZXhxgiElrbVWN1H+/8A=="
+                    "salt": "v1:IKXbP/3YHxo=:v1:X55HtxyS7RwDuk6N:Q5mZgz1/k8ghVVITtWobNBjxv+CDpQ=="
                 }
             },
             "resources": [
@@ -497,6 +497,65 @@
                     "sequenceNumber": 1
                 },
                 {
+                    "urn": "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role",
+                    "custom": true,
+                    "id": "pb-import-page-lambda-role-e826b2d",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "pb-import-page-lambda-role-e826b2d",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-15T08:16:40Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "pb-import-page-lambda-role-e826b2d",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "pb-import-page-lambda-role-e826b2d",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQ3MCCV3GTN"
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
                     "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::ImportPageLambdaPolicy",
                     "custom": true,
                     "id": "arn:aws:iam::932784301473:policy/ImportPageLambdaPolicy-1971ca1",
@@ -519,6 +578,40 @@
                         "path": "/",
                         "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:PutItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:Query\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:GetObjectAcl\",\"s3:DeleteObject\",\"s3:PutObjectAcl\",\"s3:PutObject\",\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"arn:aws:s3:::fm-bucket-5dcd190\"],\"Sid\":\"PermissionForS3\"},{\"Action\":[\"lambda:InvokeFunction\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:lambda:us-east-1:932784301473:function:*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"cognito-idp:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x\",\"Sid\":\"PermissionForCognitoIdp\"}],\"Version\":\"2012-10-17\"}",
                         "policyId": "ANPA5SLSG4WQQ2CW4IHAA",
+                        "tags": {},
+                        "tagsAll": {}
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "description": null,
+                        "policy": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy",
+                    "custom": true,
+                    "id": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
+                    "type": "aws:iam/policy:Policy",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "path"
+                        ],
+                        "description": "This policy enables access to Lambda and S3",
+                        "name": "FileManagerLambdaPolicy-126ab26",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":\"lambda:InvokeFunction\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
+                        "description": "This policy enables access to Lambda and S3",
+                        "id": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
+                        "name": "FileManagerLambdaPolicy-126ab26",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":\"lambda:InvokeFunction\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"}],\"Version\":\"2012-10-17\"}",
+                        "policyId": "ANPA5SLSG4WQ3XIY635QR",
                         "tags": {},
                         "tagsAll": {}
                     },
@@ -590,95 +683,92 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy",
+                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::pb-import-page-lambda-role-execution-role",
                     "custom": true,
-                    "id": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
-                    "type": "aws:iam/policy:Policy",
+                    "id": "pb-import-page-lambda-role-e826b2d-20220715081643005200000003",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
                     "inputs": {
-                        "__defaults": [
-                            "name",
-                            "path"
-                        ],
-                        "description": "This policy enables access to Lambda and S3",
-                        "name": "FileManagerLambdaPolicy-126ab26",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":\"lambda:InvokeFunction\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"}],\"Version\":\"2012-10-17\"}"
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole",
+                        "role": "pb-import-page-lambda-role-e826b2d"
                     },
                     "outputs": {
-                        "arn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
-                        "description": "This policy enables access to Lambda and S3",
-                        "id": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
-                        "name": "FileManagerLambdaPolicy-126ab26",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":\"lambda:InvokeFunction\",\"Effect\":\"Allow\",\"Resource\":\"*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"s3:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"}],\"Version\":\"2012-10-17\"}",
-                        "policyId": "ANPA5SLSG4WQ3XIY635QR",
-                        "tags": {},
-                        "tagsAll": {}
+                        "id": "pb-import-page-lambda-role-e826b2d-20220715081643005200000003",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole",
+                        "role": "pb-import-page-lambda-role-e826b2d"
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
+                    ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
-                        "description": null,
-                        "policy": null
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
+                        ]
                     },
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role",
+                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::pb-import-page-lambda-role-policy",
                     "custom": true,
-                    "id": "pb-import-page-lambda-role-e826b2d",
-                    "type": "aws:iam/role:Role",
+                    "id": "pb-import-page-lambda-role-e826b2d-20220715081642236400000002",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
                     "inputs": {
-                        "__defaults": [
-                            "forceDetachPolicies",
-                            "maxSessionDuration",
-                            "name",
-                            "path"
-                        ],
-                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
-                        "forceDetachPolicies": false,
-                        "maxSessionDuration": 3600,
-                        "name": "pb-import-page-lambda-role-e826b2d",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        }
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ImportPageLambdaPolicy-1971ca1",
+                        "role": "pb-import-page-lambda-role-e826b2d"
                     },
                     "outputs": {
-                        "arn": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
-                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
-                        "createDate": "2022-07-15T08:16:40Z",
-                        "description": "",
-                        "forceDetachPolicies": false,
-                        "id": "pb-import-page-lambda-role-e826b2d",
-                        "inlinePolicies": [
-                            {
-                                "name": "",
-                                "policy": ""
-                            }
-                        ],
-                        "managedPolicyArns": [],
-                        "maxSessionDuration": 3600,
-                        "name": "pb-import-page-lambda-role-e826b2d",
-                        "namePrefix": "",
-                        "path": "/",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "uniqueId": "AROA5SLSG4WQ3MCCV3GTN"
+                        "id": "pb-import-page-lambda-role-e826b2d-20220715081642236400000002",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ImportPageLambdaPolicy-1971ca1",
+                        "role": "pb-import-page-lambda-role-e826b2d"
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:iam/policy:Policy::ImportPageLambdaPolicy",
+                        "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
+                    ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
-                        "assumeRolePolicy": null,
-                        "tags": null
+                        "policyArn": [
+                            "urn:pulumi:dev::api::aws:iam/policy:Policy::ImportPageLambdaPolicy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::fm-lambda-role-policy",
+                    "custom": true,
+                    "id": "fm-lambda-role-acb6147-20220715081643676800000007",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
+                        "role": "fm-lambda-role-acb6147"
+                    },
+                    "outputs": {
+                        "id": "fm-lambda-role-acb6147-20220715081643676800000007",
+                        "policyArn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
+                        "role": "fm-lambda-role-acb6147"
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy",
+                        "urn:pulumi:dev::api::aws:iam/role:Role::fm-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "policyArn": [
+                            "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::api::aws:iam/role:Role::fm-lambda-role"
+                        ]
                     },
                     "sequenceNumber": 1
                 },
@@ -1001,92 +1091,146 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::fm-lambda-role-policy",
+                    "urn": "urn:pulumi:dev::api::aws:lambda/function:Function::pb-import-page-queue-process",
                     "custom": true,
-                    "id": "fm-lambda-role-acb6147-20220715081643676800000007",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "id": "pb-import-page-queue-process-3d51092",
+                    "type": "aws:lambda/function:Function",
                     "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
-                        "role": "fm-lambda-role-acb6147"
-                    },
-                    "outputs": {
-                        "id": "fm-lambda-role-acb6147-20220715081643676800000007",
-                        "policyArn": "arn:aws:iam::932784301473:policy/FileManagerLambdaPolicy-126ab26",
-                        "role": "fm-lambda-role-acb6147"
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy",
-                        "urn:pulumi:dev::api::aws:iam/role:Role::fm-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::api::aws:iam/policy:Policy::FileManagerLambdaPolicy"
+                        "__defaults": [
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
                         ],
-                        "role": [
-                            "urn:pulumi:dev::api::aws:iam/role:Role::fm-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::pb-import-page-lambda-role-policy",
-                    "custom": true,
-                    "id": "pb-import-page-lambda-role-e826b2d-20220715081642236400000002",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/ImportPageLambdaPolicy-1971ca1",
-                        "role": "pb-import-page-lambda-role-e826b2d"
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pageBuilder/importPages/process/build"
+                                }
+                            },
+                            "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd"
+                        },
+                        "description": "Handle import page queue process workflow",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "COGNITO_REGION": "us-east-1",
+                                "COGNITO_USER_POOL_ID": "us-east-1_riv0Xok8x",
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "S3_BUCKET": "fm-bucket-5dcd190",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_LOGS_FORWARD_URL": "undefined",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "memorySize": 512,
+                        "name": "pb-import-page-queue-process-3d51092",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 60
                     },
                     "outputs": {
-                        "id": "pb-import-page-lambda-role-e826b2d-20220715081642236400000002",
-                        "policyArn": "arn:aws:iam::932784301473:policy/ImportPageLambdaPolicy-1971ca1",
-                        "role": "pb-import-page-lambda-role-e826b2d"
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pageBuilder/importPages/process/build"
+                                }
+                            },
+                            "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Handle import page queue process workflow",
+                        "environment": {
+                            "variables": {
+                                "COGNITO_REGION": "us-east-1",
+                                "COGNITO_USER_POOL_ID": "us-east-1_riv0Xok8x",
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "S3_BUCKET": "fm-bucket-5dcd190",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_LOGS_FORWARD_URL": "undefined",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "pb-import-page-queue-process-3d51092",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-15T08:16:59.122+0000",
+                        "layers": [],
+                        "memorySize": 512,
+                        "name": "pb-import-page-queue-process-3d51092",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "qcX9JUFKkawlMWLcONbUZLDxJjhA82Xrpd867Euh6PA=",
+                        "sourceCodeSize": 641034,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 60,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::api::aws:iam/policy:Policy::ImportPageLambdaPolicy",
                         "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
                     ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::api::aws:iam/policy:Policy::ImportPageLambdaPolicy"
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
                         ],
-                        "role": [
-                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::pb-import-page-lambda-role-execution-role",
-                    "custom": true,
-                    "id": "pb-import-page-lambda-role-e826b2d-20220715081643005200000003",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole",
-                        "role": "pb-import-page-lambda-role-e826b2d"
-                    },
-                    "outputs": {
-                        "id": "pb-import-page-lambda-role-e826b2d-20220715081643005200000003",
-                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole",
-                        "role": "pb-import-page-lambda-role-e826b2d"
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "policyArn": null,
-                        "role": [
-                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
-                        ]
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null
                     },
                     "sequenceNumber": 1
                 },
@@ -1331,150 +1475,6 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:lambda/function:Function::pb-import-page-queue-process",
-                    "custom": true,
-                    "id": "pb-import-page-queue-process-3d51092",
-                    "type": "aws:lambda/function:Function",
-                    "inputs": {
-                        "__defaults": [
-                            "name",
-                            "packageType",
-                            "publish",
-                            "reservedConcurrentExecutions"
-                        ],
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd",
-                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pageBuilder/importPages/process/build"
-                                }
-                            },
-                            "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd"
-                        },
-                        "description": "Handle import page queue process workflow",
-                        "environment": {
-                            "__defaults": [],
-                            "variables": {
-                                "COGNITO_REGION": "us-east-1",
-                                "COGNITO_USER_POOL_ID": "us-east-1_riv0Xok8x",
-                                "DB_TABLE": "webiny-af7d6a6",
-                                "DEBUG": "true",
-                                "S3_BUCKET": "fm-bucket-5dcd190",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_LOGS_FORWARD_URL": "undefined",
-                                "WEBINY_PROJECT_NAME": "dusk-cms",
-                                "__defaults": []
-                            }
-                        },
-                        "handler": "handler.handler",
-                        "memorySize": 512,
-                        "name": "pb-import-page-queue-process-3d51092",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
-                        "runtime": "nodejs14.x",
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms",
-                            "__defaults": []
-                        },
-                        "timeout": 60
-                    },
-                    "outputs": {
-                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
-                        "architectures": [
-                            "x86_64"
-                        ],
-                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092",
-                        "code": {
-                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                            "assets": {
-                                ".": {
-                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd",
-                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pageBuilder/importPages/process/build"
-                                }
-                            },
-                            "hash": "66e6acc19a3b8e8deb5e19eb2f40d31865efe15562fe08c18f470fafa27ecffd"
-                        },
-                        "codeSigningConfigArn": "",
-                        "deadLetterConfig": null,
-                        "description": "Handle import page queue process workflow",
-                        "environment": {
-                            "variables": {
-                                "COGNITO_REGION": "us-east-1",
-                                "COGNITO_USER_POOL_ID": "us-east-1_riv0Xok8x",
-                                "DB_TABLE": "webiny-af7d6a6",
-                                "DEBUG": "true",
-                                "S3_BUCKET": "fm-bucket-5dcd190",
-                                "WEBINY_ENV": "dev",
-                                "WEBINY_LOGS_FORWARD_URL": "undefined",
-                                "WEBINY_PROJECT_NAME": "dusk-cms"
-                            }
-                        },
-                        "ephemeralStorage": {
-                            "size": 512
-                        },
-                        "fileSystemConfig": null,
-                        "handler": "handler.handler",
-                        "id": "pb-import-page-queue-process-3d51092",
-                        "imageConfig": null,
-                        "imageUri": "",
-                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092/invocations",
-                        "kmsKeyArn": "",
-                        "lastModified": "2022-07-15T08:16:59.122+0000",
-                        "layers": [],
-                        "memorySize": 512,
-                        "name": "pb-import-page-queue-process-3d51092",
-                        "packageType": "Zip",
-                        "publish": false,
-                        "qualifiedArn": "arn:aws:lambda:us-east-1:932784301473:function:pb-import-page-queue-process-3d51092:$LATEST",
-                        "reservedConcurrentExecutions": -1,
-                        "role": "arn:aws:iam::932784301473:role/pb-import-page-lambda-role-e826b2d",
-                        "runtime": "nodejs14.x",
-                        "signingJobArn": "",
-                        "signingProfileVersionArn": "",
-                        "sourceCodeHash": "qcX9JUFKkawlMWLcONbUZLDxJjhA82Xrpd867Euh6PA=",
-                        "sourceCodeSize": 641034,
-                        "tags": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "tagsAll": {
-                            "WbyEnvironment": "dev",
-                            "WbyProjectName": "dusk-cms"
-                        },
-                        "timeout": 60,
-                        "tracingConfig": {
-                            "mode": "PassThrough"
-                        },
-                        "version": "$LATEST",
-                        "vpcConfig": null
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "code": null,
-                        "description": null,
-                        "environment": null,
-                        "handler": null,
-                        "memorySize": null,
-                        "role": [
-                            "urn:pulumi:dev::api::aws:iam/role:Role::pb-import-page-lambda-role"
-                        ],
-                        "runtime": null,
-                        "tags": null,
-                        "timeout": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
                     "urn": "urn:pulumi:dev::api::aws:lambda/function:Function::pb-import-page-queue-create",
                     "custom": true,
                     "id": "pb-import-page-queue-create-5408a10",
@@ -1620,6 +1620,74 @@
                         "runtime": null,
                         "tags": null,
                         "timeout": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy",
+                    "custom": true,
+                    "id": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
+                    "type": "aws:iam/policy:Policy",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "path"
+                        ],
+                        "description": "This policy enables access to Dynamodb streams",
+                        "name": "HeadlessCmsLambdaPolicy-3a38aac",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionDynamodb\"}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
+                        "description": "This policy enables access to Dynamodb streams",
+                        "id": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
+                        "name": "HeadlessCmsLambdaPolicy-3a38aac",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionDynamodb\"}],\"Version\":\"2012-10-17\"}",
+                        "policyId": "ANPA5SLSG4WQULFIFQ6KT",
+                        "tags": {},
+                        "tagsAll": {}
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "description": null,
+                        "policy": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::ApiGraphqlLambdaPolicy",
+                    "custom": true,
+                    "id": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
+                    "type": "aws:iam/policy:Policy",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "path"
+                        ],
+                        "description": "This policy enables access to Dynamodb, S3, Lambda and Cognito IDP",
+                        "name": "ApiGraphqlLambdaPolicy-817fbad",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:GetObjectAcl\",\"s3:DeleteObject\",\"s3:PutObjectAcl\",\"s3:PutObject\",\"s3:GetObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"},{\"Action\":[\"lambda:InvokeFunction\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:lambda:us-east-1:932784301473:function:*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"cognito-idp:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x\",\"Sid\":\"PermissionForCognitoIdp\"},{\"Action\":\"events:PutEvents\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72\",\"Sid\":\"PermissionForEventBus\"}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
+                        "description": "This policy enables access to Dynamodb, S3, Lambda and Cognito IDP",
+                        "id": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
+                        "name": "ApiGraphqlLambdaPolicy-817fbad",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:GetObjectAcl\",\"s3:DeleteObject\",\"s3:PutObjectAcl\",\"s3:PutObject\",\"s3:GetObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"},{\"Action\":[\"lambda:InvokeFunction\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:lambda:us-east-1:932784301473:function:*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"cognito-idp:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x\",\"Sid\":\"PermissionForCognitoIdp\"},{\"Action\":\"events:PutEvents\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72\",\"Sid\":\"PermissionForEventBus\"}],\"Version\":\"2012-10-17\"}",
+                        "policyId": "ANPA5SLSG4WQXYP4TCGC4",
+                        "tags": {},
+                        "tagsAll": {}
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "description": null,
+                        "policy": null
                     },
                     "sequenceNumber": 1
                 },
@@ -1795,70 +1863,106 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy",
+                    "urn": "urn:pulumi:dev::api::aws:lambda/permission:Permission::allow-files-any",
                     "custom": true,
-                    "id": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
-                    "type": "aws:iam/policy:Policy",
+                    "id": "allow-files-any-f2bd608",
+                    "type": "aws:lambda/permission:Permission",
                     "inputs": {
                         "__defaults": [
-                            "name",
-                            "path"
+                            "statementId"
                         ],
-                        "description": "This policy enables access to Dynamodb streams",
-                        "name": "HeadlessCmsLambdaPolicy-3a38aac",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionDynamodb\"}],\"Version\":\"2012-10-17\"}"
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
+                        "principal": "apigateway.amazonaws.com",
+                        "sourceArn": "arn:aws:execute-api:us-east-1:932784301473:kkw3gblpvf/*/*/files/{path}",
+                        "statementId": "allow-files-any-f2bd608"
                     },
                     "outputs": {
-                        "arn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
-                        "description": "This policy enables access to Dynamodb streams",
-                        "id": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
-                        "name": "HeadlessCmsLambdaPolicy-3a38aac",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionDynamodb\"}],\"Version\":\"2012-10-17\"}",
-                        "policyId": "ANPA5SLSG4WQULFIFQ6KT",
-                        "tags": {},
-                        "tagsAll": {}
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
+                        "id": "allow-files-any-f2bd608",
+                        "principal": "apigateway.amazonaws.com",
+                        "qualifier": "",
+                        "sourceArn": "arn:aws:execute-api:us-east-1:932784301473:kkw3gblpvf/*/*/files/{path}",
+                        "statementId": "allow-files-any-f2bd608",
+                        "statementIdPrefix": ""
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
+                    ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
-                        "description": null,
-                        "policy": null
+                        "action": null,
+                        "function": [
+                            "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
+                        ],
+                        "principal": null,
+                        "sourceArn": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ]
                     },
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/policy:Policy::ApiGraphqlLambdaPolicy",
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any",
                     "custom": true,
-                    "id": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
-                    "type": "aws:iam/policy:Policy",
+                    "id": "qys7z76",
+                    "type": "aws:apigatewayv2/integration:Integration",
                     "inputs": {
                         "__defaults": [
-                            "name",
-                            "path"
+                            "connectionType",
+                            "payloadFormatVersion"
                         ],
-                        "description": "This policy enables access to Dynamodb, S3, Lambda and Cognito IDP",
-                        "name": "ApiGraphqlLambdaPolicy-817fbad",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:GetObjectAcl\",\"s3:DeleteObject\",\"s3:PutObjectAcl\",\"s3:PutObject\",\"s3:GetObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"},{\"Action\":[\"lambda:InvokeFunction\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:lambda:us-east-1:932784301473:function:*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"cognito-idp:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x\",\"Sid\":\"PermissionForCognitoIdp\"},{\"Action\":\"events:PutEvents\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72\",\"Sid\":\"PermissionForEventBus\"}],\"Version\":\"2012-10-17\"}"
+                        "apiId": "kkw3gblpvf",
+                        "connectionType": "INTERNET",
+                        "description": "GraphQL API Integration",
+                        "integrationMethod": "ANY",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
+                        "passthroughBehavior": "WHEN_NO_MATCH",
+                        "payloadFormatVersion": "1.0"
                     },
                     "outputs": {
-                        "arn": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
-                        "description": "This policy enables access to Dynamodb, S3, Lambda and Cognito IDP",
-                        "id": "arn:aws:iam::932784301473:policy/ApiGraphqlLambdaPolicy-817fbad",
-                        "name": "ApiGraphqlLambdaPolicy-817fbad",
-                        "path": "/",
-                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:ConditionCheckItem\",\"dynamodb:CreateBackup\",\"dynamodb:CreateTable\",\"dynamodb:CreateTableReplica\",\"dynamodb:DeleteBackup\",\"dynamodb:DeleteItem\",\"dynamodb:DeleteTable\",\"dynamodb:DeleteTableReplica\",\"dynamodb:DescribeBackup\",\"dynamodb:DescribeContinuousBackups\",\"dynamodb:DescribeContributorInsights\",\"dynamodb:DescribeExport\",\"dynamodb:DescribeKinesisStreamingDestination\",\"dynamodb:DescribeLimits\",\"dynamodb:DescribeReservedCapacity\",\"dynamodb:DescribeReservedCapacityOfferings\",\"dynamodb:DescribeStream\",\"dynamodb:DescribeTable\",\"dynamodb:DescribeTableReplicaAutoScaling\",\"dynamodb:DescribeTimeToLive\",\"dynamodb:DisableKinesisStreamingDestination\",\"dynamodb:EnableKinesisStreamingDestination\",\"dynamodb:ExportTableToPointInTime\",\"dynamodb:GetItem\",\"dynamodb:GetRecords\",\"dynamodb:GetShardIterator\",\"dynamodb:ListBackups\",\"dynamodb:ListContributorInsights\",\"dynamodb:ListExports\",\"dynamodb:ListStreams\",\"dynamodb:ListTables\",\"dynamodb:ListTagsOfResource\",\"dynamodb:PartiQLDelete\",\"dynamodb:PartiQLInsert\",\"dynamodb:PartiQLSelect\",\"dynamodb:PartiQLUpdate\",\"dynamodb:PurchaseReservedCapacityOfferings\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:RestoreTableFromBackup\",\"dynamodb:RestoreTableToPointInTime\",\"dynamodb:Scan\",\"dynamodb:UpdateContinuousBackups\",\"dynamodb:UpdateContributorInsights\",\"dynamodb:UpdateItem\",\"dynamodb:UpdateTable\",\"dynamodb:UpdateTableReplicaAutoScaling\",\"dynamodb:UpdateTimeToLive\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:GetObjectAcl\",\"s3:DeleteObject\",\"s3:PutObjectAcl\",\"s3:PutObject\",\"s3:GetObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"Sid\":\"PermissionForS3\"},{\"Action\":[\"lambda:InvokeFunction\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:lambda:us-east-1:932784301473:function:*\",\"Sid\":\"PermissionForLambda\"},{\"Action\":\"cognito-idp:*\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cognito-idp:us-east-1:932784301473:userpool/us-east-1_riv0Xok8x\",\"Sid\":\"PermissionForCognitoIdp\"},{\"Action\":\"events:PutEvents\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72\",\"Sid\":\"PermissionForEventBus\"}],\"Version\":\"2012-10-17\"}",
-                        "policyId": "ANPA5SLSG4WQXYP4TCGC4",
-                        "tags": {},
-                        "tagsAll": {}
+                        "apiId": "kkw3gblpvf",
+                        "connectionId": "",
+                        "connectionType": "INTERNET",
+                        "contentHandlingStrategy": "",
+                        "credentialsArn": "",
+                        "description": "GraphQL API Integration",
+                        "id": "qys7z76",
+                        "integrationMethod": "ANY",
+                        "integrationResponseSelectionExpression": "",
+                        "integrationSubtype": "",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
+                        "passthroughBehavior": "",
+                        "payloadFormatVersion": "1.0",
+                        "requestParameters": {},
+                        "requestTemplates": {},
+                        "responseParameters": [],
+                        "templateSelectionExpression": "",
+                        "timeoutMilliseconds": 30000,
+                        "tlsConfig": null
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
+                    ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
+                        "apiId": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ],
                         "description": null,
-                        "policy": null
+                        "integrationMethod": null,
+                        "integrationType": null,
+                        "integrationUri": [
+                            "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
+                        ],
+                        "passthroughBehavior": null
                     },
                     "sequenceNumber": 1
                 },
@@ -1925,63 +2029,33 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any",
+                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::headless-cms-lambda-role-policy",
                     "custom": true,
-                    "id": "qys7z76",
-                    "type": "aws:apigatewayv2/integration:Integration",
+                    "id": "headless-cms-lambda-role-6e66387-2022071508164669660000000a",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
                     "inputs": {
-                        "__defaults": [
-                            "connectionType",
-                            "payloadFormatVersion"
-                        ],
-                        "apiId": "kkw3gblpvf",
-                        "connectionType": "INTERNET",
-                        "description": "GraphQL API Integration",
-                        "integrationMethod": "ANY",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
-                        "passthroughBehavior": "WHEN_NO_MATCH",
-                        "payloadFormatVersion": "1.0"
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
+                        "role": "headless-cms-lambda-role-6e66387"
                     },
                     "outputs": {
-                        "apiId": "kkw3gblpvf",
-                        "connectionId": "",
-                        "connectionType": "INTERNET",
-                        "contentHandlingStrategy": "",
-                        "credentialsArn": "",
-                        "description": "GraphQL API Integration",
-                        "id": "qys7z76",
-                        "integrationMethod": "ANY",
-                        "integrationResponseSelectionExpression": "",
-                        "integrationSubtype": "",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
-                        "passthroughBehavior": "",
-                        "payloadFormatVersion": "1.0",
-                        "requestParameters": {},
-                        "requestTemplates": {},
-                        "responseParameters": [],
-                        "templateSelectionExpression": "",
-                        "timeoutMilliseconds": 30000,
-                        "tlsConfig": null
+                        "id": "headless-cms-lambda-role-6e66387-2022071508164669660000000a",
+                        "policyArn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
+                        "role": "headless-cms-lambda-role-6e66387"
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
+                        "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy",
+                        "urn:pulumi:dev::api::aws:iam/role:Role::headless-cms-lambda-role"
                     ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
-                        "apiId": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        "policyArn": [
+                            "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy"
                         ],
-                        "description": null,
-                        "integrationMethod": null,
-                        "integrationType": null,
-                        "integrationUri": [
-                            "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
-                        ],
-                        "passthroughBehavior": null
+                        "role": [
+                            "urn:pulumi:dev::api::aws:iam/role:Role::headless-cms-lambda-role"
+                        ]
                     },
                     "sequenceNumber": 1
                 },
@@ -2009,49 +2083,6 @@
                         "policyArn": null,
                         "role": [
                             "urn:pulumi:dev::api::aws:iam/role:Role::headless-cms-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::api::aws:lambda/permission:Permission::allow-files-any",
-                    "custom": true,
-                    "id": "allow-files-any-f2bd608",
-                    "type": "aws:lambda/permission:Permission",
-                    "inputs": {
-                        "__defaults": [
-                            "statementId"
-                        ],
-                        "action": "lambda:InvokeFunction",
-                        "function": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
-                        "principal": "apigateway.amazonaws.com",
-                        "sourceArn": "arn:aws:execute-api:us-east-1:932784301473:kkw3gblpvf/*/*/files/{path}",
-                        "statementId": "allow-files-any-f2bd608"
-                    },
-                    "outputs": {
-                        "action": "lambda:InvokeFunction",
-                        "function": "arn:aws:lambda:us-east-1:932784301473:function:fm-download-ad0715a",
-                        "id": "allow-files-any-f2bd608",
-                        "principal": "apigateway.amazonaws.com",
-                        "qualifier": "",
-                        "sourceArn": "arn:aws:execute-api:us-east-1:932784301473:kkw3gblpvf/*/*/files/{path}",
-                        "statementId": "allow-files-any-f2bd608",
-                        "statementIdPrefix": ""
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "action": null,
-                        "function": [
-                            "urn:pulumi:dev::api::aws:lambda/function:Function::fm-download"
-                        ],
-                        "principal": null,
-                        "sourceArn": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
                         ]
                     },
                     "sequenceNumber": 1
@@ -2085,37 +2116,6 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::headless-cms-lambda-role-policy",
-                    "custom": true,
-                    "id": "headless-cms-lambda-role-6e66387-2022071508164669660000000a",
-                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
-                    "inputs": {
-                        "__defaults": [],
-                        "policyArn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
-                        "role": "headless-cms-lambda-role-6e66387"
-                    },
-                    "outputs": {
-                        "id": "headless-cms-lambda-role-6e66387-2022071508164669660000000a",
-                        "policyArn": "arn:aws:iam::932784301473:policy/HeadlessCmsLambdaPolicy-3a38aac",
-                        "role": "headless-cms-lambda-role-6e66387"
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy",
-                        "urn:pulumi:dev::api::aws:iam/role:Role::headless-cms-lambda-role"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "policyArn": [
-                            "urn:pulumi:dev::api::aws:iam/policy:Policy::HeadlessCmsLambdaPolicy"
-                        ],
-                        "role": [
-                            "urn:pulumi:dev::api::aws:iam/role:Role::headless-cms-lambda-role"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
                     "urn": "urn:pulumi:dev::api::aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-lambda-role-policy",
                     "custom": true,
                     "id": "api-lambda-role-c9f189b-20220715081643829200000008",
@@ -2142,6 +2142,54 @@
                         ],
                         "role": [
                             "urn:pulumi:dev::api::aws:iam/role:Role::api-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::files-any",
+                    "custom": true,
+                    "id": "blyak7f",
+                    "type": "aws:apigatewayv2/route:Route",
+                    "inputs": {
+                        "__defaults": [
+                            "apiKeyRequired",
+                            "authorizationType"
+                        ],
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationType": "NONE",
+                        "routeKey": "ANY /files/{path}",
+                        "target": "integrations/qys7z76"
+                    },
+                    "outputs": {
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationScopes": [],
+                        "authorizationType": "NONE",
+                        "authorizerId": "",
+                        "id": "blyak7f",
+                        "modelSelectionExpression": "",
+                        "operationName": "",
+                        "requestModels": {},
+                        "requestParameters": [],
+                        "routeKey": "ANY /files/{path}",
+                        "routeResponseSelectionExpression": "",
+                        "target": "integrations/qys7z76"
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any"
+                    ],
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "apiId": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ],
+                        "routeKey": null,
+                        "target": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any"
                         ]
                     },
                     "sequenceNumber": 1
@@ -2562,54 +2610,6 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::files-any",
-                    "custom": true,
-                    "id": "blyak7f",
-                    "type": "aws:apigatewayv2/route:Route",
-                    "inputs": {
-                        "__defaults": [
-                            "apiKeyRequired",
-                            "authorizationType"
-                        ],
-                        "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationType": "NONE",
-                        "routeKey": "ANY /files/{path}",
-                        "target": "integrations/qys7z76"
-                    },
-                    "outputs": {
-                        "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationScopes": [],
-                        "authorizationType": "NONE",
-                        "authorizerId": "",
-                        "id": "blyak7f",
-                        "modelSelectionExpression": "",
-                        "operationName": "",
-                        "requestModels": {},
-                        "requestParameters": [],
-                        "routeKey": "ANY /files/{path}",
-                        "routeResponseSelectionExpression": "",
-                        "target": "integrations/qys7z76"
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "apiId": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
-                        ],
-                        "routeKey": null,
-                        "target": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::files-any"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
                     "urn": "urn:pulumi:dev::api::aws:lambda/function:Function::graphql",
                     "custom": true,
                     "id": "graphql-ec2666e",
@@ -2771,67 +2771,6 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post",
-                    "custom": true,
-                    "id": "bzrp16k",
-                    "type": "aws:apigatewayv2/integration:Integration",
-                    "inputs": {
-                        "__defaults": [
-                            "connectionType",
-                            "payloadFormatVersion"
-                        ],
-                        "apiId": "kkw3gblpvf",
-                        "connectionType": "INTERNET",
-                        "description": "GraphQL API Integration",
-                        "integrationMethod": "POST",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:graphql-ec2666e",
-                        "passthroughBehavior": "WHEN_NO_MATCH",
-                        "payloadFormatVersion": "1.0"
-                    },
-                    "outputs": {
-                        "apiId": "kkw3gblpvf",
-                        "connectionId": "",
-                        "connectionType": "INTERNET",
-                        "contentHandlingStrategy": "",
-                        "credentialsArn": "",
-                        "description": "GraphQL API Integration",
-                        "id": "bzrp16k",
-                        "integrationMethod": "POST",
-                        "integrationResponseSelectionExpression": "",
-                        "integrationSubtype": "",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:graphql-ec2666e",
-                        "passthroughBehavior": "",
-                        "payloadFormatVersion": "1.0",
-                        "requestParameters": {},
-                        "requestTemplates": {},
-                        "responseParameters": [],
-                        "templateSelectionExpression": "",
-                        "timeoutMilliseconds": 30000,
-                        "tlsConfig": null
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:lambda/function:Function::graphql"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "apiId": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
-                        ],
-                        "description": null,
-                        "integrationMethod": null,
-                        "integrationType": null,
-                        "integrationUri": [
-                            "urn:pulumi:dev::api::aws:lambda/function:Function::graphql"
-                        ],
-                        "passthroughBehavior": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
                     "urn": "urn:pulumi:dev::api::aws:lambda/permission:Permission::allow-graphql-post",
                     "custom": true,
                     "id": "allow-graphql-post-ecc54c2",
@@ -2979,50 +2918,63 @@
                     "sequenceNumber": 1
                 },
                 {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::graphql-post",
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post",
                     "custom": true,
-                    "id": "babl0cv",
-                    "type": "aws:apigatewayv2/route:Route",
+                    "id": "bzrp16k",
+                    "type": "aws:apigatewayv2/integration:Integration",
                     "inputs": {
                         "__defaults": [
-                            "apiKeyRequired",
-                            "authorizationType"
+                            "connectionType",
+                            "payloadFormatVersion"
                         ],
                         "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationType": "NONE",
-                        "routeKey": "POST /graphql",
-                        "target": "integrations/bzrp16k"
+                        "connectionType": "INTERNET",
+                        "description": "GraphQL API Integration",
+                        "integrationMethod": "POST",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:graphql-ec2666e",
+                        "passthroughBehavior": "WHEN_NO_MATCH",
+                        "payloadFormatVersion": "1.0"
                     },
                     "outputs": {
                         "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationScopes": [],
-                        "authorizationType": "NONE",
-                        "authorizerId": "",
-                        "id": "babl0cv",
-                        "modelSelectionExpression": "",
-                        "operationName": "",
-                        "requestModels": {},
-                        "requestParameters": [],
-                        "routeKey": "POST /graphql",
-                        "routeResponseSelectionExpression": "",
-                        "target": "integrations/bzrp16k"
+                        "connectionId": "",
+                        "connectionType": "INTERNET",
+                        "contentHandlingStrategy": "",
+                        "credentialsArn": "",
+                        "description": "GraphQL API Integration",
+                        "id": "bzrp16k",
+                        "integrationMethod": "POST",
+                        "integrationResponseSelectionExpression": "",
+                        "integrationSubtype": "",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:graphql-ec2666e",
+                        "passthroughBehavior": "",
+                        "payloadFormatVersion": "1.0",
+                        "requestParameters": {},
+                        "requestTemplates": {},
+                        "responseParameters": [],
+                        "templateSelectionExpression": "",
+                        "timeoutMilliseconds": 30000,
+                        "tlsConfig": null
                     },
                     "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
                     "dependencies": [
                         "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post"
+                        "urn:pulumi:dev::api::aws:lambda/function:Function::graphql"
                     ],
                     "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
                     "propertyDependencies": {
                         "apiId": [
                             "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
                         ],
-                        "routeKey": null,
-                        "target": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post"
-                        ]
+                        "description": null,
+                        "integrationMethod": null,
+                        "integrationType": null,
+                        "integrationUri": [
+                            "urn:pulumi:dev::api::aws:lambda/function:Function::graphql"
+                        ],
+                        "passthroughBehavior": null
                     },
                     "sequenceNumber": 1
                 },
@@ -3075,6 +3027,54 @@
                     "sequenceNumber": 1
                 },
                 {
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::graphql-post",
+                    "custom": true,
+                    "id": "babl0cv",
+                    "type": "aws:apigatewayv2/route:Route",
+                    "inputs": {
+                        "__defaults": [
+                            "apiKeyRequired",
+                            "authorizationType"
+                        ],
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationType": "NONE",
+                        "routeKey": "POST /graphql",
+                        "target": "integrations/bzrp16k"
+                    },
+                    "outputs": {
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationScopes": [],
+                        "authorizationType": "NONE",
+                        "authorizerId": "",
+                        "id": "babl0cv",
+                        "modelSelectionExpression": "",
+                        "operationName": "",
+                        "requestModels": {},
+                        "requestParameters": [],
+                        "routeKey": "POST /graphql",
+                        "routeResponseSelectionExpression": "",
+                        "target": "integrations/bzrp16k"
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post"
+                    ],
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "apiId": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ],
+                        "routeKey": null,
+                        "target": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::graphql-post"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
                     "urn": "urn:pulumi:dev::api::aws:s3/bucketObject:BucketObject::./pbInstallation.zip",
                     "custom": true,
                     "id": "pbInstallation.zip",
@@ -3090,7 +3090,7 @@
                         "key": "pbInstallation.zip",
                         "source": {
                             "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
-                            "hash": "6933b6e0f662915e2dd3db11e29a995b8c1e7f4b316cee4f690aa219522c3fd5",
+                            "hash": "f5e71cbae522954dc59f57fb4dd52d2bbbf0d0cdd1ac93c08d29f159fe618227",
                             "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pulumi/.tmp/pbInstallation.zip"
                         },
                         "tags": {
@@ -3108,7 +3108,7 @@
                         "contentEncoding": "",
                         "contentLanguage": "",
                         "contentType": "application/octet-stream",
-                        "etag": "de06bcd28162c0e21f676c5aabc0cd0c",
+                        "etag": "e82ac02f4689929465482e941ceb1f35",
                         "forceDestroy": false,
                         "id": "pbInstallation.zip",
                         "key": "pbInstallation.zip",
@@ -3119,7 +3119,7 @@
                         "serverSideEncryption": "",
                         "source": {
                             "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
-                            "hash": "6933b6e0f662915e2dd3db11e29a995b8c1e7f4b316cee4f690aa219522c3fd5",
+                            "hash": "f5e71cbae522954dc59f57fb4dd52d2bbbf0d0cdd1ac93c08d29f159fe618227",
                             "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/pulumi/.tmp/pbInstallation.zip"
                         },
                         "storageClass": "STANDARD",
@@ -3163,11 +3163,11 @@
                             "assets": {
                                 ".": {
                                     "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "506d9ff1355bcf727c74b5646ca41ee3a1af85d27d78d5f92d267fa15f098ed5",
+                                    "hash": "7aab78206c9e6b44eda1432ca533628d906f9621edf2f9483c32c80196f69a28",
                                     "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/headlessCMS/build"
                                 }
                             },
-                            "hash": "506d9ff1355bcf727c74b5646ca41ee3a1af85d27d78d5f92d267fa15f098ed5"
+                            "hash": "7aab78206c9e6b44eda1432ca533628d906f9621edf2f9483c32c80196f69a28"
                         },
                         "environment": {
                             "__defaults": [],
@@ -3215,11 +3215,11 @@
                             "assets": {
                                 ".": {
                                     "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
-                                    "hash": "506d9ff1355bcf727c74b5646ca41ee3a1af85d27d78d5f92d267fa15f098ed5",
+                                    "hash": "7aab78206c9e6b44eda1432ca533628d906f9621edf2f9483c32c80196f69a28",
                                     "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/api/headlessCMS/build"
                                 }
                             },
-                            "hash": "506d9ff1355bcf727c74b5646ca41ee3a1af85d27d78d5f92d267fa15f098ed5"
+                            "hash": "7aab78206c9e6b44eda1432ca533628d906f9621edf2f9483c32c80196f69a28"
                         },
                         "codeSigningConfigArn": "",
                         "deadLetterConfig": null,
@@ -3247,7 +3247,7 @@
                         "imageUri": "",
                         "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:headless-cms-b5dddfa/invocations",
                         "kmsKeyArn": "",
-                        "lastModified": "2022-07-19T13:35:12.000+0000",
+                        "lastModified": "2022-07-20T14:32:02.000+0000",
                         "layers": [],
                         "memorySize": 512,
                         "name": "headless-cms-b5dddfa",
@@ -3259,8 +3259,8 @@
                         "runtime": "nodejs14.x",
                         "signingJobArn": "",
                         "signingProfileVersionArn": "",
-                        "sourceCodeHash": "LBCoxf9ygfgpfJC9iYxaa09k2JkYooAD+mNy6D+Gutg=",
-                        "sourceCodeSize": 1813453,
+                        "sourceCodeHash": "tQhjfWqcTxxvvjF26n+tZ1JtkenRmTjM1x5CSCyty7w=",
+                        "sourceCodeSize": 1814354,
                         "tags": {
                             "WbyEnvironment": "dev",
                             "WbyProjectName": "dusk-cms"
@@ -3293,67 +3293,6 @@
                         "tags": null,
                         "timeout": null,
                         "vpcConfig": null
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options",
-                    "custom": true,
-                    "id": "zfz3fdo",
-                    "type": "aws:apigatewayv2/integration:Integration",
-                    "inputs": {
-                        "__defaults": [
-                            "connectionType",
-                            "payloadFormatVersion"
-                        ],
-                        "apiId": "kkw3gblpvf",
-                        "connectionType": "INTERNET",
-                        "description": "GraphQL API Integration",
-                        "integrationMethod": "OPTIONS",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:headless-cms-b5dddfa",
-                        "passthroughBehavior": "WHEN_NO_MATCH",
-                        "payloadFormatVersion": "1.0"
-                    },
-                    "outputs": {
-                        "apiId": "kkw3gblpvf",
-                        "connectionId": "",
-                        "connectionType": "INTERNET",
-                        "contentHandlingStrategy": "",
-                        "credentialsArn": "",
-                        "description": "GraphQL API Integration",
-                        "id": "zfz3fdo",
-                        "integrationMethod": "OPTIONS",
-                        "integrationResponseSelectionExpression": "",
-                        "integrationSubtype": "",
-                        "integrationType": "AWS_PROXY",
-                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:headless-cms-b5dddfa",
-                        "passthroughBehavior": "",
-                        "payloadFormatVersion": "1.0",
-                        "requestParameters": {},
-                        "requestTemplates": {},
-                        "responseParameters": [],
-                        "templateSelectionExpression": "",
-                        "timeoutMilliseconds": 30000,
-                        "tlsConfig": null
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:lambda/function:Function::headless-cms"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "apiId": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
-                        ],
-                        "description": null,
-                        "integrationMethod": null,
-                        "integrationType": null,
-                        "integrationUri": [
-                            "urn:pulumi:dev::api::aws:lambda/function:Function::headless-cms"
-                        ],
-                        "passthroughBehavior": null
                     },
                     "sequenceNumber": 1
                 },
@@ -3462,6 +3401,67 @@
                     "sequenceNumber": 1
                 },
                 {
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options",
+                    "custom": true,
+                    "id": "zfz3fdo",
+                    "type": "aws:apigatewayv2/integration:Integration",
+                    "inputs": {
+                        "__defaults": [
+                            "connectionType",
+                            "payloadFormatVersion"
+                        ],
+                        "apiId": "kkw3gblpvf",
+                        "connectionType": "INTERNET",
+                        "description": "GraphQL API Integration",
+                        "integrationMethod": "OPTIONS",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:headless-cms-b5dddfa",
+                        "passthroughBehavior": "WHEN_NO_MATCH",
+                        "payloadFormatVersion": "1.0"
+                    },
+                    "outputs": {
+                        "apiId": "kkw3gblpvf",
+                        "connectionId": "",
+                        "connectionType": "INTERNET",
+                        "contentHandlingStrategy": "",
+                        "credentialsArn": "",
+                        "description": "GraphQL API Integration",
+                        "id": "zfz3fdo",
+                        "integrationMethod": "OPTIONS",
+                        "integrationResponseSelectionExpression": "",
+                        "integrationSubtype": "",
+                        "integrationType": "AWS_PROXY",
+                        "integrationUri": "arn:aws:lambda:us-east-1:932784301473:function:headless-cms-b5dddfa",
+                        "passthroughBehavior": "",
+                        "payloadFormatVersion": "1.0",
+                        "requestParameters": {},
+                        "requestTemplates": {},
+                        "responseParameters": [],
+                        "templateSelectionExpression": "",
+                        "timeoutMilliseconds": 30000,
+                        "tlsConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:lambda/function:Function::headless-cms"
+                    ],
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "apiId": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ],
+                        "description": null,
+                        "integrationMethod": null,
+                        "integrationType": null,
+                        "integrationUri": [
+                            "urn:pulumi:dev::api::aws:lambda/function:Function::headless-cms"
+                        ],
+                        "passthroughBehavior": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
                     "urn": "urn:pulumi:dev::api::aws:lambda/permission:Permission::allow-cms-options",
                     "custom": true,
                     "id": "allow-cms-options-410aa74",
@@ -3500,54 +3500,6 @@
                         "principal": null,
                         "sourceArn": [
                             "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
-                        ]
-                    },
-                    "sequenceNumber": 1
-                },
-                {
-                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::cms-options",
-                    "custom": true,
-                    "id": "609w3ns",
-                    "type": "aws:apigatewayv2/route:Route",
-                    "inputs": {
-                        "__defaults": [
-                            "apiKeyRequired",
-                            "authorizationType"
-                        ],
-                        "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationType": "NONE",
-                        "routeKey": "OPTIONS /cms/{key+}",
-                        "target": "integrations/zfz3fdo"
-                    },
-                    "outputs": {
-                        "apiId": "kkw3gblpvf",
-                        "apiKeyRequired": false,
-                        "authorizationScopes": [],
-                        "authorizationType": "NONE",
-                        "authorizerId": "",
-                        "id": "609w3ns",
-                        "modelSelectionExpression": "",
-                        "operationName": "",
-                        "requestModels": {},
-                        "requestParameters": [],
-                        "routeKey": "OPTIONS /cms/{key+}",
-                        "routeResponseSelectionExpression": "",
-                        "target": "integrations/zfz3fdo"
-                    },
-                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
-                    "dependencies": [
-                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
-                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options"
-                    ],
-                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
-                    "propertyDependencies": {
-                        "apiId": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
-                        ],
-                        "routeKey": null,
-                        "target": [
-                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options"
                         ]
                     },
                     "sequenceNumber": 1
@@ -3596,6 +3548,54 @@
                         "routeKey": null,
                         "target": [
                             "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-post"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::api::aws:apigatewayv2/route:Route::cms-options",
+                    "custom": true,
+                    "id": "609w3ns",
+                    "type": "aws:apigatewayv2/route:Route",
+                    "inputs": {
+                        "__defaults": [
+                            "apiKeyRequired",
+                            "authorizationType"
+                        ],
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationType": "NONE",
+                        "routeKey": "OPTIONS /cms/{key+}",
+                        "target": "integrations/zfz3fdo"
+                    },
+                    "outputs": {
+                        "apiId": "kkw3gblpvf",
+                        "apiKeyRequired": false,
+                        "authorizationScopes": [],
+                        "authorizationType": "NONE",
+                        "authorizerId": "",
+                        "id": "609w3ns",
+                        "modelSelectionExpression": "",
+                        "operationName": "",
+                        "requestModels": {},
+                        "requestParameters": [],
+                        "routeKey": "OPTIONS /cms/{key+}",
+                        "routeResponseSelectionExpression": "",
+                        "target": "integrations/zfz3fdo"
+                    },
+                    "parent": "urn:pulumi:dev::api::pulumi:pulumi:Stack::api-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway",
+                        "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options"
+                    ],
+                    "provider": "urn:pulumi:dev::api::pulumi:providers:aws::default_5_9_2::ff0c3000-4243-4f2c-af6f-90a01bde953a",
+                    "propertyDependencies": {
+                        "apiId": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/api:Api::api-gateway"
+                        ],
+                        "routeKey": null,
+                        "target": [
+                            "urn:pulumi:dev::api::aws:apigatewayv2/integration:Integration::cms-options"
                         ]
                     },
                     "sequenceNumber": 1

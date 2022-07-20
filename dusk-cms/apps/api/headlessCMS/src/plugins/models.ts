@@ -18,13 +18,19 @@ export default [
                 fieldId: "idAtomsAddress",
                 id: "idAtomsAddress",
                 label: "Atoms Address Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsAddressVariant",
                 id: "atomsAddressVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -79,7 +85,10 @@ export default [
                 fieldId: "idAtomsBalance",
                 id: "idAtomsBalance",
                 label: "Atoms Balance Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -98,13 +107,19 @@ export default [
                 fieldId: "idAtomsChip",
                 id: "idAtomsChip",
                 label: "Atoms Chip Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsChipVariant",
                 id: "atomsChipVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -154,25 +169,37 @@ export default [
                 fieldId: "idAtomsDateText",
                 id: "idAtomsDateText",
                 label: "Atoms Date Text Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsDateTextTime",
                 id: "atomsDateTextTime",
                 label: "time",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsDateTextShowTimestamp",
                 id: "atomsDateTextShowTimestamp",
                 label: "showTimestamp",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsDateTextDatetimeFormat",
                 id: "atomsDateTextDatetimeFormat",
                 label: "datetimeFormat",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -196,31 +223,46 @@ export default [
                 fieldId: "idAtomsDropDown",
                 id: "idAtomsDropDown",
                 label: "Atoms Drop Down Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsDropDownOptions",
                 id: "atomsDropDownOptions",
                 label: "options",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsDropDownSelectedIndex",
                 id: "atomsDropDownSelectedIndex",
                 label: "selectedIndex",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsDropDownDropUp",
                 id: "atomsDropDownDropUp",
                 label: "dropUp",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsDropDownDisabled",
                 id: "atomsDropDownDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -245,37 +287,55 @@ export default [
                 fieldId: "idAtomsGauge",
                 id: "idAtomsGauge",
                 label: "Atoms Gauge Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsGaugeMaxValue",
                 id: "atomsGaugeMaxValue",
                 label: "maxValue",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsGaugeMinValue",
                 id: "atomsGaugeMinValue",
                 label: "minValue",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsGaugeValue",
                 id: "atomsGaugeValue",
                 label: "value",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsGaugeWidth",
                 id: "atomsGaugeWidth",
                 label: "width",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsGaugeTooltip",
                 id: "atomsGaugeTooltip",
                 label: "tooltip",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -301,19 +361,28 @@ export default [
                 fieldId: "idAtomsIcon",
                 id: "idAtomsIcon",
                 label: "Atoms Icon Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsIconName",
                 id: "atomsIconName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsIconSize",
                 id: "atomsIconSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -351,6 +420,9 @@ export default [
                 id: "atomsIconVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -387,19 +459,28 @@ export default [
                 fieldId: "atomsIconTooltip",
                 id: "atomsIconTooltip",
                 label: "tooltip",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsIconViewbox",
                 id: "atomsIconViewbox",
                 label: "viewbox",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsIconTooltipVisible",
                 id: "atomsIconTooltipVisible",
                 label: "tooltipVisible",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -457,13 +538,19 @@ export default [
                 fieldId: "idAtomsLoadingIndicator",
                 id: "idAtomsLoadingIndicator",
                 label: "Atoms Loading Indicator Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsLoadingIndicatorVariant",
                 id: "atomsLoadingIndicatorVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -500,7 +587,10 @@ export default [
                 fieldId: "atomsLoadingIndicatorDuration",
                 id: "atomsLoadingIndicatorDuration",
                 label: "duration",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -523,7 +613,10 @@ export default [
                 fieldId: "idAtomsLogo",
                 id: "idAtomsLogo",
                 label: "Atoms Logo Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -542,13 +635,19 @@ export default [
                 fieldId: "idAtomsProgressBar",
                 id: "idAtomsProgressBar",
                 label: "Atoms Progress Bar Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsProgressBarVariant",
                 id: "atomsProgressBarVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -585,13 +684,19 @@ export default [
                 fieldId: "atomsProgressBarSteps",
                 id: "atomsProgressBarSteps",
                 label: "steps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsProgressBarStep",
                 id: "atomsProgressBarStep",
                 label: "step",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -615,37 +720,55 @@ export default [
                 fieldId: "idAtomsQrCode",
                 id: "idAtomsQrCode",
                 label: "Atoms Qr Code Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsQrCodeValue",
                 id: "atomsQrCodeValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsQrCodeWidth",
                 id: "atomsQrCodeWidth",
                 label: "width",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsQrCodeQrColor",
                 id: "atomsQrCodeQrColor",
                 label: "qrColor",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsQrCodeBgColor",
                 id: "atomsQrCodeBgColor",
                 label: "bgColor",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsQrCodeAlign",
                 id: "atomsQrCodeAlign",
                 label: "align",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -671,19 +794,28 @@ export default [
                 fieldId: "idAtomsRichText",
                 id: "idAtomsRichText",
                 label: "Atoms Rich Text Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsRichTextMarkdown",
                 id: "atomsRichTextMarkdown",
                 label: "markdown",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsRichTextSize",
                 id: "atomsRichTextSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -711,6 +843,9 @@ export default [
                 id: "atomsRichTextAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -766,13 +901,19 @@ export default [
                 fieldId: "idAtomsSkeletonLoader",
                 id: "idAtomsSkeletonLoader",
                 label: "Atoms Skeleton Loader Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderVariant",
                 id: "atomsSkeletonLoaderVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -814,55 +955,82 @@ export default [
                 fieldId: "atomsSkeletonLoaderExtraSmallScreenHeight",
                 id: "atomsSkeletonLoaderExtraSmallScreenHeight",
                 label: "extraSmallScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderSmallScreenHeight",
                 id: "atomsSkeletonLoaderSmallScreenHeight",
                 label: "smallScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderMediumScreenHeight",
                 id: "atomsSkeletonLoaderMediumScreenHeight",
                 label: "mediumScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderLargeScreenHeight",
                 id: "atomsSkeletonLoaderLargeScreenHeight",
                 label: "largeScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderExtraLargeScreenHeight",
                 id: "atomsSkeletonLoaderExtraLargeScreenHeight",
                 label: "extraLargeScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderJumboScreenHeight",
                 id: "atomsSkeletonLoaderJumboScreenHeight",
                 label: "jumboScreenHeight",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderWidth",
                 id: "atomsSkeletonLoaderWidth",
                 label: "width",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderPulse",
                 id: "atomsSkeletonLoaderPulse",
                 label: "pulse",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsSkeletonLoaderRounded",
                 id: "atomsSkeletonLoaderRounded",
                 label: "rounded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -893,31 +1061,46 @@ export default [
                 fieldId: "idAtomsSlider",
                 id: "idAtomsSlider",
                 label: "Atoms Slider Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsSliderMin",
                 id: "atomsSliderMin",
                 label: "min",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSliderMax",
                 id: "atomsSliderMax",
                 label: "max",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSliderValue",
                 id: "atomsSliderValue",
                 label: "value",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "atomsSliderId",
                 id: "atomsSliderId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -942,37 +1125,55 @@ export default [
                 fieldId: "idAtomsTextField",
                 id: "idAtomsTextField",
                 label: "Atoms Text Field Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldValue",
                 id: "atomsTextFieldValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldDisabled",
                 id: "atomsTextFieldDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldMultiline",
                 id: "atomsTextFieldMultiline",
                 label: "multiline",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldPlaceholder",
                 id: "atomsTextFieldPlaceholder",
                 label: "placeholder",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldState",
                 id: "atomsTextFieldState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -994,19 +1195,28 @@ export default [
                 fieldId: "atomsTextFieldId",
                 id: "atomsTextFieldId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldName",
                 id: "atomsTextFieldName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTextFieldFocused",
                 id: "atomsTextFieldFocused",
                 label: "focused",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -1035,13 +1245,19 @@ export default [
                 fieldId: "idAtomsToggle",
                 id: "idAtomsToggle",
                 label: "Atoms Toggle Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsToggleVariant",
                 id: "atomsToggleVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1079,6 +1295,9 @@ export default [
                 id: "atomsToggleType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1095,55 +1314,82 @@ export default [
                 fieldId: "atomsToggleName",
                 id: "atomsToggleName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsToggleChecked",
                 id: "atomsToggleChecked",
                 label: "checked",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsToggleId",
                 id: "atomsToggleId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsToggleValue",
                 id: "atomsToggleValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsToggleGroup",
                 id: "atomsToggleGroup",
                 label: "group",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsToggleDisabled",
                 id: "atomsToggleDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsToggleSelected",
                 id: "atomsToggleSelected",
                 label: "selected",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "atomsToggleOnIcon",
                 id: "atomsToggleOnIcon",
                 label: "onIcon",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsToggleOffIcon",
                 id: "atomsToggleOffIcon",
                 label: "offIcon",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -1175,13 +1421,19 @@ export default [
                 fieldId: "idAtomsTruncateText",
                 id: "idAtomsTruncateText",
                 label: "Atoms Truncate Text Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTruncateTextWidth",
                 id: "atomsTruncateTextWidth",
                 label: "width",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1203,13 +1455,19 @@ export default [
                 fieldId: "atomsTruncateTextTitle",
                 id: "atomsTruncateTextTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "atomsTruncateTextText",
                 id: "atomsTruncateTextText",
                 label: "text",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -1240,31 +1498,46 @@ export default [
                 fieldId: "idMoleculesAlert",
                 id: "idMoleculesAlert",
                 label: "Molecules Alert Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesAlertValue",
                 id: "moleculesAlertValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesAlertId",
                 id: "moleculesAlertId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesAlertDismissable",
                 id: "moleculesAlertDismissable",
                 label: "dismissable",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesAlertVariant",
                 id: "moleculesAlertVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1286,7 +1559,10 @@ export default [
                 fieldId: "moleculesAlertModal",
                 id: "moleculesAlertModal",
                 label: "modal",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesAlertChildren",
@@ -1328,13 +1604,19 @@ export default [
                 fieldId: "idMoleculesBreadcrumb",
                 id: "idMoleculesBreadcrumb",
                 label: "Molecules Breadcrumb Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesBreadcrumbHref",
                 id: "moleculesBreadcrumbHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -1353,25 +1635,37 @@ export default [
                 fieldId: "idMoleculesButton",
                 id: "idMoleculesButton",
                 label: "Molecules Button Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesButtonId",
                 id: "moleculesButtonId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesButtonValue",
                 id: "moleculesButtonValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonVariant",
                 id: "moleculesButtonVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1409,6 +1703,9 @@ export default [
                 id: "moleculesButtonSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1425,43 +1722,64 @@ export default [
                 fieldId: "moleculesButtonOutline",
                 id: "moleculesButtonOutline",
                 label: "outline",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonCircle",
                 id: "moleculesButtonCircle",
                 label: "circle",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonBlock",
                 id: "moleculesButtonBlock",
                 label: "block",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonHref",
                 id: "moleculesButtonHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesButtonActive",
                 id: "moleculesButtonActive",
                 label: "active",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonDisabled",
                 id: "moleculesButtonDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesButtonLabel",
                 id: "moleculesButtonLabel",
                 label: "label",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesButtonChildren",
@@ -1512,25 +1830,37 @@ export default [
                 fieldId: "idMoleculesChart",
                 id: "idMoleculesChart",
                 label: "Molecules Chart Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesChartType",
                 id: "moleculesChartType",
                 label: "type",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesChartData",
                 id: "moleculesChartData",
                 label: "data",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesChartAspectRatio",
                 id: "moleculesChartAspectRatio",
                 label: "aspectRatio",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -1554,7 +1884,10 @@ export default [
                 fieldId: "idMoleculesContent",
                 id: "idMoleculesContent",
                 label: "Molecules Content Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesContentChildren",
@@ -1609,14 +1942,21 @@ export default [
                 fieldId: "idMoleculesControl",
                 id: "idMoleculesControl",
                 label: "Molecules Control Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesControlType",
                 id: "moleculesControlType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "text-inputs"
+                },
                 multipleValues: false,
+                name: "text-inputs",
                 predefinedValues: {
                     enabled: true,
                     values: []
@@ -1627,6 +1967,9 @@ export default [
                 id: "moleculesControlState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1648,25 +1991,37 @@ export default [
                 fieldId: "moleculesControlId",
                 id: "moleculesControlId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesControlLabel",
                 id: "moleculesControlLabel",
                 label: "label",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesControlMessage",
                 id: "moleculesControlMessage",
                 label: "message",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesControlWidth",
                 id: "moleculesControlWidth",
                 label: "width",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1688,13 +2043,19 @@ export default [
                 fieldId: "moleculesControlName",
                 id: "moleculesControlName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesControlGroup",
                 id: "moleculesControlGroup",
                 label: "group",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesControlChildren",
@@ -1754,13 +2115,19 @@ export default [
                 fieldId: "idMoleculesCtaList",
                 id: "idMoleculesCtaList",
                 label: "Molecules Cta List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesCtaListVariant",
                 id: "moleculesCtaListVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1798,6 +2165,9 @@ export default [
                 id: "moleculesCtaListType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1827,13 +2197,19 @@ export default [
                 fieldId: "idMoleculesDetailList",
                 id: "idMoleculesDetailList",
                 label: "Molecules Detail List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesDetailListSplit",
                 id: "moleculesDetailListSplit",
                 label: "split",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesDetailListChildren",
@@ -1880,7 +2256,10 @@ export default [
                 fieldId: "idMoleculesDisclaimerList",
                 id: "idMoleculesDisclaimerList",
                 label: "Molecules Disclaimer List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesDisclaimerListChildren",
@@ -1914,25 +2293,37 @@ export default [
                 fieldId: "idMoleculesFileUpload",
                 id: "idMoleculesFileUpload",
                 label: "Molecules File Upload Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesFileUploadId",
                 id: "moleculesFileUploadId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesFileUploadName",
                 id: "moleculesFileUploadName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesFileUploadUploaded",
                 id: "moleculesFileUploadUploaded",
                 label: "uploaded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -1956,13 +2347,19 @@ export default [
                 fieldId: "idMoleculesGroup",
                 id: "idMoleculesGroup",
                 label: "Molecules Group Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesGroupAlign",
                 id: "moleculesGroupAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1999,7 +2396,10 @@ export default [
                 fieldId: "moleculesGroupGrid",
                 id: "moleculesGroupGrid",
                 label: "grid",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesGroupChildren",
@@ -2044,13 +2444,19 @@ export default [
                 fieldId: "idMoleculesHeading",
                 id: "idMoleculesHeading",
                 label: "Molecules Heading Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesHeadingSize",
                 id: "moleculesHeadingSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2068,6 +2474,9 @@ export default [
                 id: "moleculesHeadingVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2090,6 +2499,9 @@ export default [
                 id: "moleculesHeadingAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2154,19 +2566,28 @@ export default [
                 fieldId: "idMoleculesItem",
                 id: "idMoleculesItem",
                 label: "Molecules Item Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesItemIconName",
                 id: "moleculesItemIconName",
                 label: "iconName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesItemIconViewbox",
                 id: "moleculesItemIconViewbox",
                 label: "iconViewbox",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2185,7 +2606,10 @@ export default [
                 fieldId: "idMoleculesLabel",
                 id: "idMoleculesLabel",
                 label: "Molecules Label Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2204,19 +2628,28 @@ export default [
                 fieldId: "idMoleculesMediaContent",
                 id: "idMoleculesMediaContent",
                 label: "Molecules Media Content Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMediaContentReverse",
                 id: "moleculesMediaContentReverse",
                 label: "reverse",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesMediaContentAlign",
                 id: "moleculesMediaContentAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2239,6 +2672,9 @@ export default [
                 id: "moleculesMediaContentValign",
                 label: "valign",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2303,13 +2739,19 @@ export default [
                 fieldId: "idMoleculesMenu",
                 id: "idMoleculesMenu",
                 label: "Molecules Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMenuOrientation",
                 id: "moleculesMenuOrientation",
                 label: "orientation",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2326,13 +2768,19 @@ export default [
                 fieldId: "moleculesMenuId",
                 id: "moleculesMenuId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMenuName",
                 id: "moleculesMenuName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMenuChildren",
@@ -2372,19 +2820,28 @@ export default [
                 fieldId: "idMoleculesMnemonic",
                 id: "idMoleculesMnemonic",
                 label: "Molecules Mnemonic Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMnemonicSeed",
                 id: "moleculesMnemonicSeed",
                 label: "seed",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesMnemonicType",
                 id: "moleculesMnemonicType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2406,13 +2863,19 @@ export default [
                 fieldId: "moleculesMnemonicLength",
                 id: "moleculesMnemonicLength",
                 label: "length",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "moleculesMnemonicDisabled",
                 id: "moleculesMnemonicDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "moleculesMnemonicChildren",
@@ -2456,31 +2919,46 @@ export default [
                 fieldId: "idMoleculesPagination",
                 id: "idMoleculesPagination",
                 label: "Molecules Pagination Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesPaginationRef",
                 id: "moleculesPaginationRef",
                 label: "ref",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesPaginationItems",
                 id: "moleculesPaginationItems",
                 label: "items",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesPaginationItemsPerPage",
                 id: "moleculesPaginationItemsPerPage",
                 label: "itemsPerPage",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "moleculesPaginationPageNumber",
                 id: "moleculesPaginationPageNumber",
                 label: "pageNumber",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "moleculesPaginationChildren",
@@ -2521,13 +2999,19 @@ export default [
                 fieldId: "idMoleculesPasswordStrength",
                 id: "idMoleculesPasswordStrength",
                 label: "Molecules Password Strength Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesPasswordStrengthPassword",
                 id: "moleculesPasswordStrengthPassword",
                 label: "password",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesPasswordStrengthChildren",
@@ -2565,13 +3049,19 @@ export default [
                 fieldId: "idMoleculesStatistic",
                 id: "idMoleculesStatistic",
                 label: "Molecules Statistic Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesStatisticTitle",
                 id: "moleculesStatisticTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesStatisticChildren",
@@ -2609,13 +3099,19 @@ export default [
                 fieldId: "idMoleculesStepList",
                 id: "idMoleculesStepList",
                 label: "Molecules Step List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesStepListVariant",
                 id: "moleculesStepListVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2665,31 +3161,46 @@ export default [
                 fieldId: "idMoleculesWord",
                 id: "idMoleculesWord",
                 label: "Molecules Word Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesWordValue",
                 id: "moleculesWordValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesWordIndex",
                 id: "moleculesWordIndex",
                 label: "index",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesWordDisabled",
                 id: "moleculesWordDisabled",
                 label: "disabled",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "moleculesWordId",
                 id: "moleculesWordId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2721,13 +3232,19 @@ export default [
                 fieldId: "idOrganismsAccordion",
                 id: "idOrganismsAccordion",
                 label: "Organisms Accordion Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsAccordionMultiselect",
                 id: "organismsAccordionMultiselect",
                 label: "multiselect",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsAccordionChildren",
@@ -2765,7 +3282,10 @@ export default [
                 fieldId: "idOrganismsActions",
                 id: "idOrganismsActions",
                 label: "Organisms Actions Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2784,19 +3304,28 @@ export default [
                 fieldId: "idOrganismsAppsMenu",
                 id: "idOrganismsAppsMenu",
                 label: "Organisms Apps Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsAppsMenuApps",
                 id: "organismsAppsMenuApps",
                 label: "apps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsAppsMenuAppName",
                 id: "organismsAppsMenuAppName",
                 label: "appName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2815,13 +3344,19 @@ export default [
                 fieldId: "idOrganismsCard",
                 id: "idOrganismsCard",
                 label: "Organisms Card Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCardVariant",
                 id: "organismsCardVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2859,6 +3394,9 @@ export default [
                 id: "organismsCardState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2880,19 +3418,28 @@ export default [
                 fieldId: "organismsCardHref",
                 id: "organismsCardHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCardDisabled",
                 id: "organismsCardDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsCardOverflow",
                 id: "organismsCardOverflow",
                 label: "overflow",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsCardChildren",
@@ -2961,13 +3508,19 @@ export default [
                 fieldId: "idOrganismsCategoryMenu",
                 id: "idOrganismsCategoryMenu",
                 label: "Organisms Category Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCategoryMenuCategory",
                 id: "organismsCategoryMenuCategory",
                 label: "category",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -2986,61 +3539,91 @@ export default [
                 fieldId: "idOrganismsCookieBanner",
                 id: "idOrganismsCookieBanner",
                 label: "Organisms Cookie Banner Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerId",
                 id: "organismsCookieBannerId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerCookieName",
                 id: "organismsCookieBannerCookieName",
                 label: "cookieName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerDarkModeCookieName",
                 id: "organismsCookieBannerDarkModeCookieName",
                 label: "darkModeCookieName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerCookieConfig",
                 id: "organismsCookieBannerCookieConfig",
                 label: "cookieConfig",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerAcceptLabel",
                 id: "organismsCookieBannerAcceptLabel",
                 label: "acceptLabel",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerSettingsLabel",
                 id: "organismsCookieBannerSettingsLabel",
                 label: "settingsLabel",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerShowBanner",
                 id: "organismsCookieBannerShowBanner",
                 label: "showBanner",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerShowSettings",
                 id: "organismsCookieBannerShowSettings",
                 label: "showSettings",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsCookieBannerCloseScrim",
                 id: "organismsCookieBannerCloseScrim",
                 label: "closeScrim",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -3070,37 +3653,55 @@ export default [
                 fieldId: "idOrganismsDatum",
                 id: "idOrganismsDatum",
                 label: "Organisms Datum Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsDatumVariant",
                 id: "organismsDatumVariant",
                 label: "variant",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsDatumDataKey",
                 id: "organismsDatumDataKey",
                 label: "dataKey",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsDatumHidden",
                 id: "organismsDatumHidden",
                 label: "hidden",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsDatumColspan",
                 id: "organismsDatumColspan",
                 label: "colspan",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsDatumId",
                 id: "organismsDatumId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsDatumChildren",
@@ -3151,31 +3752,46 @@ export default [
                 fieldId: "idOrganismsErrorBlock",
                 id: "idOrganismsErrorBlock",
                 label: "Organisms Error Block Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsErrorBlockCode",
                 id: "organismsErrorBlockCode",
                 label: "code",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "organismsErrorBlockMessage",
                 id: "organismsErrorBlockMessage",
                 label: "message",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsErrorBlockStack",
                 id: "organismsErrorBlockStack",
                 label: "stack",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsErrorBlockDev",
                 id: "organismsErrorBlockDev",
                 label: "dev",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3200,13 +3816,19 @@ export default [
                 fieldId: "idOrganismsFooter",
                 id: "idOrganismsFooter",
                 label: "Organisms Footer Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFooterType",
                 id: "organismsFooterType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3223,13 +3845,19 @@ export default [
                 fieldId: "organismsFooterSocial",
                 id: "organismsFooterSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFooterCategories",
                 id: "organismsFooterCategories",
                 label: "categories",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFooterChildren",
@@ -3275,31 +3903,46 @@ export default [
                 fieldId: "idOrganismsForm",
                 id: "idOrganismsForm",
                 label: "Organisms Form Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFormSubmitHandler",
                 id: "organismsFormSubmitHandler",
                 label: "submitHandler",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFormSchema",
                 id: "organismsFormSchema",
                 label: "schema",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFormFields",
                 id: "organismsFormFields",
                 label: "fields",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFormSubmitted",
                 id: "organismsFormSubmitted",
                 label: "submitted",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsFormChildren",
@@ -3343,7 +3986,10 @@ export default [
                 fieldId: "idOrganismsHero",
                 id: "idOrganismsHero",
                 label: "Organisms Hero Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsHeroChildren",
@@ -3386,37 +4032,55 @@ export default [
                 fieldId: "idOrganismsItem",
                 id: "idOrganismsItem",
                 label: "Organisms Item Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsItemId",
                 id: "organismsItemId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsItemTitle",
                 id: "organismsItemTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsItemExpanded",
                 id: "organismsItemExpanded",
                 label: "expanded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsItemDisabled",
                 id: "organismsItemDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsItemRef",
                 id: "organismsItemRef",
                 label: "ref",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3442,13 +4106,19 @@ export default [
                 fieldId: "idOrganismsLegalMenu",
                 id: "idOrganismsLegalMenu",
                 label: "Organisms Legal Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsLegalMenuOrientation",
                 id: "organismsLegalMenuOrientation",
                 label: "orientation",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3467,13 +4137,19 @@ export default [
                 fieldId: "idOrganismsLinksMenu",
                 id: "idOrganismsLinksMenu",
                 label: "Organisms Links Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsLinksMenuLinks",
                 id: "organismsLinksMenuLinks",
                 label: "links",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3492,13 +4168,19 @@ export default [
                 fieldId: "idOrganismsMaximal",
                 id: "idOrganismsMaximal",
                 label: "Organisms Maximal Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsMaximalCategories",
                 id: "organismsMaximalCategories",
                 label: "categories",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3517,19 +4199,28 @@ export default [
                 fieldId: "idOrganismsMinimal",
                 id: "idOrganismsMinimal",
                 label: "Organisms Minimal Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsMinimalCopyright",
                 id: "organismsMinimalCopyright",
                 label: "copyright",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsMinimalSocial",
                 id: "organismsMinimalSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3548,43 +4239,64 @@ export default [
                 fieldId: "idOrganismsNavbar",
                 id: "idOrganismsNavbar",
                 label: "Organisms Navbar Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarTitle",
                 id: "organismsNavbarTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarApps",
                 id: "organismsNavbarApps",
                 label: "apps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarLinks",
                 id: "organismsNavbarLinks",
                 label: "links",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarAppName",
                 id: "organismsNavbarAppName",
                 label: "appName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarCookieConfig",
                 id: "organismsNavbarCookieConfig",
                 label: "cookieConfig",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarId",
                 id: "organismsNavbarId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsNavbarChildren",
@@ -3630,7 +4342,10 @@ export default [
                 fieldId: "idOrganismsNewsletter",
                 id: "idOrganismsNewsletter",
                 label: "Organisms Newsletter Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
@@ -3649,31 +4364,46 @@ export default [
                 fieldId: "idOrganismsRow",
                 id: "idOrganismsRow",
                 label: "Organisms Row Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsRowType",
                 id: "organismsRowType",
                 label: "type",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsRowHidden",
                 id: "organismsRowHidden",
                 label: "hidden",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsRowVariant",
                 id: "organismsRowVariant",
                 label: "variant",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsRowId",
                 id: "organismsRowId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsRowChildren",
@@ -3714,25 +4444,37 @@ export default [
                 fieldId: "idOrganismsSearchList",
                 id: "idOrganismsSearchList",
                 label: "Organisms Search List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSearchListData",
                 id: "organismsSearchListData",
                 label: "data",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSearchListFieldButton",
                 id: "organismsSearchListFieldButton",
                 label: "fieldButton",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
                 fieldId: "organismsSearchListDataSearchResults",
                 id: "organismsSearchListDataSearchResults",
                 label: "dataSearchResults",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSearchListChildren",
@@ -3775,19 +4517,28 @@ export default [
                 fieldId: "idOrganismsSocialMediaMenu",
                 id: "idOrganismsSocialMediaMenu",
                 label: "Organisms Social Media Menu Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSocialMediaMenuOrientation",
                 id: "organismsSocialMediaMenuOrientation",
                 label: "orientation",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSocialMediaMenuSocial",
                 id: "organismsSocialMediaMenuSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsSocialMediaMenuChildren",
@@ -3829,13 +4580,19 @@ export default [
                 fieldId: "idOrganismsStep",
                 id: "idOrganismsStep",
                 label: "Organisms Step Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsStepNumber",
                 id: "organismsStepNumber",
                 label: "number",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             }
         ],
         group: {
@@ -3854,25 +4611,37 @@ export default [
                 fieldId: "idOrganismsTable",
                 id: "idOrganismsTable",
                 label: "Organisms Table Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsTableData",
                 id: "organismsTableData",
                 label: "data",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsTableSettings",
                 id: "organismsTableSettings",
                 label: "settings",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsTableMobileBreakpoint",
                 id: "organismsTableMobileBreakpoint",
                 label: "mobileBreakpoint",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3904,13 +4673,19 @@ export default [
                 fieldId: "organismsTableDuration",
                 id: "organismsTableDuration",
                 label: "duration",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "organismsTableDataRows",
                 id: "organismsTableDataRows",
                 label: "dataRows",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsTableChildren",
@@ -3955,13 +4730,19 @@ export default [
                 fieldId: "idOrganismsWizard",
                 id: "idOrganismsWizard",
                 label: "Organisms Wizard Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "organismsWizardStepCount",
                 id: "organismsWizardStepCount",
                 label: "stepCount",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
                 fieldId: "organismsWizardChildren",
@@ -4008,13 +4789,19 @@ export default [
                 fieldId: "idTemplatesBuyHomepage",
                 id: "idTemplatesBuyHomepage",
                 label: "Templates Buy Homepage Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesBuyHomepageIsLoading",
                 id: "templatesBuyHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4031,7 +4818,10 @@ export default [
                 fieldId: "templatesBuyHomepageIsError",
                 id: "templatesBuyHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4054,13 +4844,19 @@ export default [
                 fieldId: "idTemplatesDefault",
                 id: "idTemplatesDefault",
                 label: "Templates Default Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesDefaultIsLoading",
                 id: "templatesDefaultIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4077,7 +4873,10 @@ export default [
                 fieldId: "templatesDefaultIsError",
                 id: "templatesDefaultIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4100,13 +4899,19 @@ export default [
                 fieldId: "idTemplatesDevopsCentered",
                 id: "idTemplatesDevopsCentered",
                 label: "Templates Devops Centered Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesDevopsCenteredIsLoading",
                 id: "templatesDevopsCenteredIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4123,7 +4928,10 @@ export default [
                 fieldId: "templatesDevopsCenteredIsError",
                 id: "templatesDevopsCenteredIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4146,13 +4954,19 @@ export default [
                 fieldId: "idTemplatesDevopsDashboard",
                 id: "idTemplatesDevopsDashboard",
                 label: "Templates Devops Dashboard Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesDevopsDashboardIsLoading",
                 id: "templatesDevopsDashboardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4169,7 +4983,10 @@ export default [
                 fieldId: "templatesDevopsDashboardIsError",
                 id: "templatesDevopsDashboardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4192,13 +5009,19 @@ export default [
                 fieldId: "idTemplatesExplorerCharts",
                 id: "idTemplatesExplorerCharts",
                 label: "Templates Explorer Charts Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesExplorerChartsIsLoading",
                 id: "templatesExplorerChartsIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4215,7 +5038,10 @@ export default [
                 fieldId: "templatesExplorerChartsIsError",
                 id: "templatesExplorerChartsIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4238,13 +5064,19 @@ export default [
                 fieldId: "idTemplatesExplorerDetail",
                 id: "idTemplatesExplorerDetail",
                 label: "Templates Explorer Detail Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesExplorerDetailIsLoading",
                 id: "templatesExplorerDetailIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4261,7 +5093,10 @@ export default [
                 fieldId: "templatesExplorerDetailIsError",
                 id: "templatesExplorerDetailIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4284,13 +5119,19 @@ export default [
                 fieldId: "idTemplatesExplorerHomepage",
                 id: "idTemplatesExplorerHomepage",
                 label: "Templates Explorer Homepage Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesExplorerHomepageIsLoading",
                 id: "templatesExplorerHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4307,7 +5148,10 @@ export default [
                 fieldId: "templatesExplorerHomepageIsError",
                 id: "templatesExplorerHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4330,13 +5174,19 @@ export default [
                 fieldId: "idTemplatesExplorerList",
                 id: "idTemplatesExplorerList",
                 label: "Templates Explorer List Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesExplorerListIsLoading",
                 id: "templatesExplorerListIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4353,7 +5203,10 @@ export default [
                 fieldId: "templatesExplorerListIsError",
                 id: "templatesExplorerListIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4376,13 +5229,19 @@ export default [
                 fieldId: "idTemplatesExtensionDefault",
                 id: "idTemplatesExtensionDefault",
                 label: "Templates Extension Default Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesExtensionDefaultIsLoading",
                 id: "templatesExtensionDefaultIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4399,7 +5258,10 @@ export default [
                 fieldId: "templatesExtensionDefaultIsError",
                 id: "templatesExtensionDefaultIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4422,13 +5284,19 @@ export default [
                 fieldId: "idTemplatesWalletDashboard",
                 id: "idTemplatesWalletDashboard",
                 label: "Templates Wallet Dashboard Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesWalletDashboardIsLoading",
                 id: "templatesWalletDashboardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4445,7 +5313,10 @@ export default [
                 fieldId: "templatesWalletDashboardIsError",
                 id: "templatesWalletDashboardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4468,13 +5339,19 @@ export default [
                 fieldId: "idTemplatesWalletHomepage",
                 id: "idTemplatesWalletHomepage",
                 label: "Templates Wallet Homepage Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesWalletHomepageIsLoading",
                 id: "templatesWalletHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4491,7 +5368,10 @@ export default [
                 fieldId: "templatesWalletHomepageIsError",
                 id: "templatesWalletHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4514,13 +5394,19 @@ export default [
                 fieldId: "idTemplatesWalletOption",
                 id: "idTemplatesWalletOption",
                 label: "Templates Wallet Option Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesWalletOptionIsLoading",
                 id: "templatesWalletOptionIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4537,7 +5423,10 @@ export default [
                 fieldId: "templatesWalletOptionIsError",
                 id: "templatesWalletOptionIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
@@ -4560,13 +5449,19 @@ export default [
                 fieldId: "idTemplatesWalletWizard",
                 id: "idTemplatesWalletWizard",
                 label: "Templates Wallet Wizard Id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
                 fieldId: "templatesWalletWizardIsLoading",
                 id: "templatesWalletWizardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4583,7 +5478,10 @@ export default [
                 fieldId: "templatesWalletWizardIsError",
                 id: "templatesWalletWizardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
