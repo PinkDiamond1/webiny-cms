@@ -1,0 +1,2074 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "dev",
+        "latest": {
+            "manifest": {
+                "time": "2022-07-20T16:33:20.199816+02:00",
+                "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
+                "version": "v3.35.3"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:/G6+useCkgA=:v1:tdBIz4ADjknQMG04:3FOl2s8ArFpEIX4RgOhQ9eBr5qxS+Q=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "appDomain": "d1t7arssoyyhwi.cloudfront.net",
+                        "appId": "E209CMTGNK0EET",
+                        "appStorage": "app-891663d",
+                        "appUrl": "https://d1t7arssoyyhwi.cloudfront.net",
+                        "deliveryDomain": "d2szcmofy3o4hu.cloudfront.net",
+                        "deliveryId": "E230M82SH43PVU",
+                        "deliveryStorage": "delivery-33e6d7f",
+                        "deliveryUrl": "https://d2szcmofy3o4hu.cloudfront.net"
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2",
+                    "custom": true,
+                    "id": "245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "version": "5.9.2"
+                    },
+                    "outputs": {
+                        "version": "5.9.2"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue",
+                    "custom": true,
+                    "id": "https://sqs.us-east-1.amazonaws.com/932784301473/ps-render-queue-a1d2676.fifo",
+                    "type": "aws:sqs/queue:Queue",
+                    "inputs": {
+                        "__defaults": [
+                            "contentBasedDeduplication",
+                            "delaySeconds",
+                            "maxMessageSize",
+                            "messageRetentionSeconds",
+                            "name",
+                            "receiveWaitTimeSeconds"
+                        ],
+                        "contentBasedDeduplication": false,
+                        "delaySeconds": 0,
+                        "fifoQueue": true,
+                        "maxMessageSize": 262144,
+                        "messageRetentionSeconds": 345600,
+                        "name": "ps-render-queue-a1d2676.fifo",
+                        "receiveWaitTimeSeconds": 0,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "visibilityTimeoutSeconds": 300
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:sqs:us-east-1:932784301473:ps-render-queue-a1d2676.fifo",
+                        "contentBasedDeduplication": false,
+                        "deduplicationScope": "queue",
+                        "delaySeconds": 0,
+                        "fifoQueue": true,
+                        "fifoThroughputLimit": "perQueue",
+                        "id": "https://sqs.us-east-1.amazonaws.com/932784301473/ps-render-queue-a1d2676.fifo",
+                        "kmsDataKeyReusePeriodSeconds": 300,
+                        "kmsMasterKeyId": "",
+                        "maxMessageSize": 262144,
+                        "messageRetentionSeconds": 345600,
+                        "name": "ps-render-queue-a1d2676.fifo",
+                        "namePrefix": "",
+                        "policy": "",
+                        "receiveWaitTimeSeconds": 0,
+                        "redriveAllowPolicy": "",
+                        "redrivePolicy": "",
+                        "sqsManagedSseEnabled": false,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "url": "https://sqs.us-east-1.amazonaws.com/932784301473/ps-render-queue-a1d2676.fifo",
+                        "visibilityTimeoutSeconds": 300
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "fifoQueue": null,
+                        "tags": null,
+                        "visibilityTimeoutSeconds": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                    "custom": true,
+                    "id": "app-891663d",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "app-891663d",
+                        "forceDestroy": true,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::app-891663d",
+                        "bucket": "app-891663d",
+                        "bucketDomainName": "app-891663d.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "app-891663d.s3.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "app-891663d",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "us-east-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website-us-east-1.amazonaws.com",
+                        "websiteEndpoint": "app-891663d.s3-website-us-east-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "forceDestroy": null,
+                        "tags": null,
+                        "website": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                    "custom": true,
+                    "id": "delivery-33e6d7f",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "delivery-33e6d7f",
+                        "forceDestroy": true,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::delivery-33e6d7f",
+                        "bucket": "delivery-33e6d7f",
+                        "bucketDomainName": "delivery-33e6d7f.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "delivery-33e6d7f.s3.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "delivery-33e6d7f",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "us-east-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website-us-east-1.amazonaws.com",
+                        "websiteEndpoint": "delivery-33e6d7f.s3-website-us-east-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "forceDestroy": null,
+                        "tags": null,
+                        "website": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::app",
+                    "custom": true,
+                    "id": "E209CMTGNK0EET",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "retainOnDelete"
+                        ],
+                        "customErrorResponses": [
+                            {
+                                "__defaults": [],
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "__defaults": [],
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 0,
+                            "forwardedValues": {
+                                "__defaults": [],
+                                "cookies": {
+                                    "__defaults": [],
+                                    "forward": "none"
+                                },
+                                "queryString": false
+                            },
+                            "maxTtl": 0,
+                            "minTtl": 0,
+                            "targetOriginId": "arn:aws:s3:::app-891663d",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "origins": [
+                            {
+                                "__defaults": [
+                                    "connectionAttempts",
+                                    "connectionTimeout",
+                                    "originPath"
+                                ],
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-891663d.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-891663d",
+                                "originPath": ""
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": true
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": [],
+                        "arn": "arn:aws:cloudfront::932784301473:distribution/E209CMTGNK0EET",
+                        "callerReference": "terraform-20220715082119311200000004",
+                        "customErrorResponses": [
+                            {
+                                "errorCachingMinTtl": 0,
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachePolicyId": "",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 0,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": {
+                                "cookies": {
+                                    "forward": "none",
+                                    "whitelistedNames": []
+                                },
+                                "headers": [],
+                                "queryString": false,
+                                "queryStringCacheKeys": []
+                            },
+                            "functionAssociations": [],
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 0,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "responseHeadersPolicyId": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "arn:aws:s3:::app-891663d",
+                            "trustedKeyGroups": [],
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "domainName": "d1t7arssoyyhwi.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E3I5630S9HO656",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E209CMTGNK0EET",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2022-07-15 08:21:23.568 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [],
+                        "origins": [
+                            {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-891663d.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-891663d",
+                                "originPath": "",
+                                "originShield": null,
+                                "s3OriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "status": "Deployed",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "trustedKeyGroups": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": true,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "customErrorResponses": null,
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "defaultRootObject": null,
+                        "enabled": null,
+                        "origins": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "priceClass": null,
+                        "restrictions": null,
+                        "tags": null,
+                        "viewerCertificate": null,
+                        "waitForDeployment": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::delivery",
+                    "custom": true,
+                    "id": "E230M82SH43PVU",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "retainOnDelete"
+                        ],
+                        "customErrorResponses": [
+                            {
+                                "__defaults": [],
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/_NOT_FOUND_PAGE_/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "__defaults": [],
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 30,
+                            "forwardedValues": {
+                                "__defaults": [],
+                                "cookies": {
+                                    "__defaults": [],
+                                    "forward": "none"
+                                },
+                                "queryString": true
+                            },
+                            "maxTtl": 30,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "targetOriginId": "arn:aws:s3:::delivery-33e6d7f",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "orderedCacheBehaviors": [
+                            {
+                                "__defaults": [],
+                                "allowedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "cachedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "compress": true,
+                                "defaultTtl": 2592000,
+                                "forwardedValues": {
+                                    "__defaults": [],
+                                    "cookies": {
+                                        "__defaults": [],
+                                        "forward": "none"
+                                    },
+                                    "headers": [],
+                                    "queryString": false
+                                },
+                                "maxTtl": 2592000,
+                                "minTtl": 0,
+                                "pathPattern": "/static/*",
+                                "targetOriginId": "arn:aws:s3:::app-891663d",
+                                "viewerProtocolPolicy": "allow-all"
+                            }
+                        ],
+                        "origins": [
+                            {
+                                "__defaults": [
+                                    "connectionAttempts",
+                                    "connectionTimeout",
+                                    "originPath"
+                                ],
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "delivery-33e6d7f.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::delivery-33e6d7f",
+                                "originPath": ""
+                            },
+                            {
+                                "__defaults": [
+                                    "connectionAttempts",
+                                    "connectionTimeout",
+                                    "originPath"
+                                ],
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-891663d.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-891663d",
+                                "originPath": ""
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": true
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": [],
+                        "arn": "arn:aws:cloudfront::932784301473:distribution/E230M82SH43PVU",
+                        "callerReference": "terraform-20220715082119315300000005",
+                        "customErrorResponses": [
+                            {
+                                "errorCachingMinTtl": 0,
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/_NOT_FOUND_PAGE_/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachePolicyId": "",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 30,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": {
+                                "cookies": {
+                                    "forward": "none",
+                                    "whitelistedNames": []
+                                },
+                                "headers": [],
+                                "queryString": true,
+                                "queryStringCacheKeys": []
+                            },
+                            "functionAssociations": [],
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 30,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "responseHeadersPolicyId": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "arn:aws:s3:::delivery-33e6d7f",
+                            "trustedKeyGroups": [],
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "domainName": "d2szcmofy3o4hu.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E2275ZP546J0F9",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E230M82SH43PVU",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2022-07-15 08:21:21.303 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [
+                            {
+                                "allowedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "cachePolicyId": "",
+                                "cachedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "OPTIONS"
+                                ],
+                                "compress": true,
+                                "defaultTtl": 2592000,
+                                "fieldLevelEncryptionId": "",
+                                "forwardedValues": {
+                                    "cookies": {
+                                        "forward": "none",
+                                        "whitelistedNames": []
+                                    },
+                                    "headers": [],
+                                    "queryString": false,
+                                    "queryStringCacheKeys": []
+                                },
+                                "functionAssociations": [],
+                                "lambdaFunctionAssociations": [],
+                                "maxTtl": 2592000,
+                                "minTtl": 0,
+                                "originRequestPolicyId": "",
+                                "pathPattern": "/static/*",
+                                "realtimeLogConfigArn": "",
+                                "responseHeadersPolicyId": "",
+                                "smoothStreaming": false,
+                                "targetOriginId": "arn:aws:s3:::app-891663d",
+                                "trustedKeyGroups": [],
+                                "trustedSigners": [],
+                                "viewerProtocolPolicy": "allow-all"
+                            }
+                        ],
+                        "origins": [
+                            {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "app-891663d.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::app-891663d",
+                                "originPath": "",
+                                "originShield": null,
+                                "s3OriginConfig": null
+                            },
+                            {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "delivery-33e6d7f.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::delivery-33e6d7f",
+                                "originPath": "",
+                                "originShield": null,
+                                "s3OriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "status": "Deployed",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "trustedKeyGroups": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": true,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app",
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "customErrorResponses": null,
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery"
+                        ],
+                        "defaultRootObject": null,
+                        "enabled": null,
+                        "orderedCacheBehaviors": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "origins": [
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::app"
+                        ],
+                        "priceClass": null,
+                        "restrictions": null,
+                        "tags": null,
+                        "viewerCertificate": null,
+                        "waitForDeployment": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                    "custom": true,
+                    "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72/ps-render-subscriber-event-rule-f676942",
+                    "type": "aws:cloudwatch/eventRule:EventRule",
+                    "inputs": {
+                        "__defaults": [
+                            "isEnabled",
+                            "name"
+                        ],
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
+                        "isEnabled": true,
+                        "name": "ps-render-subscriber-event-rule-f676942",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-render-subscriber-event-rule-f676942",
+                        "description": "",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "eventPattern": "{\"detail-type\":[\"RenderPages\"]}",
+                        "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72/ps-render-subscriber-event-rule-f676942",
+                        "isEnabled": true,
+                        "name": "ps-render-subscriber-event-rule-f676942",
+                        "namePrefix": "",
+                        "roleArn": "",
+                        "scheduleExpression": "",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "eventBusName": null,
+                        "eventPattern": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule",
+                    "custom": true,
+                    "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72/ps-flush-event-rule-2b18a3c",
+                    "type": "aws:cloudwatch/eventRule:EventRule",
+                    "inputs": {
+                        "__defaults": [
+                            "isEnabled",
+                            "name"
+                        ],
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "eventPattern": "{\"detail-type\":[\"FlushPages\"]}",
+                        "isEnabled": true,
+                        "name": "ps-flush-event-rule-2b18a3c",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-flush-event-rule-2b18a3c",
+                        "description": "",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "eventPattern": "{\"detail-type\":[\"FlushPages\"]}",
+                        "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72/ps-flush-event-rule-2b18a3c",
+                        "isEnabled": true,
+                        "name": "ps-flush-event-rule-2b18a3c",
+                        "namePrefix": "",
+                        "roleArn": "",
+                        "scheduleExpression": "",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "eventBusName": null,
+                        "eventPattern": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role",
+                    "custom": true,
+                    "id": "ps-render-subscriber-role-6989b80",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-subscriber-role-6989b80",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-6989b80",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-15T08:20:56Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "ps-render-subscriber-role-6989b80",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-subscriber-role-6989b80",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQ4VTK2STJY"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:dynamodb/tableItem:TableItem::psSettings",
+                    "custom": true,
+                    "id": "webiny-af7d6a6|PK||PS#SETTINGS||SK||default|",
+                    "type": "aws:dynamodb/tableItem:TableItem",
+                    "inputs": {
+                        "__defaults": [],
+                        "hashKey": "PK",
+                        "item": "{\"PK\":{\"S\":\"PS#SETTINGS\"},\"SK\":{\"S\":\"default\"},\"data\":{\"M\":{\"appUrl\":{\"S\":\"https://d1t7arssoyyhwi.cloudfront.net\"},\"deliveryUrl\":{\"S\":\"https://d2szcmofy3o4hu.cloudfront.net\"},\"bucket\":{\"S\":\"delivery-33e6d7f\"},\"cloudfrontId\":{\"S\":\"E230M82SH43PVU\"},\"sqsQueueUrl\":{\"S\":\"https://sqs.us-east-1.amazonaws.com/932784301473/ps-render-queue-a1d2676.fifo\"}}}}",
+                        "rangeKey": "SK",
+                        "tableName": "webiny-af7d6a6"
+                    },
+                    "outputs": {
+                        "hashKey": "PK",
+                        "id": "webiny-af7d6a6|PK||PS#SETTINGS||SK||default|",
+                        "item": "{\"PK\":{\"S\":\"PS#SETTINGS\"},\"SK\":{\"S\":\"default\"},\"data\":{\"M\":{\"appUrl\":{\"S\":\"https://d1t7arssoyyhwi.cloudfront.net\"},\"deliveryUrl\":{\"S\":\"https://d2szcmofy3o4hu.cloudfront.net\"},\"bucket\":{\"S\":\"delivery-33e6d7f\"},\"cloudfrontId\":{\"S\":\"E230M82SH43PVU\"},\"sqsQueueUrl\":{\"S\":\"https://sqs.us-east-1.amazonaws.com/932784301473/ps-render-queue-a1d2676.fifo\"}}}}",
+                        "rangeKey": "SK",
+                        "tableName": "webiny-af7d6a6"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::app",
+                        "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::delivery",
+                        "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "hashKey": null,
+                        "item": [
+                            "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::app",
+                            "urn:pulumi:dev::website::aws:cloudfront/distribution:Distribution::delivery",
+                            "urn:pulumi:dev::website::aws:s3/bucket:Bucket::delivery",
+                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        ],
+                        "rangeKey": null,
+                        "tableName": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role",
+                    "custom": true,
+                    "id": "ps-render-lambda-role-4d2831d",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-lambda-role-4d2831d",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/ps-render-lambda-role-4d2831d",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-15T08:20:56Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "ps-render-lambda-role-4d2831d",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "ps-render-lambda-role-4d2831d",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQUSFUNSIQS"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-75e1e93",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "ps-flush-lambda-role-75e1e93",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        }
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-75e1e93",
+                        "assumeRolePolicy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                        "createDate": "2022-07-15T08:20:56Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "ps-flush-lambda-role-75e1e93",
+                        "inlinePolicies": [
+                            {
+                                "name": "",
+                                "policy": ""
+                            }
+                        ],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "ps-flush-lambda-role-75e1e93",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "uniqueId": "AROA5SLSG4WQYDCZBPHHP"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null,
+                        "tags": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                    "custom": true,
+                    "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                    "type": "aws:iam/policy:Policy",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "path"
+                        ],
+                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
+                        "name": "ps-lambda-policy-2b3b25f",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:us-east-1:932784301473:ps-render-queue-a1d2676.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "description": "This policy enables access to Lambda, S3, Cloudfront, SQS and Dynamodb",
+                        "id": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "name": "ps-lambda-policy-2b3b25f",
+                        "path": "/",
+                        "policy": "{\"Statement\":[{\"Action\":[\"dynamodb:BatchGetItem\",\"dynamodb:BatchWriteItem\",\"dynamodb:DeleteItem\",\"dynamodb:GetItem\",\"dynamodb:PutItem\",\"dynamodb:Query\",\"dynamodb:Scan\",\"dynamodb:UpdateItem\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6\",\"arn:aws:dynamodb:us-east-1:932784301473:table/webiny-af7d6a6/*\"],\"Sid\":\"PermissionForDynamodb\"},{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:GetObjectAcl\",\"s3:PutObject\",\"s3:PutObjectAcl\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::fm-bucket-5dcd190/*\",\"arn:aws:s3:::delivery-*/*\"],\"Sid\":\"PermissionForS3\"},{\"Action\":\"cloudfront:CreateInvalidation\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:cloudfront::932784301473:distribution/*\",\"Sid\":\"PermissionForCloudfront\"},{\"Action\":[\"sqs:SendMessage\",\"sqs:SendMessageBatch\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:sqs:us-east-1:932784301473:ps-render-queue-a1d2676.fifo\",\"Sid\":\"PermissionForSQS\"}],\"Version\":\"2012-10-17\"}",
+                        "policyId": "ANPA5SLSG4WQ2CFBGE76F",
+                        "tags": {},
+                        "tagsAll": {}
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "description": null,
+                        "policy": [
+                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-execution-role",
+                    "custom": true,
+                    "id": "ps-render-subscriber-role-6989b80-20220715082059291100000003",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-render-subscriber-role-6989b80"
+                    },
+                    "outputs": {
+                        "id": "ps-render-subscriber-role-6989b80-20220715082059291100000003",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-render-subscriber-role-6989b80"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-execution-role",
+                    "custom": true,
+                    "id": "ps-render-lambda-role-4d2831d-20220715082058659600000001",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
+                        "role": "ps-render-lambda-role-4d2831d"
+                    },
+                    "outputs": {
+                        "id": "ps-render-lambda-role-4d2831d-20220715082058659600000001",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole",
+                        "role": "ps-render-lambda-role-4d2831d"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda",
+                    "custom": true,
+                    "id": "ps-render-subscriber-lambda-fb6ea02",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
+                        ],
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
+                                }
+                            },
+                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
+                        },
+                        "description": "Subscribes to render events on event bus",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "memorySize": 512,
+                        "name": "ps-render-subscriber-lambda-fb6ea02",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-6989b80",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 30,
+                        "vpcConfig": {
+                            "__defaults": [],
+                            "securityGroupIds": [],
+                            "subnetIds": []
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/subscribe/build"
+                                }
+                            },
+                            "hash": "ebf1c4b8bedc5a34f0d49d7068e4db8da6dd45fdd62504786f21e17ceda19e51"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Subscribes to render events on event bus",
+                        "environment": {
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "ps-render-subscriber-lambda-fb6ea02",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-15T08:21:36.600+0000",
+                        "layers": [],
+                        "memorySize": 512,
+                        "name": "ps-render-subscriber-lambda-fb6ea02",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-subscriber-role-6989b80",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "AConlf6a+1H9iBFraX6cHDM9tfCfsiTFCGC1Ia5gUXk=",
+                        "sourceCodeSize": 34279,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 30,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ],
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null,
+                        "vpcConfig": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda",
+                    "custom": true,
+                    "id": "ps-render-lambda-71b06a0",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
+                        ],
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "e6f0465b9c18aefc760daea9804b3d3e3d66b8cdcef1e1b20f1f0eeeab26e42b",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/render/build"
+                                }
+                            },
+                            "hash": "e6f0465b9c18aefc760daea9804b3d3e3d66b8cdcef1e1b20f1f0eeeab26e42b"
+                        },
+                        "description": "Renders pages and stores output in an S3 bucket of choice.",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "layers": [
+                            "arn:aws:lambda:us-east-1:764866452798:layer:chrome-aws-lambda:25"
+                        ],
+                        "memorySize": 2048,
+                        "name": "ps-render-lambda-71b06a0",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-lambda-role-4d2831d",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 300,
+                        "vpcConfig": {
+                            "__defaults": [],
+                            "securityGroupIds": [],
+                            "subnetIds": []
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "e6f0465b9c18aefc760daea9804b3d3e3d66b8cdcef1e1b20f1f0eeeab26e42b",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/render/build"
+                                }
+                            },
+                            "hash": "e6f0465b9c18aefc760daea9804b3d3e3d66b8cdcef1e1b20f1f0eeeab26e42b"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Renders pages and stores output in an S3 bucket of choice.",
+                        "environment": {
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "ps-render-lambda-71b06a0",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-15T08:21:08.655+0000",
+                        "layers": [
+                            "arn:aws:lambda:us-east-1:764866452798:layer:chrome-aws-lambda:25"
+                        ],
+                        "memorySize": 2048,
+                        "name": "ps-render-lambda-71b06a0",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-render-lambda-role-4d2831d",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "y66dy/N/XlAycg9AURBi1esOuylYrF6bDn0sUFrCHaI=",
+                        "sourceCodeSize": 75053,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 300,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "layers": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                        ],
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null,
+                        "vpcConfig": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-execution-role",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-75e1e93-20220715082058697700000002",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-flush-lambda-role-75e1e93"
+                    },
+                    "outputs": {
+                        "id": "ps-flush-lambda-role-75e1e93-20220715082058697700000002",
+                        "policyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+                        "role": "ps-flush-lambda-role-75e1e93"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda",
+                    "custom": true,
+                    "id": "ps-flush-lambda-ccac39b",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions"
+                        ],
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
+                                }
+                            },
+                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
+                        },
+                        "description": "Subscribes to flush events on event bus",
+                        "environment": {
+                            "__defaults": [],
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms",
+                                "__defaults": []
+                            }
+                        },
+                        "handler": "handler.handler",
+                        "memorySize": 512,
+                        "name": "ps-flush-lambda-ccac39b",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-75e1e93",
+                        "runtime": "nodejs14.x",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "timeout": 30,
+                        "vpcConfig": {
+                            "__defaults": [],
+                            "securityGroupIds": [],
+                            "subnetIds": []
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "assets": {
+                                ".": {
+                                    "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                                    "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3",
+                                    "path": "/Users/Shared/dev/dusk/webiny-cms/dusk-cms/.webiny/workspaces/apps/website/prerendering/flush/build"
+                                }
+                            },
+                            "hash": "9e0ca636f57d7e2a28b58cd78562d8c8ec82dcc2cd3258afea8a22125514cef3"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "Subscribes to flush events on event bus",
+                        "environment": {
+                            "variables": {
+                                "DB_TABLE": "webiny-af7d6a6",
+                                "DEBUG": "true",
+                                "WEBINY_ENV": "dev",
+                                "WEBINY_PROJECT_NAME": "dusk-cms"
+                            }
+                        },
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "handler.handler",
+                        "id": "ps-flush-lambda-ccac39b",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-07-15T08:21:25.087+0000",
+                        "layers": [],
+                        "memorySize": 512,
+                        "name": "ps-flush-lambda-ccac39b",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b:$LATEST",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::932784301473:role/ps-flush-lambda-role-75e1e93",
+                        "runtime": "nodejs14.x",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "POMR/wW+ajn6SP3e2B7/imxEbxaZbYptdOYVXgAkgvY=",
+                        "sourceCodeSize": 35607,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "timeout": 30,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "code": null,
+                        "description": null,
+                        "environment": null,
+                        "handler": null,
+                        "memorySize": null,
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                        ],
+                        "runtime": null,
+                        "tags": null,
+                        "timeout": null,
+                        "vpcConfig": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-flush-lambda-role-policy",
+                    "custom": true,
+                    "id": "ps-flush-lambda-role-75e1e93-20220715082132118900000006",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-flush-lambda-role-75e1e93"
+                    },
+                    "outputs": {
+                        "id": "ps-flush-lambda-role-75e1e93-20220715082132118900000006",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-flush-lambda-role-75e1e93"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-flush-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-subscriber-role-policy",
+                    "custom": true,
+                    "id": "ps-render-subscriber-role-6989b80-20220715082132146200000007",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-render-subscriber-role-6989b80"
+                    },
+                    "outputs": {
+                        "id": "ps-render-subscriber-role-6989b80-20220715082132146200000007",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-render-subscriber-role-6989b80"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-subscriber-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:iam/rolePolicyAttachment:RolePolicyAttachment::ps-render-lambda-role-policy",
+                    "custom": true,
+                    "id": "ps-render-lambda-role-4d2831d-20220715082133173800000008",
+                    "type": "aws:iam/rolePolicyAttachment:RolePolicyAttachment",
+                    "inputs": {
+                        "__defaults": [],
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-render-lambda-role-4d2831d"
+                    },
+                    "outputs": {
+                        "id": "ps-render-lambda-role-4d2831d-20220715082133173800000008",
+                        "policyArn": "arn:aws:iam::932784301473:policy/ps-lambda-policy-2b3b25f",
+                        "role": "ps-render-lambda-role-4d2831d"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy",
+                        "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "policyArn": [
+                            "urn:pulumi:dev::website::aws:iam/policy:Policy::ps-lambda-policy"
+                        ],
+                        "role": [
+                            "urn:pulumi:dev::website::aws:iam/role:Role::ps-render-lambda-role"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/permission:Permission::ps-render-subscriber-event-permission",
+                    "custom": true,
+                    "id": "ps-render-subscriber-event-permission-f14f89a",
+                    "type": "aws:lambda/permission:Permission",
+                    "inputs": {
+                        "__defaults": [
+                            "statementId"
+                        ],
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02",
+                        "principal": "events.amazonaws.com",
+                        "sourceArn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-render-subscriber-event-rule-f676942",
+                        "statementId": "ps-render-subscriber-event-permission-f14f89a"
+                    },
+                    "outputs": {
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02",
+                        "id": "ps-render-subscriber-event-permission-f14f89a",
+                        "principal": "events.amazonaws.com",
+                        "qualifier": "",
+                        "sourceArn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-render-subscriber-event-rule-f676942",
+                        "statementId": "ps-render-subscriber-event-permission-f14f89a",
+                        "statementIdPrefix": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "action": null,
+                        "function": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        ],
+                        "principal": null,
+                        "sourceArn": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventTarget:EventTarget::ps-render-subscriber-event-target",
+                    "custom": true,
+                    "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72-ps-render-subscriber-event-rule-f676942-ps-render-subscriber-event-target-2b3873c",
+                    "type": "aws:cloudwatch/eventTarget:EventTarget",
+                    "inputs": {
+                        "__defaults": [
+                            "targetId"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "rule": "ps-render-subscriber-event-rule-f676942",
+                        "targetId": "ps-render-subscriber-event-target-2b3873c"
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-subscriber-lambda-fb6ea02",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "httpTarget": null,
+                        "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72-ps-render-subscriber-event-rule-f676942-ps-render-subscriber-event-target-2b3873c",
+                        "input": "",
+                        "inputPath": "",
+                        "roleArn": "",
+                        "rule": "ps-render-subscriber-event-rule-f676942",
+                        "targetId": "ps-render-subscriber-event-target-2b3873c"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "arn": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-subscriber-lambda"
+                        ],
+                        "eventBusName": null,
+                        "rule": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-render-subscriber-event-rule"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/eventSourceMapping:EventSourceMapping::ps-render-event-source-mapping",
+                    "custom": true,
+                    "id": "580c4093-4e7e-4dac-ba07-52af4d381e01",
+                    "type": "aws:lambda/eventSourceMapping:EventSourceMapping",
+                    "inputs": {
+                        "__defaults": [
+                            "enabled"
+                        ],
+                        "batchSize": 1,
+                        "enabled": true,
+                        "eventSourceArn": "arn:aws:sqs:us-east-1:932784301473:ps-render-queue-a1d2676.fifo",
+                        "functionName": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0"
+                    },
+                    "outputs": {
+                        "batchSize": 1,
+                        "bisectBatchOnFunctionError": false,
+                        "destinationConfig": null,
+                        "enabled": true,
+                        "eventSourceArn": "arn:aws:sqs:us-east-1:932784301473:ps-render-queue-a1d2676.fifo",
+                        "filterCriteria": null,
+                        "functionArn": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0",
+                        "functionName": "arn:aws:lambda:us-east-1:932784301473:function:ps-render-lambda-71b06a0",
+                        "functionResponseTypes": [],
+                        "id": "580c4093-4e7e-4dac-ba07-52af4d381e01",
+                        "lastModified": "2022-07-15T08:21:27Z",
+                        "lastProcessingResult": "",
+                        "maximumBatchingWindowInSeconds": 0,
+                        "maximumRecordAgeInSeconds": 0,
+                        "maximumRetryAttempts": 0,
+                        "parallelizationFactor": 0,
+                        "queues": [],
+                        "selfManagedEventSource": null,
+                        "sourceAccessConfigurations": [],
+                        "startingPosition": "",
+                        "startingPositionTimestamp": "",
+                        "state": "Enabled",
+                        "stateTransitionReason": "USER_INITIATED",
+                        "topics": [],
+                        "tumblingWindowInSeconds": 0,
+                        "uuid": "580c4093-4e7e-4dac-ba07-52af4d381e01"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda",
+                        "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "batchSize": null,
+                        "eventSourceArn": [
+                            "urn:pulumi:dev::website::aws:sqs/queue:Queue::ps-render-queue"
+                        ],
+                        "functionName": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-render-lambda"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:cloudwatch/eventTarget:EventTarget::ps-flush-event-target",
+                    "custom": true,
+                    "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72-ps-flush-event-rule-2b18a3c-ps-flush-event-target-d9d7b97",
+                    "type": "aws:cloudwatch/eventTarget:EventTarget",
+                    "inputs": {
+                        "__defaults": [
+                            "targetId"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "rule": "ps-flush-event-rule-2b18a3c",
+                        "targetId": "ps-flush-event-target-d9d7b97"
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "arn": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b",
+                        "eventBusName": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72",
+                        "httpTarget": null,
+                        "id": "arn:aws:events:us-east-1:932784301473:event-bus/event-bus-15fcf72-ps-flush-event-rule-2b18a3c-ps-flush-event-target-d9d7b97",
+                        "input": "",
+                        "inputPath": "",
+                        "roleArn": "",
+                        "rule": "ps-flush-event-rule-2b18a3c",
+                        "targetId": "ps-flush-event-target-d9d7b97"
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "arn": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda"
+                        ],
+                        "eventBusName": null,
+                        "rule": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::website::aws:lambda/permission:Permission::ps-flush-event-permission",
+                    "custom": true,
+                    "id": "ps-flush-event-permission-47a5a9a",
+                    "type": "aws:lambda/permission:Permission",
+                    "inputs": {
+                        "__defaults": [
+                            "statementId"
+                        ],
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b",
+                        "principal": "events.amazonaws.com",
+                        "sourceArn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-flush-event-rule-2b18a3c",
+                        "statementId": "ps-flush-event-permission-47a5a9a"
+                    },
+                    "outputs": {
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:932784301473:function:ps-flush-lambda-ccac39b",
+                        "id": "ps-flush-event-permission-47a5a9a",
+                        "principal": "events.amazonaws.com",
+                        "qualifier": "",
+                        "sourceArn": "arn:aws:events:us-east-1:932784301473:rule/event-bus-15fcf72/ps-flush-event-rule-2b18a3c",
+                        "statementId": "ps-flush-event-permission-47a5a9a",
+                        "statementIdPrefix": ""
+                    },
+                    "parent": "urn:pulumi:dev::website::pulumi:pulumi:Stack::website-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule",
+                        "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda"
+                    ],
+                    "provider": "urn:pulumi:dev::website::pulumi:providers:aws::default_5_9_2::245fd1f6-7c83-4e3d-aee1-5d3c4652a285",
+                    "propertyDependencies": {
+                        "action": null,
+                        "function": [
+                            "urn:pulumi:dev::website::aws:lambda/function:Function::ps-flush-lambda"
+                        ],
+                        "principal": null,
+                        "sourceArn": [
+                            "urn:pulumi:dev::website::aws:cloudwatch/eventRule:EventRule::ps-flush-event-rule"
+                        ]
+                    },
+                    "sequenceNumber": 1
+                }
+            ]
+        }
+    }
+}

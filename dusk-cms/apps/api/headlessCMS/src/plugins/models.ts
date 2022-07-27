@@ -9,43 +9,28 @@ export default [
         icon: "fas/id-card-alt",
         description: ""
     }),
-    new CmsGroupPlugin({
-        id: "molecules",
-        name: "Molecules",
-        slug: "molecules",
-        icon: "fas/id-card-alt",
-        description: ""
-    }),
-    new CmsGroupPlugin({
-        id: "organisms",
-        name: "Organisms",
-        slug: "organisms",
-        icon: "fas/id-card-alt",
-        description: ""
-    }),
-    new CmsGroupPlugin({
-        id: "templates",
-        name: "Templates",
-        slug: "templates",
-        icon: "fas/id-card-alt",
-        description: ""
-    }),
     new CmsModelPlugin({
-        name: "Address",
-        modelId: "address",
+        name: "Atoms Address",
+        modelId: "AtomsAddress",
         description: "",
         fields: [
             {
-                fieldId: "idAddress",
-                id: "idAddress",
-                label: "Address Id",
-                type: "text"
+                fieldId: "idAtomsAddress",
+                id: "idAtomsAddress",
+                label: "Atoms Address Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsAddressVariant",
+                id: "atomsAddressVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -88,48 +73,53 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idAddress"
+        layout: [["idAtomsAddress"], ["atomsAddressVariant"]],
+        titleFieldId: "idAtomsAddress"
     }),
     new CmsModelPlugin({
-        name: "Balance",
-        modelId: "balance",
+        name: "Atoms Balance",
+        modelId: "AtomsBalance",
         description: "",
         fields: [
             {
-                fieldId: "idBalance",
-                id: "idBalance",
-                label: "Balance Id",
-                type: "text"
+                fieldId: "idAtomsBalance",
+                id: "idAtomsBalance",
+                label: "Atoms Balance Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idBalance"
+        layout: [["idAtomsBalance"]],
+        titleFieldId: "idAtomsBalance"
     }),
     new CmsModelPlugin({
-        name: "Chip",
-        modelId: "chip",
+        name: "Atoms Chip",
+        modelId: "AtomsChip",
         description: "",
         fields: [
             {
-                fieldId: "idChip",
-                id: "idChip",
-                label: "Chip Id",
-                type: "text"
+                fieldId: "idAtomsChip",
+                id: "idAtomsChip",
+                label: "Atoms Chip Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsChipVariant",
+                id: "atomsChipVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -167,168 +157,232 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idChip"
+        layout: [["idAtomsChip"], ["atomsChipVariant"]],
+        titleFieldId: "idAtomsChip"
     }),
     new CmsModelPlugin({
-        name: "DateText",
-        modelId: "date_text",
+        name: "Atoms Date Text",
+        modelId: "AtomsDateText",
         description: "",
         fields: [
             {
-                fieldId: "idDateText",
-                id: "idDateText",
-                label: "Date Text Id",
-                type: "text"
+                fieldId: "idAtomsDateText",
+                id: "idAtomsDateText",
+                label: "Atoms Date Text Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "time",
-                id: "time",
+                fieldId: "atomsDateTextTime",
+                id: "atomsDateTextTime",
                 label: "time",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "show_timestamp",
-                id: "show_timestamp",
+                fieldId: "atomsDateTextShowTimestamp",
+                id: "atomsDateTextShowTimestamp",
                 label: "showTimestamp",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "datetime_format",
-                id: "datetime_format",
+                fieldId: "atomsDateTextDatetimeFormat",
+                id: "atomsDateTextDatetimeFormat",
                 label: "datetimeFormat",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDateText"
+        layout: [
+            ["idAtomsDateText"],
+            ["atomsDateTextTime"],
+            ["atomsDateTextShowTimestamp"],
+            ["atomsDateTextDatetimeFormat"]
+        ],
+        titleFieldId: "idAtomsDateText"
     }),
     new CmsModelPlugin({
-        name: "DropDown",
-        modelId: "drop_down",
+        name: "Atoms Drop Down",
+        modelId: "AtomsDropDown",
         description: "",
         fields: [
             {
-                fieldId: "idDropDown",
-                id: "idDropDown",
-                label: "Drop Down Id",
-                type: "text"
+                fieldId: "idAtomsDropDown",
+                id: "idAtomsDropDown",
+                label: "Atoms Drop Down Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "options",
-                id: "options",
+                fieldId: "atomsDropDownOptions",
+                id: "atomsDropDownOptions",
                 label: "options",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "selected_index",
-                id: "selected_index",
+                fieldId: "atomsDropDownSelectedIndex",
+                id: "atomsDropDownSelectedIndex",
                 label: "selectedIndex",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "drop_up",
-                id: "drop_up",
+                fieldId: "atomsDropDownDropUp",
+                id: "atomsDropDownDropUp",
                 label: "dropUp",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "atomsDropDownDisabled",
+                id: "atomsDropDownDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDropDown"
+        layout: [
+            ["idAtomsDropDown"],
+            ["atomsDropDownOptions"],
+            ["atomsDropDownSelectedIndex"],
+            ["atomsDropDownDropUp"],
+            ["atomsDropDownDisabled"]
+        ],
+        titleFieldId: "idAtomsDropDown"
     }),
     new CmsModelPlugin({
-        name: "Gauge",
-        modelId: "gauge",
+        name: "Atoms Gauge",
+        modelId: "AtomsGauge",
         description: "",
         fields: [
             {
-                fieldId: "idGauge",
-                id: "idGauge",
-                label: "Gauge Id",
-                type: "text"
+                fieldId: "idAtomsGauge",
+                id: "idAtomsGauge",
+                label: "Atoms Gauge Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "max_value",
-                id: "max_value",
+                fieldId: "atomsGaugeMaxValue",
+                id: "atomsGaugeMaxValue",
                 label: "maxValue",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "min_value",
-                id: "min_value",
+                fieldId: "atomsGaugeMinValue",
+                id: "atomsGaugeMinValue",
                 label: "minValue",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "atomsGaugeValue",
+                id: "atomsGaugeValue",
                 label: "value",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "width",
-                id: "width",
+                fieldId: "atomsGaugeWidth",
+                id: "atomsGaugeWidth",
                 label: "width",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "tooltip",
-                id: "tooltip",
+                fieldId: "atomsGaugeTooltip",
+                id: "atomsGaugeTooltip",
                 label: "tooltip",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idGauge"
+        layout: [
+            ["idAtomsGauge"],
+            ["atomsGaugeMaxValue"],
+            ["atomsGaugeMinValue"],
+            ["atomsGaugeValue"],
+            ["atomsGaugeWidth"],
+            ["atomsGaugeTooltip"]
+        ],
+        titleFieldId: "idAtomsGauge"
     }),
     new CmsModelPlugin({
-        name: "Icon",
-        modelId: "icon",
+        name: "Atoms Icon",
+        modelId: "AtomsIcon",
         description: "",
         fields: [
             {
-                fieldId: "idIcon",
-                id: "idIcon",
-                label: "Icon Id",
-                type: "text"
+                fieldId: "idAtomsIcon",
+                id: "idAtomsIcon",
+                label: "Atoms Icon Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "atomsIconName",
+                id: "atomsIconName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "size",
-                id: "size",
+                fieldId: "atomsIconSize",
+                id: "atomsIconSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -362,10 +416,13 @@ export default [
                 }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsIconVariant",
+                id: "atomsIconVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -399,22 +456,31 @@ export default [
                 }
             },
             {
-                fieldId: "tooltip",
-                id: "tooltip",
+                fieldId: "atomsIconTooltip",
+                id: "atomsIconTooltip",
                 label: "tooltip",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "viewbox",
-                id: "viewbox",
+                fieldId: "atomsIconViewbox",
+                id: "atomsIconViewbox",
                 label: "viewbox",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "tooltip_visible",
-                id: "tooltip_visible",
+                fieldId: "atomsIconTooltipVisible",
+                id: "atomsIconTooltipVisible",
                 label: "tooltipVisible",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -452,27 +518,39 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idIcon"
+        layout: [
+            ["idAtomsIcon"],
+            ["atomsIconName"],
+            ["atomsIconSize"],
+            ["atomsIconVariant"],
+            ["atomsIconTooltip"],
+            ["atomsIconViewbox"],
+            ["atomsIconTooltipVisible"]
+        ],
+        titleFieldId: "idAtomsIcon"
     }),
     new CmsModelPlugin({
-        name: "LoadingIndicator",
-        modelId: "loading_indicator",
+        name: "Atoms Loading Indicator",
+        modelId: "AtomsLoadingIndicator",
         description: "",
         fields: [
             {
-                fieldId: "idLoadingIndicator",
-                id: "idLoadingIndicator",
-                label: "Loading Indicator Id",
-                type: "text"
+                fieldId: "idAtomsLoadingIndicator",
+                id: "idAtomsLoadingIndicator",
+                label: "Atoms Loading Indicator Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsLoadingIndicatorVariant",
+                id: "atomsLoadingIndicatorVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -506,58 +584,70 @@ export default [
                 }
             },
             {
-                fieldId: "duration",
-                id: "duration",
+                fieldId: "atomsLoadingIndicatorDuration",
+                id: "atomsLoadingIndicatorDuration",
                 label: "duration",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idLoadingIndicator"
+        layout: [
+            ["idAtomsLoadingIndicator"],
+            ["atomsLoadingIndicatorVariant"],
+            ["atomsLoadingIndicatorDuration"]
+        ],
+        titleFieldId: "idAtomsLoadingIndicator"
     }),
     new CmsModelPlugin({
-        name: "Logo",
-        modelId: "logo",
+        name: "Atoms Logo",
+        modelId: "AtomsLogo",
         description: "",
         fields: [
             {
-                fieldId: "idLogo",
-                id: "idLogo",
-                label: "Logo Id",
-                type: "text"
+                fieldId: "idAtomsLogo",
+                id: "idAtomsLogo",
+                label: "Atoms Logo Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idLogo"
+        layout: [["idAtomsLogo"]],
+        titleFieldId: "idAtomsLogo"
     }),
     new CmsModelPlugin({
-        name: "ProgressBar",
-        modelId: "progress_bar",
+        name: "Atoms Progress Bar",
+        modelId: "AtomsProgressBar",
         description: "",
         fields: [
             {
-                fieldId: "idProgressBar",
-                id: "idProgressBar",
-                label: "Progress Bar Id",
-                type: "text"
+                fieldId: "idAtomsProgressBar",
+                id: "idAtomsProgressBar",
+                label: "Atoms Progress Bar Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsProgressBarVariant",
+                id: "atomsProgressBarVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -591,100 +681,141 @@ export default [
                 }
             },
             {
-                fieldId: "steps",
-                id: "steps",
+                fieldId: "atomsProgressBarSteps",
+                id: "atomsProgressBarSteps",
                 label: "steps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "step",
-                id: "step",
+                fieldId: "atomsProgressBarStep",
+                id: "atomsProgressBarStep",
                 label: "step",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idProgressBar"
+        layout: [
+            ["idAtomsProgressBar"],
+            ["atomsProgressBarVariant"],
+            ["atomsProgressBarSteps"],
+            ["atomsProgressBarStep"]
+        ],
+        titleFieldId: "idAtomsProgressBar"
     }),
     new CmsModelPlugin({
-        name: "QrCode",
-        modelId: "qr_code",
+        name: "Atoms Qr Code",
+        modelId: "AtomsQrCode",
         description: "",
         fields: [
             {
-                fieldId: "idQrCode",
-                id: "idQrCode",
-                label: "Qr Code Id",
-                type: "text"
+                fieldId: "idAtomsQrCode",
+                id: "idAtomsQrCode",
+                label: "Atoms Qr Code Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "atomsQrCodeValue",
+                id: "atomsQrCodeValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "width",
-                id: "width",
+                fieldId: "atomsQrCodeWidth",
+                id: "atomsQrCodeWidth",
                 label: "width",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "qr_color",
-                id: "qr_color",
+                fieldId: "atomsQrCodeQrColor",
+                id: "atomsQrCodeQrColor",
                 label: "qrColor",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "bg_color",
-                id: "bg_color",
+                fieldId: "atomsQrCodeBgColor",
+                id: "atomsQrCodeBgColor",
                 label: "bgColor",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "align",
-                id: "align",
+                fieldId: "atomsQrCodeAlign",
+                id: "atomsQrCodeAlign",
                 label: "align",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idQrCode"
+        layout: [
+            ["idAtomsQrCode"],
+            ["atomsQrCodeValue"],
+            ["atomsQrCodeWidth"],
+            ["atomsQrCodeQrColor"],
+            ["atomsQrCodeBgColor"],
+            ["atomsQrCodeAlign"]
+        ],
+        titleFieldId: "idAtomsQrCode"
     }),
     new CmsModelPlugin({
-        name: "RichText",
-        modelId: "rich_text",
+        name: "Atoms Rich Text",
+        modelId: "AtomsRichText",
         description: "",
         fields: [
             {
-                fieldId: "idRichText",
-                id: "idRichText",
-                label: "Rich Text Id",
-                type: "text"
+                fieldId: "idAtomsRichText",
+                id: "idAtomsRichText",
+                label: "Atoms Rich Text Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "markdown",
-                id: "markdown",
+                fieldId: "atomsRichTextMarkdown",
+                id: "atomsRichTextMarkdown",
                 label: "markdown",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "size",
-                id: "size",
+                fieldId: "atomsRichTextSize",
+                id: "atomsRichTextSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -708,10 +839,13 @@ export default [
                 }
             },
             {
-                fieldId: "align",
-                id: "align",
+                fieldId: "atomsRichTextAlign",
+                id: "atomsRichTextAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -730,8 +864,8 @@ export default [
                 }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "atomsRichTextChildren",
+                id: "atomsRichTextChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -739,7 +873,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "accordion"
+                            modelId: "OrganismsAccordion"
                         }
                     ]
                 }
@@ -749,27 +883,37 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idRichText"
+        layout: [
+            ["idAtomsRichText"],
+            ["atomsRichTextMarkdown"],
+            ["atomsRichTextSize"],
+            ["atomsRichTextAlign"],
+            ["atomsRichTextChildren"]
+        ],
+        titleFieldId: "idAtomsRichText"
     }),
     new CmsModelPlugin({
-        name: "SkeletonLoader",
-        modelId: "skeleton_loader",
+        name: "Atoms Skeleton Loader",
+        modelId: "AtomsSkeletonLoader",
         description: "",
         fields: [
             {
-                fieldId: "idSkeletonLoader",
-                id: "idSkeletonLoader",
-                label: "Skeleton Loader Id",
-                type: "text"
+                fieldId: "idAtomsSkeletonLoader",
+                id: "idAtomsSkeletonLoader",
+                label: "Atoms Skeleton Loader Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsSkeletonLoaderVariant",
+                id: "atomsSkeletonLoaderVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -808,154 +952,228 @@ export default [
                 }
             },
             {
-                fieldId: "extra_small_screen_height",
-                id: "extra_small_screen_height",
+                fieldId: "atomsSkeletonLoaderExtraSmallScreenHeight",
+                id: "atomsSkeletonLoaderExtraSmallScreenHeight",
                 label: "extraSmallScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "small_screen_height",
-                id: "small_screen_height",
+                fieldId: "atomsSkeletonLoaderSmallScreenHeight",
+                id: "atomsSkeletonLoaderSmallScreenHeight",
                 label: "smallScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "medium_screen_height",
-                id: "medium_screen_height",
+                fieldId: "atomsSkeletonLoaderMediumScreenHeight",
+                id: "atomsSkeletonLoaderMediumScreenHeight",
                 label: "mediumScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "large_screen_height",
-                id: "large_screen_height",
+                fieldId: "atomsSkeletonLoaderLargeScreenHeight",
+                id: "atomsSkeletonLoaderLargeScreenHeight",
                 label: "largeScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "extra_large_screen_height",
-                id: "extra_large_screen_height",
+                fieldId: "atomsSkeletonLoaderExtraLargeScreenHeight",
+                id: "atomsSkeletonLoaderExtraLargeScreenHeight",
                 label: "extraLargeScreenHeight",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "jumbo_screen_height",
-                id: "jumbo_screen_height",
+                fieldId: "atomsSkeletonLoaderJumboScreenHeight",
+                id: "atomsSkeletonLoaderJumboScreenHeight",
                 label: "jumboScreenHeight",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "width",
-                id: "width",
+                fieldId: "atomsSkeletonLoaderWidth",
+                id: "atomsSkeletonLoaderWidth",
                 label: "width",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "pulse",
-                id: "pulse",
+                fieldId: "atomsSkeletonLoaderPulse",
+                id: "atomsSkeletonLoaderPulse",
                 label: "pulse",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "rounded",
-                id: "rounded",
+                fieldId: "atomsSkeletonLoaderRounded",
+                id: "atomsSkeletonLoaderRounded",
                 label: "rounded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idSkeletonLoader"
+        layout: [
+            ["idAtomsSkeletonLoader"],
+            ["atomsSkeletonLoaderVariant"],
+            ["atomsSkeletonLoaderExtraSmallScreenHeight"],
+            ["atomsSkeletonLoaderSmallScreenHeight"],
+            ["atomsSkeletonLoaderMediumScreenHeight"],
+            ["atomsSkeletonLoaderLargeScreenHeight"],
+            ["atomsSkeletonLoaderExtraLargeScreenHeight"],
+            ["atomsSkeletonLoaderJumboScreenHeight"],
+            ["atomsSkeletonLoaderWidth"],
+            ["atomsSkeletonLoaderPulse"],
+            ["atomsSkeletonLoaderRounded"]
+        ],
+        titleFieldId: "idAtomsSkeletonLoader"
     }),
     new CmsModelPlugin({
-        name: "Slider",
-        modelId: "slider",
+        name: "Atoms Slider",
+        modelId: "AtomsSlider",
         description: "",
         fields: [
             {
-                fieldId: "idSlider",
-                id: "idSlider",
-                label: "Slider Id",
-                type: "text"
+                fieldId: "idAtomsSlider",
+                id: "idAtomsSlider",
+                label: "Atoms Slider Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "min",
-                id: "min",
+                fieldId: "atomsSliderMin",
+                id: "atomsSliderMin",
                 label: "min",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "max",
-                id: "max",
+                fieldId: "atomsSliderMax",
+                id: "atomsSliderMax",
                 label: "max",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "atomsSliderValue",
+                id: "atomsSliderValue",
                 label: "value",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "atomsSliderId",
+                id: "atomsSliderId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idSlider"
+        layout: [
+            ["idAtomsSlider"],
+            ["atomsSliderMin"],
+            ["atomsSliderMax"],
+            ["atomsSliderValue"],
+            ["atomsSliderId"]
+        ],
+        titleFieldId: "idAtomsSlider"
     }),
     new CmsModelPlugin({
-        name: "TextField",
-        modelId: "text_field",
+        name: "Atoms Text Field",
+        modelId: "AtomsTextField",
         description: "",
         fields: [
             {
-                fieldId: "idTextField",
-                id: "idTextField",
-                label: "Text Field Id",
-                type: "text"
+                fieldId: "idAtomsTextField",
+                id: "idAtomsTextField",
+                label: "Atoms Text Field Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "atomsTextFieldValue",
+                id: "atomsTextFieldValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "atomsTextFieldDisabled",
+                id: "atomsTextFieldDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "multiline",
-                id: "multiline",
+                fieldId: "atomsTextFieldMultiline",
+                id: "atomsTextFieldMultiline",
                 label: "multiline",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "placeholder",
-                id: "placeholder",
+                fieldId: "atomsTextFieldPlaceholder",
+                id: "atomsTextFieldPlaceholder",
                 label: "placeholder",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "state",
-                id: "state",
+                fieldId: "atomsTextFieldState",
+                id: "atomsTextFieldState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -974,49 +1192,72 @@ export default [
                 }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "atomsTextFieldId",
+                id: "atomsTextFieldId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "atomsTextFieldName",
+                id: "atomsTextFieldName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "focused",
-                id: "focused",
+                fieldId: "atomsTextFieldFocused",
+                id: "atomsTextFieldFocused",
                 label: "focused",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idTextField"
+        layout: [
+            ["idAtomsTextField"],
+            ["atomsTextFieldValue"],
+            ["atomsTextFieldDisabled"],
+            ["atomsTextFieldMultiline"],
+            ["atomsTextFieldPlaceholder"],
+            ["atomsTextFieldState"],
+            ["atomsTextFieldId"],
+            ["atomsTextFieldName"],
+            ["atomsTextFieldFocused"]
+        ],
+        titleFieldId: "idAtomsTextField"
     }),
     new CmsModelPlugin({
-        name: "Toggle",
-        modelId: "toggle",
+        name: "Atoms Toggle",
+        modelId: "AtomsToggle",
         description: "",
         fields: [
             {
-                fieldId: "idToggle",
-                id: "idToggle",
-                label: "Toggle Id",
-                type: "text"
+                fieldId: "idAtomsToggle",
+                id: "idAtomsToggle",
+                label: "Atoms Toggle Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "atomsToggleVariant",
+                id: "atomsToggleVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1050,10 +1291,13 @@ export default [
                 }
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "atomsToggleType",
+                id: "atomsToggleType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1067,85 +1311,129 @@ export default [
                 }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "atomsToggleName",
+                id: "atomsToggleName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "checked",
-                id: "checked",
+                fieldId: "atomsToggleChecked",
+                id: "atomsToggleChecked",
                 label: "checked",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "atomsToggleId",
+                id: "atomsToggleId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "atomsToggleValue",
+                id: "atomsToggleValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "group",
-                id: "group",
+                fieldId: "atomsToggleGroup",
+                id: "atomsToggleGroup",
                 label: "group",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "atomsToggleDisabled",
+                id: "atomsToggleDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "selected",
-                id: "selected",
+                fieldId: "atomsToggleSelected",
+                id: "atomsToggleSelected",
                 label: "selected",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "on_icon",
-                id: "on_icon",
+                fieldId: "atomsToggleOnIcon",
+                id: "atomsToggleOnIcon",
                 label: "onIcon",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "off_icon",
-                id: "off_icon",
+                fieldId: "atomsToggleOffIcon",
+                id: "atomsToggleOffIcon",
                 label: "offIcon",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idToggle"
+        layout: [
+            ["idAtomsToggle"],
+            ["atomsToggleVariant"],
+            ["atomsToggleType"],
+            ["atomsToggleName"],
+            ["atomsToggleChecked"],
+            ["atomsToggleId"],
+            ["atomsToggleValue"],
+            ["atomsToggleGroup"],
+            ["atomsToggleDisabled"],
+            ["atomsToggleSelected"],
+            ["atomsToggleOnIcon"],
+            ["atomsToggleOffIcon"]
+        ],
+        titleFieldId: "idAtomsToggle"
     }),
     new CmsModelPlugin({
-        name: "TruncateText",
-        modelId: "truncate_text",
+        name: "Atoms Truncate Text",
+        modelId: "AtomsTruncateText",
         description: "",
         fields: [
             {
-                fieldId: "idTruncateText",
-                id: "idTruncateText",
-                label: "Truncate Text Id",
-                type: "text"
+                fieldId: "idAtomsTruncateText",
+                id: "idAtomsTruncateText",
+                label: "Atoms Truncate Text Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "width",
-                id: "width",
+                fieldId: "atomsTruncateTextWidth",
+                id: "atomsTruncateTextWidth",
                 label: "width",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1164,61 +1452,92 @@ export default [
                 }
             },
             {
-                fieldId: "title",
-                id: "title",
+                fieldId: "atomsTruncateTextTitle",
+                id: "atomsTruncateTextTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "text",
-                id: "text",
+                fieldId: "atomsTruncateTextText",
+                id: "atomsTruncateTextText",
                 label: "text",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idTruncateText"
+        layout: [
+            ["idAtomsTruncateText"],
+            ["atomsTruncateTextWidth"],
+            ["atomsTruncateTextTitle"],
+            ["atomsTruncateTextText"]
+        ],
+        titleFieldId: "idAtomsTruncateText"
+    }),
+    new CmsGroupPlugin({
+        id: "molecules",
+        name: "Molecules",
+        slug: "molecules",
+        icon: "fas/id-card-alt",
+        description: ""
     }),
     new CmsModelPlugin({
-        name: "Alert",
-        modelId: "alert",
+        name: "Molecules Alert",
+        modelId: "MoleculesAlert",
         description: "",
         fields: [
             {
-                fieldId: "idAlert",
-                id: "idAlert",
-                label: "Alert Id",
-                type: "text"
+                fieldId: "idMoleculesAlert",
+                id: "idMoleculesAlert",
+                label: "Molecules Alert Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "moleculesAlertValue",
+                id: "moleculesAlertValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesAlertId",
+                id: "moleculesAlertId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "dismissable",
-                id: "dismissable",
+                fieldId: "moleculesAlertDismissable",
+                id: "moleculesAlertDismissable",
                 label: "dismissable",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "moleculesAlertVariant",
+                id: "moleculesAlertVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1237,14 +1556,17 @@ export default [
                 }
             },
             {
-                fieldId: "modal",
-                id: "modal",
+                fieldId: "moleculesAlertModal",
+                id: "moleculesAlertModal",
                 label: "modal",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesAlertChildren",
+                id: "moleculesAlertChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -1252,7 +1574,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "icon"
+                            modelId: "AtomsIcon"
                         }
                     ]
                 }
@@ -1262,66 +1584,88 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idAlert"
+        layout: [
+            ["idMoleculesAlert"],
+            ["moleculesAlertValue"],
+            ["moleculesAlertId"],
+            ["moleculesAlertDismissable"],
+            ["moleculesAlertVariant"],
+            ["moleculesAlertModal"],
+            ["moleculesAlertChildren"]
+        ],
+        titleFieldId: "idMoleculesAlert"
     }),
     new CmsModelPlugin({
-        name: "Breadcrumb",
-        modelId: "breadcrumb",
+        name: "Molecules Breadcrumb",
+        modelId: "MoleculesBreadcrumb",
         description: "",
         fields: [
             {
-                fieldId: "idBreadcrumb",
-                id: "idBreadcrumb",
-                label: "Breadcrumb Id",
-                type: "text"
+                fieldId: "idMoleculesBreadcrumb",
+                id: "idMoleculesBreadcrumb",
+                label: "Molecules Breadcrumb Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "href",
-                id: "href",
+                fieldId: "moleculesBreadcrumbHref",
+                id: "moleculesBreadcrumbHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idBreadcrumb"
+        layout: [["idMoleculesBreadcrumb"], ["moleculesBreadcrumbHref"]],
+        titleFieldId: "idMoleculesBreadcrumb"
     }),
     new CmsModelPlugin({
-        name: "Button",
-        modelId: "button",
+        name: "Molecules Button",
+        modelId: "MoleculesButton",
         description: "",
         fields: [
             {
-                fieldId: "idButton",
-                id: "idButton",
-                label: "Button Id",
-                type: "text"
+                fieldId: "idMoleculesButton",
+                id: "idMoleculesButton",
+                label: "Molecules Button Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesButtonId",
+                id: "moleculesButtonId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "moleculesButtonValue",
+                id: "moleculesButtonValue",
                 label: "value",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "moleculesButtonVariant",
+                id: "moleculesButtonVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1355,10 +1699,13 @@ export default [
                 }
             },
             {
-                fieldId: "size",
-                id: "size",
+                fieldId: "moleculesButtonSize",
+                id: "moleculesButtonSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1372,50 +1719,71 @@ export default [
                 }
             },
             {
-                fieldId: "outline",
-                id: "outline",
+                fieldId: "moleculesButtonOutline",
+                id: "moleculesButtonOutline",
                 label: "outline",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "circle",
-                id: "circle",
+                fieldId: "moleculesButtonCircle",
+                id: "moleculesButtonCircle",
                 label: "circle",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "block",
-                id: "block",
+                fieldId: "moleculesButtonBlock",
+                id: "moleculesButtonBlock",
                 label: "block",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "href",
-                id: "href",
+                fieldId: "moleculesButtonHref",
+                id: "moleculesButtonHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "active",
-                id: "active",
+                fieldId: "moleculesButtonActive",
+                id: "moleculesButtonActive",
                 label: "active",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "moleculesButtonDisabled",
+                id: "moleculesButtonDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "label",
-                id: "label",
+                fieldId: "moleculesButtonLabel",
+                id: "moleculesButtonLabel",
                 label: "label",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesButtonChildren",
+                id: "moleculesButtonChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -1423,10 +1791,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "icon"
+                            modelId: "AtomsIcon"
                         },
                         {
-                            modelId: "label"
+                            modelId: "MoleculesLabel"
                         }
                     ]
                 }
@@ -1436,123 +1804,157 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idButton"
-    }),
-    new CmsModelPlugin({
-        name: "Chart",
-        modelId: "chart",
-        description: "",
-        fields: [
-            {
-                fieldId: "idChart",
-                id: "idChart",
-                label: "Chart Id",
-                type: "text"
-            },
-            {
-                fieldId: "type",
-                id: "type",
-                label: "type",
-                type: "text"
-            },
-            {
-                fieldId: "data",
-                id: "data",
-                label: "data",
-                type: "text"
-            },
-            {
-                fieldId: "aspect_ratio",
-                id: "aspect_ratio",
-                label: "aspectRatio",
-                type: "text"
-            }
+        layout: [
+            ["idMoleculesButton"],
+            ["moleculesButtonId"],
+            ["moleculesButtonValue"],
+            ["moleculesButtonVariant"],
+            ["moleculesButtonSize"],
+            ["moleculesButtonOutline"],
+            ["moleculesButtonCircle"],
+            ["moleculesButtonBlock"],
+            ["moleculesButtonHref"],
+            ["moleculesButtonActive"],
+            ["moleculesButtonDisabled"],
+            ["moleculesButtonLabel"],
+            ["moleculesButtonChildren"]
         ],
-        group: {
-            id: "molecules",
-            name: "Molecules"
-        },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idChart"
+        titleFieldId: "idMoleculesButton"
     }),
     new CmsModelPlugin({
-        name: "Content",
-        modelId: "content",
+        name: "Molecules Chart",
+        modelId: "MoleculesChart",
         description: "",
         fields: [
             {
-                fieldId: "idContent",
-                id: "idContent",
-                label: "Content Id",
-                type: "text"
-            },
-            {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
-                settings: {
-                    models: [
-                        {
-                            modelId: "address"
-                        },
-                        {
-                            modelId: "detail_list"
-                        },
-                        {
-                            modelId: "disclaimer_list"
-                        },
-                        {
-                            modelId: "form"
-                        },
-                        {
-                            modelId: "group"
-                        },
-                        {
-                            modelId: "heading"
-                        },
-                        {
-                            modelId: "qr_code"
-                        },
-                        {
-                            modelId: "rich_text"
-                        }
-                    ]
+                fieldId: "idMoleculesChart",
+                id: "idMoleculesChart",
+                label: "Molecules Chart Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
                 }
-            }
-        ],
-        group: {
-            id: "molecules",
-            name: "Molecules"
-        },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idContent"
-    }),
-    new CmsModelPlugin({
-        name: "Control",
-        modelId: "control",
-        description: "",
-        fields: [
-            {
-                fieldId: "idControl",
-                id: "idControl",
-                label: "Control Id",
-                type: "text"
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "moleculesChartType",
+                id: "moleculesChartType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "moleculesChartData",
+                id: "moleculesChartData",
+                label: "data",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "moleculesChartAspectRatio",
+                id: "moleculesChartAspectRatio",
+                label: "aspectRatio",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            }
+        ],
+        group: {
+            id: "molecules",
+            name: "Molecules"
+        },
+        layout: [
+            ["idMoleculesChart"],
+            ["moleculesChartType"],
+            ["moleculesChartData"],
+            ["moleculesChartAspectRatio"]
+        ],
+        titleFieldId: "idMoleculesChart"
+    }),
+    new CmsModelPlugin({
+        name: "Molecules Content",
+        modelId: "MoleculesContent",
+        description: "",
+        fields: [
+            {
+                fieldId: "idMoleculesContent",
+                id: "idMoleculesContent",
+                label: "Molecules Content Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "moleculesContentChildren",
+                id: "moleculesContentChildren",
+                label: "Nested elements",
+                type: "ref",
+                helpText: "Choose one or more nested models",
+                multipleValues: true,
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsAddress"
+                        },
+                        {
+                            modelId: "AtomsQrCode"
+                        },
+                        {
+                            modelId: "AtomsRichText"
+                        },
+                        {
+                            modelId: "MoleculesDetailList"
+                        },
+                        {
+                            modelId: "MoleculesDisclaimerList"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        },
+                        {
+                            modelId: "MoleculesHeading"
+                        },
+                        {
+                            modelId: "OrganismsForm"
+                        }
+                    ]
+                }
+            }
+        ],
+        group: {
+            id: "molecules",
+            name: "Molecules"
+        },
+        layout: [["idMoleculesContent"], ["moleculesContentChildren"]],
+        titleFieldId: "idMoleculesContent"
+    }),
+    new CmsModelPlugin({
+        name: "Molecules Control",
+        modelId: "MoleculesControl",
+        description: "",
+        fields: [
+            {
+                fieldId: "idMoleculesControl",
+                id: "idMoleculesControl",
+                label: "Molecules Control Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "moleculesControlType",
+                id: "moleculesControlType",
+                label: "type",
+                type: "text",
+                renderer: {
+                    name: "text-inputs"
+                },
                 multipleValues: false,
                 predefinedValues: {
                     enabled: true,
@@ -1560,10 +1962,13 @@ export default [
                 }
             },
             {
-                fieldId: "state",
-                id: "state",
+                fieldId: "moleculesControlState",
+                id: "moleculesControlState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1582,28 +1987,40 @@ export default [
                 }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesControlId",
+                id: "moleculesControlId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "label",
-                id: "label",
+                fieldId: "moleculesControlLabel",
+                id: "moleculesControlLabel",
                 label: "label",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "message",
-                id: "message",
+                fieldId: "moleculesControlMessage",
+                id: "moleculesControlMessage",
                 label: "message",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "width",
-                id: "width",
+                fieldId: "moleculesControlWidth",
+                id: "moleculesControlWidth",
                 label: "width",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1622,43 +2039,94 @@ export default [
                 }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "moleculesControlName",
+                id: "moleculesControlName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "group",
-                id: "group",
+                fieldId: "moleculesControlGroup",
+                id: "moleculesControlGroup",
                 label: "group",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
+            },
+            {
+                fieldId: "moleculesControlChildren",
+                id: "moleculesControlChildren",
+                label: "Nested elements",
+                type: "ref",
+                helpText: "Choose one or more nested models",
+                multipleValues: true,
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsTextField"
+                        },
+                        {
+                            modelId: "AtomsToggle"
+                        },
+                        {
+                            modelId: "MoleculesFileUpload"
+                        },
+                        {
+                            modelId: "MoleculesPasswordStrength"
+                        }
+                    ]
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idControl"
+        layout: [
+            ["idMoleculesControl"],
+            ["moleculesControlType"],
+            ["moleculesControlState"],
+            ["moleculesControlId"],
+            ["moleculesControlLabel"],
+            ["moleculesControlMessage"],
+            ["moleculesControlWidth"],
+            ["moleculesControlName"],
+            ["moleculesControlGroup"],
+            ["moleculesControlChildren"]
+        ],
+        titleFieldId: "idMoleculesControl"
     }),
     new CmsModelPlugin({
-        name: "CtaList",
-        modelId: "cta_list",
+        name: "Molecules Cta List",
+        modelId: "MoleculesCtaList",
         description: "",
         fields: [
             {
-                fieldId: "idCtaList",
-                id: "idCtaList",
-                label: "Cta List Id",
-                type: "text"
+                fieldId: "idMoleculesCtaList",
+                id: "idMoleculesCtaList",
+                label: "Molecules Cta List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "moleculesCtaListVariant",
+                id: "moleculesCtaListVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1692,10 +2160,13 @@ export default [
                 }
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "moleculesCtaListType",
+                id: "moleculesCtaListType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1713,31 +2184,35 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idCtaList"
+        layout: [["idMoleculesCtaList"], ["moleculesCtaListVariant"], ["moleculesCtaListType"]],
+        titleFieldId: "idMoleculesCtaList"
     }),
     new CmsModelPlugin({
-        name: "DetailList",
-        modelId: "detail_list",
+        name: "Molecules Detail List",
+        modelId: "MoleculesDetailList",
         description: "",
         fields: [
             {
-                fieldId: "idDetailList",
-                id: "idDetailList",
-                label: "Detail List Id",
-                type: "text"
+                fieldId: "idMoleculesDetailList",
+                id: "idMoleculesDetailList",
+                label: "Molecules Detail List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "split",
-                id: "split",
+                fieldId: "moleculesDetailListSplit",
+                id: "moleculesDetailListSplit",
                 label: "split",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesDetailListChildren",
+                id: "moleculesDetailListChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -1745,16 +2220,16 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "chip"
+                            modelId: "AtomsChip"
                         },
                         {
-                            modelId: "group"
+                            modelId: "AtomsIcon"
                         },
                         {
-                            modelId: "icon"
+                            modelId: "AtomsRichText"
                         },
                         {
-                            modelId: "rich_text"
+                            modelId: "MoleculesGroup"
                         }
                     ]
                 }
@@ -1764,25 +2239,30 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDetailList"
+        layout: [
+            ["idMoleculesDetailList"],
+            ["moleculesDetailListSplit"],
+            ["moleculesDetailListChildren"]
+        ],
+        titleFieldId: "idMoleculesDetailList"
     }),
     new CmsModelPlugin({
-        name: "DisclaimerList",
-        modelId: "disclaimer_list",
+        name: "Molecules Disclaimer List",
+        modelId: "MoleculesDisclaimerList",
         description: "",
         fields: [
             {
-                fieldId: "idDisclaimerList",
-                id: "idDisclaimerList",
-                label: "Disclaimer List Id",
-                type: "text"
+                fieldId: "idMoleculesDisclaimerList",
+                id: "idMoleculesDisclaimerList",
+                label: "Molecules Disclaimer List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesDisclaimerListChildren",
+                id: "moleculesDisclaimerListChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -1790,7 +2270,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "heading"
+                            modelId: "MoleculesHeading"
                         }
                     ]
                 }
@@ -1800,66 +2280,85 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDisclaimerList"
+        layout: [["idMoleculesDisclaimerList"], ["moleculesDisclaimerListChildren"]],
+        titleFieldId: "idMoleculesDisclaimerList"
     }),
     new CmsModelPlugin({
-        name: "FileUpload",
-        modelId: "file_upload",
+        name: "Molecules File Upload",
+        modelId: "MoleculesFileUpload",
         description: "",
         fields: [
             {
-                fieldId: "idFileUpload",
-                id: "idFileUpload",
-                label: "File Upload Id",
-                type: "text"
+                fieldId: "idMoleculesFileUpload",
+                id: "idMoleculesFileUpload",
+                label: "Molecules File Upload Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesFileUploadId",
+                id: "moleculesFileUploadId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "moleculesFileUploadName",
+                id: "moleculesFileUploadName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "uploaded",
-                id: "uploaded",
+                fieldId: "moleculesFileUploadUploaded",
+                id: "moleculesFileUploadUploaded",
                 label: "uploaded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idFileUpload"
+        layout: [
+            ["idMoleculesFileUpload"],
+            ["moleculesFileUploadId"],
+            ["moleculesFileUploadName"],
+            ["moleculesFileUploadUploaded"]
+        ],
+        titleFieldId: "idMoleculesFileUpload"
     }),
     new CmsModelPlugin({
-        name: "Group",
-        modelId: "group",
+        name: "Molecules Group",
+        modelId: "MoleculesGroup",
         description: "",
         fields: [
             {
-                fieldId: "idGroup",
-                id: "idGroup",
-                label: "Group Id",
-                type: "text"
+                fieldId: "idMoleculesGroup",
+                id: "idMoleculesGroup",
+                label: "Molecules Group Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "align",
-                id: "align",
+                fieldId: "moleculesGroupAlign",
+                id: "moleculesGroupAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1893,14 +2392,17 @@ export default [
                 }
             },
             {
-                fieldId: "grid",
-                id: "grid",
+                fieldId: "moleculesGroupGrid",
+                id: "moleculesGroupGrid",
                 label: "grid",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesGroupChildren",
+                id: "moleculesGroupChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -1908,13 +2410,13 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "button"
+                            modelId: "AtomsIcon"
                         },
                         {
-                            modelId: "card"
+                            modelId: "MoleculesButton"
                         },
                         {
-                            modelId: "icon"
+                            modelId: "OrganismsCard"
                         }
                     ]
                 }
@@ -1924,27 +2426,36 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idGroup"
+        layout: [
+            ["idMoleculesGroup"],
+            ["moleculesGroupAlign"],
+            ["moleculesGroupGrid"],
+            ["moleculesGroupChildren"]
+        ],
+        titleFieldId: "idMoleculesGroup"
     }),
     new CmsModelPlugin({
-        name: "Heading",
-        modelId: "heading",
+        name: "Molecules Heading",
+        modelId: "MoleculesHeading",
         description: "",
         fields: [
             {
-                fieldId: "idHeading",
-                id: "idHeading",
-                label: "Heading Id",
-                type: "text"
+                fieldId: "idMoleculesHeading",
+                id: "idMoleculesHeading",
+                label: "Molecules Heading Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "size",
-                id: "size",
+                fieldId: "moleculesHeadingSize",
+                id: "moleculesHeadingSize",
                 label: "size",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1958,10 +2469,13 @@ export default [
                 }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "moleculesHeadingVariant",
+                id: "moleculesHeadingVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -1980,10 +2494,13 @@ export default [
                 }
             },
             {
-                fieldId: "align",
-                id: "align",
+                fieldId: "moleculesHeadingAlign",
+                id: "moleculesHeadingAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2002,8 +2519,8 @@ export default [
                 }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesHeadingChildren",
+                id: "moleculesHeadingChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2011,16 +2528,16 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "button"
+                            modelId: "AtomsIcon"
                         },
                         {
-                            modelId: "group"
+                            modelId: "AtomsLoadingIndicator"
                         },
                         {
-                            modelId: "icon"
+                            modelId: "MoleculesButton"
                         },
                         {
-                            modelId: "loading_indicator"
+                            modelId: "MoleculesGroup"
                         }
                     ]
                 }
@@ -2030,87 +2547,108 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idHeading"
+        layout: [
+            ["idMoleculesHeading"],
+            ["moleculesHeadingSize"],
+            ["moleculesHeadingVariant"],
+            ["moleculesHeadingAlign"],
+            ["moleculesHeadingChildren"]
+        ],
+        titleFieldId: "idMoleculesHeading"
     }),
     new CmsModelPlugin({
-        name: "Item",
-        modelId: "item",
+        name: "Molecules Item",
+        modelId: "MoleculesItem",
         description: "",
         fields: [
             {
-                fieldId: "idItem",
-                id: "idItem",
-                label: "Item Id",
-                type: "text"
+                fieldId: "idMoleculesItem",
+                id: "idMoleculesItem",
+                label: "Molecules Item Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "icon_name",
-                id: "icon_name",
+                fieldId: "moleculesItemIconName",
+                id: "moleculesItemIconName",
                 label: "iconName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "icon_viewbox",
-                id: "icon_viewbox",
+                fieldId: "moleculesItemIconViewbox",
+                id: "moleculesItemIconViewbox",
                 label: "iconViewbox",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idItem"
+        layout: [["idMoleculesItem"], ["moleculesItemIconName"], ["moleculesItemIconViewbox"]],
+        titleFieldId: "idMoleculesItem"
     }),
     new CmsModelPlugin({
-        name: "Label",
-        modelId: "label",
+        name: "Molecules Label",
+        modelId: "MoleculesLabel",
         description: "",
         fields: [
             {
-                fieldId: "idLabel",
-                id: "idLabel",
-                label: "Label Id",
-                type: "text"
+                fieldId: "idMoleculesLabel",
+                id: "idMoleculesLabel",
+                label: "Molecules Label Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idLabel"
+        layout: [["idMoleculesLabel"]],
+        titleFieldId: "idMoleculesLabel"
     }),
     new CmsModelPlugin({
-        name: "MediaContent",
-        modelId: "media_content",
+        name: "Molecules Media Content",
+        modelId: "MoleculesMediaContent",
         description: "",
         fields: [
             {
-                fieldId: "idMediaContent",
-                id: "idMediaContent",
-                label: "Media Content Id",
-                type: "text"
+                fieldId: "idMoleculesMediaContent",
+                id: "idMoleculesMediaContent",
+                label: "Molecules Media Content Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "reverse",
-                id: "reverse",
+                fieldId: "moleculesMediaContentReverse",
+                id: "moleculesMediaContentReverse",
                 label: "reverse",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "align",
-                id: "align",
+                fieldId: "moleculesMediaContentAlign",
+                id: "moleculesMediaContentAlign",
                 label: "align",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2129,10 +2667,13 @@ export default [
                 }
             },
             {
-                fieldId: "valign",
-                id: "valign",
+                fieldId: "moleculesMediaContentValign",
+                id: "moleculesMediaContentValign",
                 label: "valign",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2151,8 +2692,8 @@ export default [
                 }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesMediaContentChildren",
+                id: "moleculesMediaContentChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2160,16 +2701,16 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "detail_list"
+                            modelId: "AtomsRichText"
                         },
                         {
-                            modelId: "group"
+                            modelId: "MoleculesDetailList"
                         },
                         {
-                            modelId: "heading"
+                            modelId: "MoleculesGroup"
                         },
                         {
-                            modelId: "rich_text"
+                            modelId: "MoleculesHeading"
                         }
                     ]
                 }
@@ -2179,27 +2720,37 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idMediaContent"
+        layout: [
+            ["idMoleculesMediaContent"],
+            ["moleculesMediaContentReverse"],
+            ["moleculesMediaContentAlign"],
+            ["moleculesMediaContentValign"],
+            ["moleculesMediaContentChildren"]
+        ],
+        titleFieldId: "idMoleculesMediaContent"
     }),
     new CmsModelPlugin({
-        name: "Menu",
-        modelId: "menu",
+        name: "Molecules Menu",
+        modelId: "MoleculesMenu",
         description: "",
         fields: [
             {
-                fieldId: "idMenu",
-                id: "idMenu",
-                label: "Menu Id",
-                type: "text"
+                fieldId: "idMoleculesMenu",
+                id: "idMoleculesMenu",
+                label: "Molecules Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "orientation",
-                id: "orientation",
+                fieldId: "moleculesMenuOrientation",
+                id: "moleculesMenuOrientation",
                 label: "orientation",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2213,20 +2764,26 @@ export default [
                 }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesMenuId",
+                id: "moleculesMenuId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "name",
-                id: "name",
+                fieldId: "moleculesMenuName",
+                id: "moleculesMenuName",
                 label: "name",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesMenuChildren",
+                id: "moleculesMenuChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2234,7 +2791,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "drop_down"
+                            modelId: "AtomsDropDown"
                         }
                     ]
                 }
@@ -2244,33 +2801,46 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idMenu"
+        layout: [
+            ["idMoleculesMenu"],
+            ["moleculesMenuOrientation"],
+            ["moleculesMenuId"],
+            ["moleculesMenuName"],
+            ["moleculesMenuChildren"]
+        ],
+        titleFieldId: "idMoleculesMenu"
     }),
     new CmsModelPlugin({
-        name: "Mnemonic",
-        modelId: "mnemonic",
+        name: "Molecules Mnemonic",
+        modelId: "MoleculesMnemonic",
         description: "",
         fields: [
             {
-                fieldId: "idMnemonic",
-                id: "idMnemonic",
-                label: "Mnemonic Id",
-                type: "text"
+                fieldId: "idMoleculesMnemonic",
+                id: "idMoleculesMnemonic",
+                label: "Molecules Mnemonic Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "seed",
-                id: "seed",
+                fieldId: "moleculesMnemonicSeed",
+                id: "moleculesMnemonicSeed",
                 label: "seed",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "moleculesMnemonicType",
+                id: "moleculesMnemonicType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2289,20 +2859,26 @@ export default [
                 }
             },
             {
-                fieldId: "length",
-                id: "length",
+                fieldId: "moleculesMnemonicLength",
+                id: "moleculesMnemonicLength",
                 label: "length",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "moleculesMnemonicDisabled",
+                id: "moleculesMnemonicDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesMnemonicChildren",
+                id: "moleculesMnemonicChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2310,10 +2886,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "button"
+                            modelId: "AtomsTextField"
                         },
                         {
-                            modelId: "text_field"
+                            modelId: "MoleculesButton"
                         }
                     ]
                 }
@@ -2323,49 +2899,69 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idMnemonic"
+        layout: [
+            ["idMoleculesMnemonic"],
+            ["moleculesMnemonicSeed"],
+            ["moleculesMnemonicType"],
+            ["moleculesMnemonicLength"],
+            ["moleculesMnemonicDisabled"],
+            ["moleculesMnemonicChildren"]
+        ],
+        titleFieldId: "idMoleculesMnemonic"
     }),
     new CmsModelPlugin({
-        name: "Pagination",
-        modelId: "pagination",
+        name: "Molecules Pagination",
+        modelId: "MoleculesPagination",
         description: "",
         fields: [
             {
-                fieldId: "idPagination",
-                id: "idPagination",
-                label: "Pagination Id",
-                type: "text"
+                fieldId: "idMoleculesPagination",
+                id: "idMoleculesPagination",
+                label: "Molecules Pagination Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "ref",
-                id: "ref",
+                fieldId: "moleculesPaginationRef",
+                id: "moleculesPaginationRef",
                 label: "ref",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "items",
-                id: "items",
+                fieldId: "moleculesPaginationItems",
+                id: "moleculesPaginationItems",
                 label: "items",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "items_per_page",
-                id: "items_per_page",
+                fieldId: "moleculesPaginationItemsPerPage",
+                id: "moleculesPaginationItemsPerPage",
                 label: "itemsPerPage",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "page_number",
-                id: "page_number",
+                fieldId: "moleculesPaginationPageNumber",
+                id: "moleculesPaginationPageNumber",
                 label: "pageNumber",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesPaginationChildren",
+                id: "moleculesPaginationChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2373,7 +2969,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "menu"
+                            modelId: "MoleculesMenu"
                         }
                     ]
                 }
@@ -2383,31 +2979,42 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idPagination"
+        layout: [
+            ["idMoleculesPagination"],
+            ["moleculesPaginationRef"],
+            ["moleculesPaginationItems"],
+            ["moleculesPaginationItemsPerPage"],
+            ["moleculesPaginationPageNumber"],
+            ["moleculesPaginationChildren"]
+        ],
+        titleFieldId: "idMoleculesPagination"
     }),
     new CmsModelPlugin({
-        name: "PasswordStrength",
-        modelId: "password_strength",
+        name: "Molecules Password Strength",
+        modelId: "MoleculesPasswordStrength",
         description: "",
         fields: [
             {
-                fieldId: "idPasswordStrength",
-                id: "idPasswordStrength",
-                label: "Password Strength Id",
-                type: "text"
+                fieldId: "idMoleculesPasswordStrength",
+                id: "idMoleculesPasswordStrength",
+                label: "Molecules Password Strength Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "password",
-                id: "password",
+                fieldId: "moleculesPasswordStrengthPassword",
+                id: "moleculesPasswordStrengthPassword",
                 label: "password",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesPasswordStrengthChildren",
+                id: "moleculesPasswordStrengthChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2415,7 +3022,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "progress_bar"
+                            modelId: "AtomsProgressBar"
                         }
                     ]
                 }
@@ -2425,31 +3032,39 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idPasswordStrength"
+        layout: [
+            ["idMoleculesPasswordStrength"],
+            ["moleculesPasswordStrengthPassword"],
+            ["moleculesPasswordStrengthChildren"]
+        ],
+        titleFieldId: "idMoleculesPasswordStrength"
     }),
     new CmsModelPlugin({
-        name: "Statistic",
-        modelId: "statistic",
+        name: "Molecules Statistic",
+        modelId: "MoleculesStatistic",
         description: "",
         fields: [
             {
-                fieldId: "idStatistic",
-                id: "idStatistic",
-                label: "Statistic Id",
-                type: "text"
+                fieldId: "idMoleculesStatistic",
+                id: "idMoleculesStatistic",
+                label: "Molecules Statistic Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "title",
-                id: "title",
+                fieldId: "moleculesStatisticTitle",
+                id: "moleculesStatisticTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "moleculesStatisticChildren",
+                id: "moleculesStatisticChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2457,7 +3072,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "chip"
+                            modelId: "AtomsChip"
                         }
                     ]
                 }
@@ -2467,27 +3082,35 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idStatistic"
+        layout: [
+            ["idMoleculesStatistic"],
+            ["moleculesStatisticTitle"],
+            ["moleculesStatisticChildren"]
+        ],
+        titleFieldId: "idMoleculesStatistic"
     }),
     new CmsModelPlugin({
-        name: "StepList",
-        modelId: "step_list",
+        name: "Molecules Step List",
+        modelId: "MoleculesStepList",
         description: "",
         fields: [
             {
-                fieldId: "idStepList",
-                id: "idStepList",
-                label: "Step List Id",
-                type: "text"
+                fieldId: "idMoleculesStepList",
+                id: "idMoleculesStepList",
+                label: "Molecules Step List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "moleculesStepListVariant",
+                id: "moleculesStepListVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2525,77 +3148,106 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idStepList"
+        layout: [["idMoleculesStepList"], ["moleculesStepListVariant"]],
+        titleFieldId: "idMoleculesStepList"
     }),
     new CmsModelPlugin({
-        name: "Word",
-        modelId: "word",
+        name: "Molecules Word",
+        modelId: "MoleculesWord",
         description: "",
         fields: [
             {
-                fieldId: "idWord",
-                id: "idWord",
-                label: "Word Id",
-                type: "text"
+                fieldId: "idMoleculesWord",
+                id: "idMoleculesWord",
+                label: "Molecules Word Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "value",
-                id: "value",
+                fieldId: "moleculesWordValue",
+                id: "moleculesWordValue",
                 label: "value",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "index",
-                id: "index",
+                fieldId: "moleculesWordIndex",
+                id: "moleculesWordIndex",
                 label: "index",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "moleculesWordDisabled",
+                id: "moleculesWordDisabled",
                 label: "disabled",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "moleculesWordId",
+                id: "moleculesWordId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWord"
+        layout: [
+            ["idMoleculesWord"],
+            ["moleculesWordValue"],
+            ["moleculesWordIndex"],
+            ["moleculesWordDisabled"],
+            ["moleculesWordId"]
+        ],
+        titleFieldId: "idMoleculesWord"
     }),
-
+    new CmsGroupPlugin({
+        id: "organisms",
+        name: "Organisms",
+        slug: "organisms",
+        icon: "fas/id-card-alt",
+        description: ""
+    }),
     new CmsModelPlugin({
-        name: "Accordion",
-        modelId: "accordion",
+        name: "Organisms Accordion",
+        modelId: "OrganismsAccordion",
         description: "",
         fields: [
             {
-                fieldId: "idAccordion",
-                id: "idAccordion",
-                label: "Accordion Id",
-                type: "text"
+                fieldId: "idOrganismsAccordion",
+                id: "idOrganismsAccordion",
+                label: "Organisms Accordion Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "multiselect",
-                id: "multiselect",
+                fieldId: "organismsAccordionMultiselect",
+                id: "organismsAccordionMultiselect",
                 label: "multiselect",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsAccordionChildren",
+                id: "organismsAccordionChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2603,7 +3255,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "button"
+                            modelId: "MoleculesButton"
                         }
                     ]
                 }
@@ -2613,81 +3265,97 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idAccordion"
+        layout: [
+            ["idOrganismsAccordion"],
+            ["organismsAccordionMultiselect"],
+            ["organismsAccordionChildren"]
+        ],
+        titleFieldId: "idOrganismsAccordion"
     }),
     new CmsModelPlugin({
-        name: "Actions",
-        modelId: "actions",
+        name: "Organisms Actions",
+        modelId: "OrganismsActions",
         description: "",
         fields: [
             {
-                fieldId: "idActions",
-                id: "idActions",
-                label: "Actions Id",
-                type: "text"
+                fieldId: "idOrganismsActions",
+                id: "idOrganismsActions",
+                label: "Organisms Actions Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idActions"
+        layout: [["idOrganismsActions"]],
+        titleFieldId: "idOrganismsActions"
     }),
     new CmsModelPlugin({
-        name: "AppsMenu",
-        modelId: "apps_menu",
+        name: "Organisms Apps Menu",
+        modelId: "OrganismsAppsMenu",
         description: "",
         fields: [
             {
-                fieldId: "idAppsMenu",
-                id: "idAppsMenu",
-                label: "Apps Menu Id",
-                type: "text"
+                fieldId: "idOrganismsAppsMenu",
+                id: "idOrganismsAppsMenu",
+                label: "Organisms Apps Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "apps",
-                id: "apps",
+                fieldId: "organismsAppsMenuApps",
+                id: "organismsAppsMenuApps",
                 label: "apps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "app_name",
-                id: "app_name",
+                fieldId: "organismsAppsMenuAppName",
+                id: "organismsAppsMenuAppName",
                 label: "appName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idAppsMenu"
+        layout: [["idOrganismsAppsMenu"], ["organismsAppsMenuApps"], ["organismsAppsMenuAppName"]],
+        titleFieldId: "idOrganismsAppsMenu"
     }),
     new CmsModelPlugin({
-        name: "Card",
-        modelId: "card",
+        name: "Organisms Card",
+        modelId: "OrganismsCard",
         description: "",
         fields: [
             {
-                fieldId: "idCard",
-                id: "idCard",
-                label: "Card Id",
-                type: "text"
+                fieldId: "idOrganismsCard",
+                id: "idOrganismsCard",
+                label: "Organisms Card Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "organismsCardVariant",
+                id: "organismsCardVariant",
                 label: "variant",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2721,10 +3389,13 @@ export default [
                 }
             },
             {
-                fieldId: "state",
-                id: "state",
+                fieldId: "organismsCardState",
+                id: "organismsCardState",
                 label: "state",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -2743,26 +3414,35 @@ export default [
                 }
             },
             {
-                fieldId: "href",
-                id: "href",
+                fieldId: "organismsCardHref",
+                id: "organismsCardHref",
                 label: "href",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "organismsCardDisabled",
+                id: "organismsCardDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "overflow",
-                id: "overflow",
+                fieldId: "organismsCardOverflow",
+                id: "organismsCardOverflow",
                 label: "overflow",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsCardChildren",
+                id: "organismsCardChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2770,34 +3450,34 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "accordion"
+                            modelId: "AtomsRichText"
                         },
                         {
-                            modelId: "breadcrumb"
+                            modelId: "MoleculesBreadcrumb"
                         },
                         {
-                            modelId: "content"
+                            modelId: "MoleculesContent"
                         },
                         {
-                            modelId: "detail_list"
+                            modelId: "MoleculesDetailList"
                         },
                         {
-                            modelId: "disclaimer_list"
+                            modelId: "MoleculesDisclaimerList"
                         },
                         {
-                            modelId: "heading"
+                            modelId: "MoleculesHeading"
                         },
                         {
-                            modelId: "media_content"
+                            modelId: "MoleculesMediaContent"
                         },
                         {
-                            modelId: "mnemonic"
+                            modelId: "MoleculesMnemonic"
                         },
                         {
-                            modelId: "rich_text"
+                            modelId: "OrganismsAccordion"
                         },
                         {
-                            modelId: "wizard"
+                            modelId: "OrganismsWizard"
                         }
                     ]
                 }
@@ -2807,157 +3487,224 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idCard"
+        layout: [
+            ["idOrganismsCard"],
+            ["organismsCardVariant"],
+            ["organismsCardState"],
+            ["organismsCardHref"],
+            ["organismsCardDisabled"],
+            ["organismsCardOverflow"],
+            ["organismsCardChildren"]
+        ],
+        titleFieldId: "idOrganismsCard"
     }),
     new CmsModelPlugin({
-        name: "CategoryMenu",
-        modelId: "category_menu",
+        name: "Organisms Category Menu",
+        modelId: "OrganismsCategoryMenu",
         description: "",
         fields: [
             {
-                fieldId: "idCategoryMenu",
-                id: "idCategoryMenu",
-                label: "Category Menu Id",
-                type: "text"
+                fieldId: "idOrganismsCategoryMenu",
+                id: "idOrganismsCategoryMenu",
+                label: "Organisms Category Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "category",
-                id: "category",
+                fieldId: "organismsCategoryMenuCategory",
+                id: "organismsCategoryMenuCategory",
                 label: "category",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idCategoryMenu"
+        layout: [["idOrganismsCategoryMenu"], ["organismsCategoryMenuCategory"]],
+        titleFieldId: "idOrganismsCategoryMenu"
     }),
     new CmsModelPlugin({
-        name: "CookieBanner",
-        modelId: "cookie_banner",
+        name: "Organisms Cookie Banner",
+        modelId: "OrganismsCookieBanner",
         description: "",
         fields: [
             {
-                fieldId: "idCookieBanner",
-                id: "idCookieBanner",
-                label: "Cookie Banner Id",
-                type: "text"
+                fieldId: "idOrganismsCookieBanner",
+                id: "idOrganismsCookieBanner",
+                label: "Organisms Cookie Banner Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "organismsCookieBannerId",
+                id: "organismsCookieBannerId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "cookie_name",
-                id: "cookie_name",
+                fieldId: "organismsCookieBannerCookieName",
+                id: "organismsCookieBannerCookieName",
                 label: "cookieName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "dark_mode_cookie_name",
-                id: "dark_mode_cookie_name",
+                fieldId: "organismsCookieBannerDarkModeCookieName",
+                id: "organismsCookieBannerDarkModeCookieName",
                 label: "darkModeCookieName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "cookie_config",
-                id: "cookie_config",
+                fieldId: "organismsCookieBannerCookieConfig",
+                id: "organismsCookieBannerCookieConfig",
                 label: "cookieConfig",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "accept_label",
-                id: "accept_label",
+                fieldId: "organismsCookieBannerAcceptLabel",
+                id: "organismsCookieBannerAcceptLabel",
                 label: "acceptLabel",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "settings_label",
-                id: "settings_label",
+                fieldId: "organismsCookieBannerSettingsLabel",
+                id: "organismsCookieBannerSettingsLabel",
                 label: "settingsLabel",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "show_banner",
-                id: "show_banner",
+                fieldId: "organismsCookieBannerShowBanner",
+                id: "organismsCookieBannerShowBanner",
                 label: "showBanner",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "show_settings",
-                id: "show_settings",
+                fieldId: "organismsCookieBannerShowSettings",
+                id: "organismsCookieBannerShowSettings",
                 label: "showSettings",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "close_scrim",
-                id: "close_scrim",
+                fieldId: "organismsCookieBannerCloseScrim",
+                id: "organismsCookieBannerCloseScrim",
                 label: "closeScrim",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idCookieBanner"
+        layout: [
+            ["idOrganismsCookieBanner"],
+            ["organismsCookieBannerId"],
+            ["organismsCookieBannerCookieName"],
+            ["organismsCookieBannerDarkModeCookieName"],
+            ["organismsCookieBannerCookieConfig"],
+            ["organismsCookieBannerAcceptLabel"],
+            ["organismsCookieBannerSettingsLabel"],
+            ["organismsCookieBannerShowBanner"],
+            ["organismsCookieBannerShowSettings"],
+            ["organismsCookieBannerCloseScrim"]
+        ],
+        titleFieldId: "idOrganismsCookieBanner"
     }),
     new CmsModelPlugin({
-        name: "Datum",
-        modelId: "datum",
+        name: "Organisms Datum",
+        modelId: "OrganismsDatum",
         description: "",
         fields: [
             {
-                fieldId: "idDatum",
-                id: "idDatum",
-                label: "Datum Id",
-                type: "text"
+                fieldId: "idOrganismsDatum",
+                id: "idOrganismsDatum",
+                label: "Organisms Datum Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "organismsDatumVariant",
+                id: "organismsDatumVariant",
                 label: "variant",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "data_key",
-                id: "data_key",
+                fieldId: "organismsDatumDataKey",
+                id: "organismsDatumDataKey",
                 label: "dataKey",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "hidden",
-                id: "hidden",
+                fieldId: "organismsDatumHidden",
+                id: "organismsDatumHidden",
                 label: "hidden",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "colspan",
-                id: "colspan",
+                fieldId: "organismsDatumColspan",
+                id: "organismsDatumColspan",
                 label: "colspan",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "organismsDatumId",
+                id: "organismsDatumId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsDatumChildren",
+                id: "organismsDatumChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -2965,16 +3712,16 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "chip"
+                            modelId: "AtomsChip"
                         },
                         {
-                            modelId: "heading"
+                            modelId: "AtomsLoadingIndicator"
                         },
                         {
-                            modelId: "loading_indicator"
+                            modelId: "AtomsTruncateText"
                         },
                         {
-                            modelId: "truncate_text"
+                            modelId: "MoleculesHeading"
                         }
                     ]
                 }
@@ -2984,72 +3731,103 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDatum"
+        layout: [
+            ["idOrganismsDatum"],
+            ["organismsDatumVariant"],
+            ["organismsDatumDataKey"],
+            ["organismsDatumHidden"],
+            ["organismsDatumColspan"],
+            ["organismsDatumId"],
+            ["organismsDatumChildren"]
+        ],
+        titleFieldId: "idOrganismsDatum"
     }),
     new CmsModelPlugin({
-        name: "ErrorBlock",
-        modelId: "error_block",
+        name: "Organisms Error Block",
+        modelId: "OrganismsErrorBlock",
         description: "",
         fields: [
             {
-                fieldId: "idErrorBlock",
-                id: "idErrorBlock",
-                label: "Error Block Id",
-                type: "text"
+                fieldId: "idOrganismsErrorBlock",
+                id: "idOrganismsErrorBlock",
+                label: "Organisms Error Block Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "code",
-                id: "code",
+                fieldId: "organismsErrorBlockCode",
+                id: "organismsErrorBlockCode",
                 label: "code",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "message",
-                id: "message",
+                fieldId: "organismsErrorBlockMessage",
+                id: "organismsErrorBlockMessage",
                 label: "message",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "stack",
-                id: "stack",
+                fieldId: "organismsErrorBlockStack",
+                id: "organismsErrorBlockStack",
                 label: "stack",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "dev",
-                id: "dev",
+                fieldId: "organismsErrorBlockDev",
+                id: "organismsErrorBlockDev",
                 label: "dev",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idErrorBlock"
+        layout: [
+            ["idOrganismsErrorBlock"],
+            ["organismsErrorBlockCode"],
+            ["organismsErrorBlockMessage"],
+            ["organismsErrorBlockStack"],
+            ["organismsErrorBlockDev"]
+        ],
+        titleFieldId: "idOrganismsErrorBlock"
     }),
     new CmsModelPlugin({
-        name: "Footer",
-        modelId: "footer",
+        name: "Organisms Footer",
+        modelId: "OrganismsFooter",
         description: "",
         fields: [
             {
-                fieldId: "idFooter",
-                id: "idFooter",
-                label: "Footer Id",
-                type: "text"
+                fieldId: "idOrganismsFooter",
+                id: "idOrganismsFooter",
+                label: "Organisms Footer Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "organismsFooterType",
+                id: "organismsFooterType",
                 label: "type",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3063,20 +3841,26 @@ export default [
                 }
             },
             {
-                fieldId: "social",
-                id: "social",
+                fieldId: "organismsFooterSocial",
+                id: "organismsFooterSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "categories",
-                id: "categories",
+                fieldId: "organismsFooterCategories",
+                id: "organismsFooterCategories",
                 label: "categories",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsFooterChildren",
+                id: "organismsFooterChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3084,13 +3868,13 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "icon"
+                            modelId: "AtomsIcon"
                         },
                         {
-                            modelId: "logo"
+                            modelId: "AtomsLogo"
                         },
                         {
-                            modelId: "menu"
+                            modelId: "MoleculesMenu"
                         }
                     ]
                 }
@@ -3100,49 +3884,68 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idFooter"
+        layout: [
+            ["idOrganismsFooter"],
+            ["organismsFooterType"],
+            ["organismsFooterSocial"],
+            ["organismsFooterCategories"],
+            ["organismsFooterChildren"]
+        ],
+        titleFieldId: "idOrganismsFooter"
     }),
     new CmsModelPlugin({
-        name: "Form",
-        modelId: "form",
+        name: "Organisms Form",
+        modelId: "OrganismsForm",
         description: "",
         fields: [
             {
-                fieldId: "idForm",
-                id: "idForm",
-                label: "Form Id",
-                type: "text"
+                fieldId: "idOrganismsForm",
+                id: "idOrganismsForm",
+                label: "Organisms Form Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "submit_handler",
-                id: "submit_handler",
+                fieldId: "organismsFormSubmitHandler",
+                id: "organismsFormSubmitHandler",
                 label: "submitHandler",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "schema",
-                id: "schema",
+                fieldId: "organismsFormSchema",
+                id: "organismsFormSchema",
                 label: "schema",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "fields",
-                id: "fields",
+                fieldId: "organismsFormFields",
+                id: "organismsFormFields",
                 label: "fields",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "submitted",
-                id: "submitted",
+                fieldId: "organismsFormSubmitted",
+                id: "organismsFormSubmitted",
                 label: "submitted",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsFormChildren",
+                id: "organismsFormChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3150,10 +3953,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "file_upload"
+                            modelId: "MoleculesFileUpload"
                         },
                         {
-                            modelId: "group"
+                            modelId: "MoleculesGroup"
                         }
                     ]
                 }
@@ -3163,25 +3966,33 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idForm"
+        layout: [
+            ["idOrganismsForm"],
+            ["organismsFormSubmitHandler"],
+            ["organismsFormSchema"],
+            ["organismsFormFields"],
+            ["organismsFormSubmitted"],
+            ["organismsFormChildren"]
+        ],
+        titleFieldId: "idOrganismsForm"
     }),
     new CmsModelPlugin({
-        name: "Hero",
-        modelId: "hero",
+        name: "Organisms Hero",
+        modelId: "OrganismsHero",
         description: "",
         fields: [
             {
-                fieldId: "idHero",
-                id: "idHero",
-                label: "Hero Id",
-                type: "text"
+                fieldId: "idOrganismsHero",
+                id: "idOrganismsHero",
+                label: "Organisms Hero Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsHeroChildren",
+                id: "organismsHeroChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3189,16 +4000,16 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "alert"
+                            modelId: "AtomsRichText"
                         },
                         {
-                            modelId: "button"
+                            modelId: "MoleculesAlert"
                         },
                         {
-                            modelId: "heading"
+                            modelId: "MoleculesButton"
                         },
                         {
-                            modelId: "rich_text"
+                            modelId: "MoleculesHeading"
                         }
                     ]
                 }
@@ -3208,226 +4019,287 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idHero"
+        layout: [["idOrganismsHero"], ["organismsHeroChildren"]],
+        titleFieldId: "idOrganismsHero"
     }),
     new CmsModelPlugin({
-        name: "Item",
-        modelId: "item",
+        name: "Organisms Item",
+        modelId: "OrganismsItem",
         description: "",
         fields: [
             {
-                fieldId: "idItem",
-                id: "idItem",
-                label: "Item Id",
-                type: "text"
+                fieldId: "idOrganismsItem",
+                id: "idOrganismsItem",
+                label: "Organisms Item Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "organismsItemId",
+                id: "organismsItemId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "title",
-                id: "title",
+                fieldId: "organismsItemTitle",
+                id: "organismsItemTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "expanded",
-                id: "expanded",
+                fieldId: "organismsItemExpanded",
+                id: "organismsItemExpanded",
                 label: "expanded",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "disabled",
-                id: "disabled",
+                fieldId: "organismsItemDisabled",
+                id: "organismsItemDisabled",
                 label: "disabled",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "ref",
-                id: "ref",
+                fieldId: "organismsItemRef",
+                id: "organismsItemRef",
                 label: "ref",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idItem"
+        layout: [
+            ["idOrganismsItem"],
+            ["organismsItemId"],
+            ["organismsItemTitle"],
+            ["organismsItemExpanded"],
+            ["organismsItemDisabled"],
+            ["organismsItemRef"]
+        ],
+        titleFieldId: "idOrganismsItem"
     }),
     new CmsModelPlugin({
-        name: "LegalMenu",
-        modelId: "legal_menu",
+        name: "Organisms Legal Menu",
+        modelId: "OrganismsLegalMenu",
         description: "",
         fields: [
             {
-                fieldId: "idLegalMenu",
-                id: "idLegalMenu",
-                label: "Legal Menu Id",
-                type: "text"
+                fieldId: "idOrganismsLegalMenu",
+                id: "idOrganismsLegalMenu",
+                label: "Organisms Legal Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "orientation",
-                id: "orientation",
+                fieldId: "organismsLegalMenuOrientation",
+                id: "organismsLegalMenuOrientation",
                 label: "orientation",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idLegalMenu"
+        layout: [["idOrganismsLegalMenu"], ["organismsLegalMenuOrientation"]],
+        titleFieldId: "idOrganismsLegalMenu"
     }),
     new CmsModelPlugin({
-        name: "LinksMenu",
-        modelId: "links_menu",
+        name: "Organisms Links Menu",
+        modelId: "OrganismsLinksMenu",
         description: "",
         fields: [
             {
-                fieldId: "idLinksMenu",
-                id: "idLinksMenu",
-                label: "Links Menu Id",
-                type: "text"
+                fieldId: "idOrganismsLinksMenu",
+                id: "idOrganismsLinksMenu",
+                label: "Organisms Links Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "links",
-                id: "links",
+                fieldId: "organismsLinksMenuLinks",
+                id: "organismsLinksMenuLinks",
                 label: "links",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idLinksMenu"
+        layout: [["idOrganismsLinksMenu"], ["organismsLinksMenuLinks"]],
+        titleFieldId: "idOrganismsLinksMenu"
     }),
     new CmsModelPlugin({
-        name: "Maximal",
-        modelId: "maximal",
+        name: "Organisms Maximal",
+        modelId: "OrganismsMaximal",
         description: "",
         fields: [
             {
-                fieldId: "idMaximal",
-                id: "idMaximal",
-                label: "Maximal Id",
-                type: "text"
+                fieldId: "idOrganismsMaximal",
+                id: "idOrganismsMaximal",
+                label: "Organisms Maximal Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "categories",
-                id: "categories",
+                fieldId: "organismsMaximalCategories",
+                id: "organismsMaximalCategories",
                 label: "categories",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idMaximal"
+        layout: [["idOrganismsMaximal"], ["organismsMaximalCategories"]],
+        titleFieldId: "idOrganismsMaximal"
     }),
     new CmsModelPlugin({
-        name: "Minimal",
-        modelId: "minimal",
+        name: "Organisms Minimal",
+        modelId: "OrganismsMinimal",
         description: "",
         fields: [
             {
-                fieldId: "idMinimal",
-                id: "idMinimal",
-                label: "Minimal Id",
-                type: "text"
+                fieldId: "idOrganismsMinimal",
+                id: "idOrganismsMinimal",
+                label: "Organisms Minimal Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "copyright",
-                id: "copyright",
+                fieldId: "organismsMinimalCopyright",
+                id: "organismsMinimalCopyright",
                 label: "copyright",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "social",
-                id: "social",
+                fieldId: "organismsMinimalSocial",
+                id: "organismsMinimalSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idMinimal"
+        layout: [["idOrganismsMinimal"], ["organismsMinimalCopyright"], ["organismsMinimalSocial"]],
+        titleFieldId: "idOrganismsMinimal"
     }),
     new CmsModelPlugin({
-        name: "Navbar",
-        modelId: "navbar",
+        name: "Organisms Navbar",
+        modelId: "OrganismsNavbar",
         description: "",
         fields: [
             {
-                fieldId: "idNavbar",
-                id: "idNavbar",
-                label: "Navbar Id",
-                type: "text"
+                fieldId: "idOrganismsNavbar",
+                id: "idOrganismsNavbar",
+                label: "Organisms Navbar Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "title",
-                id: "title",
+                fieldId: "organismsNavbarTitle",
+                id: "organismsNavbarTitle",
                 label: "title",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "apps",
-                id: "apps",
+                fieldId: "organismsNavbarApps",
+                id: "organismsNavbarApps",
                 label: "apps",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "links",
-                id: "links",
+                fieldId: "organismsNavbarLinks",
+                id: "organismsNavbarLinks",
                 label: "links",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "app_name",
-                id: "app_name",
+                fieldId: "organismsNavbarAppName",
+                id: "organismsNavbarAppName",
                 label: "appName",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "cookie_config",
-                id: "cookie_config",
+                fieldId: "organismsNavbarCookieConfig",
+                id: "organismsNavbarCookieConfig",
                 label: "cookieConfig",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "organismsNavbarId",
+                id: "organismsNavbarId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsNavbarChildren",
+                id: "organismsNavbarChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3435,10 +4307,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "logo"
+                            modelId: "AtomsLogo"
                         },
                         {
-                            modelId: "menu"
+                            modelId: "MoleculesMenu"
                         }
                     ]
                 }
@@ -3448,70 +4320,93 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idNavbar"
+        layout: [
+            ["idOrganismsNavbar"],
+            ["organismsNavbarTitle"],
+            ["organismsNavbarApps"],
+            ["organismsNavbarLinks"],
+            ["organismsNavbarAppName"],
+            ["organismsNavbarCookieConfig"],
+            ["organismsNavbarId"],
+            ["organismsNavbarChildren"]
+        ],
+        titleFieldId: "idOrganismsNavbar"
     }),
     new CmsModelPlugin({
-        name: "Newsletter",
-        modelId: "newsletter",
+        name: "Organisms Newsletter",
+        modelId: "OrganismsNewsletter",
         description: "",
         fields: [
             {
-                fieldId: "idNewsletter",
-                id: "idNewsletter",
-                label: "Newsletter Id",
-                type: "text"
+                fieldId: "idOrganismsNewsletter",
+                id: "idOrganismsNewsletter",
+                label: "Organisms Newsletter Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idNewsletter"
+        layout: [["idOrganismsNewsletter"]],
+        titleFieldId: "idOrganismsNewsletter"
     }),
     new CmsModelPlugin({
-        name: "Row",
-        modelId: "row",
+        name: "Organisms Row",
+        modelId: "OrganismsRow",
         description: "",
         fields: [
             {
-                fieldId: "idRow",
-                id: "idRow",
-                label: "Row Id",
-                type: "text"
+                fieldId: "idOrganismsRow",
+                id: "idOrganismsRow",
+                label: "Organisms Row Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "type",
-                id: "type",
+                fieldId: "organismsRowType",
+                id: "organismsRowType",
                 label: "type",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "hidden",
-                id: "hidden",
+                fieldId: "organismsRowHidden",
+                id: "organismsRowHidden",
                 label: "hidden",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "variant",
-                id: "variant",
+                fieldId: "organismsRowVariant",
+                id: "organismsRowVariant",
                 label: "variant",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "id",
-                id: "id",
+                fieldId: "organismsRowId",
+                id: "organismsRowId",
                 label: "id",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsRowChildren",
+                id: "organismsRowChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3519,7 +4414,7 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "datum"
+                            modelId: "OrganismsDatum"
                         }
                     ]
                 }
@@ -3529,43 +4424,60 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idRow"
+        layout: [
+            ["idOrganismsRow"],
+            ["organismsRowType"],
+            ["organismsRowHidden"],
+            ["organismsRowVariant"],
+            ["organismsRowId"],
+            ["organismsRowChildren"]
+        ],
+        titleFieldId: "idOrganismsRow"
     }),
     new CmsModelPlugin({
-        name: "SearchList",
-        modelId: "search_list",
+        name: "Organisms Search List",
+        modelId: "OrganismsSearchList",
         description: "",
         fields: [
             {
-                fieldId: "idSearchList",
-                id: "idSearchList",
-                label: "Search List Id",
-                type: "text"
+                fieldId: "idOrganismsSearchList",
+                id: "idOrganismsSearchList",
+                label: "Organisms Search List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "data",
-                id: "data",
+                fieldId: "organismsSearchListData",
+                id: "organismsSearchListData",
                 label: "data",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "field_button",
-                id: "field_button",
+                fieldId: "organismsSearchListFieldButton",
+                id: "organismsSearchListFieldButton",
                 label: "fieldButton",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             },
             {
-                fieldId: "data_search_results",
-                id: "data_search_results",
+                fieldId: "organismsSearchListDataSearchResults",
+                id: "organismsSearchListDataSearchResults",
                 label: "dataSearchResults",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsSearchListChildren",
+                id: "organismsSearchListChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3573,10 +4485,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "control"
+                            modelId: "MoleculesControl"
                         },
                         {
-                            modelId: "detail_list"
+                            modelId: "MoleculesDetailList"
                         }
                     ]
                 }
@@ -3586,99 +4498,149 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idSearchList"
+        layout: [
+            ["idOrganismsSearchList"],
+            ["organismsSearchListData"],
+            ["organismsSearchListFieldButton"],
+            ["organismsSearchListDataSearchResults"],
+            ["organismsSearchListChildren"]
+        ],
+        titleFieldId: "idOrganismsSearchList"
     }),
     new CmsModelPlugin({
-        name: "SocialMediaMenu",
-        modelId: "social_media_menu",
+        name: "Organisms Social Media Menu",
+        modelId: "OrganismsSocialMediaMenu",
         description: "",
         fields: [
             {
-                fieldId: "idSocialMediaMenu",
-                id: "idSocialMediaMenu",
-                label: "Social Media Menu Id",
-                type: "text"
+                fieldId: "idOrganismsSocialMediaMenu",
+                id: "idOrganismsSocialMediaMenu",
+                label: "Organisms Social Media Menu Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "orientation",
-                id: "orientation",
+                fieldId: "organismsSocialMediaMenuOrientation",
+                id: "organismsSocialMediaMenuOrientation",
                 label: "orientation",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "social",
-                id: "social",
+                fieldId: "organismsSocialMediaMenuSocial",
+                id: "organismsSocialMediaMenuSocial",
                 label: "social",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsSocialMediaMenuChildren",
+                id: "organismsSocialMediaMenuChildren",
+                label: "Nested elements",
+                type: "ref",
+                helpText: "Choose one or more nested models",
+                multipleValues: true,
+                settings: {
+                    models: [
+                        {
+                            modelId: "MoleculesMenu"
+                        },
+                        {
+                            modelId: "OrganismsFooter"
+                        }
+                    ]
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idSocialMediaMenu"
+        layout: [
+            ["idOrganismsSocialMediaMenu"],
+            ["organismsSocialMediaMenuOrientation"],
+            ["organismsSocialMediaMenuSocial"],
+            ["organismsSocialMediaMenuChildren"]
+        ],
+        titleFieldId: "idOrganismsSocialMediaMenu"
     }),
     new CmsModelPlugin({
-        name: "Step",
-        modelId: "step",
+        name: "Organisms Step",
+        modelId: "OrganismsStep",
         description: "",
         fields: [
             {
-                fieldId: "idStep",
-                id: "idStep",
-                label: "Step Id",
-                type: "text"
+                fieldId: "idOrganismsStep",
+                id: "idOrganismsStep",
+                label: "Organisms Step Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "number",
-                id: "number",
+                fieldId: "organismsStepNumber",
+                id: "organismsStepNumber",
                 label: "number",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idStep"
+        layout: [["idOrganismsStep"], ["organismsStepNumber"]],
+        titleFieldId: "idOrganismsStep"
     }),
     new CmsModelPlugin({
-        name: "Table",
-        modelId: "table",
+        name: "Organisms Table",
+        modelId: "OrganismsTable",
         description: "",
         fields: [
             {
-                fieldId: "idTable",
-                id: "idTable",
-                label: "Table Id",
-                type: "text"
+                fieldId: "idOrganismsTable",
+                id: "idOrganismsTable",
+                label: "Organisms Table Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "data",
-                id: "data",
+                fieldId: "organismsTableData",
+                id: "organismsTableData",
                 label: "data",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "settings",
-                id: "settings",
+                fieldId: "organismsTableSettings",
+                id: "organismsTableSettings",
                 label: "settings",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "mobile_breakpoint",
-                id: "mobile_breakpoint",
+                fieldId: "organismsTableMobileBreakpoint",
+                id: "organismsTableMobileBreakpoint",
                 label: "mobileBreakpoint",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3707,20 +4669,26 @@ export default [
                 }
             },
             {
-                fieldId: "duration",
-                id: "duration",
+                fieldId: "organismsTableDuration",
+                id: "organismsTableDuration",
                 label: "duration",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "data_rows",
-                id: "data_rows",
+                fieldId: "organismsTableDataRows",
+                id: "organismsTableDataRows",
                 label: "dataRows",
-                type: "text"
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsTableChildren",
+                id: "organismsTableChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3728,10 +4696,10 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "drop_down"
+                            modelId: "AtomsDropDown"
                         },
                         {
-                            modelId: "pagination"
+                            modelId: "MoleculesPagination"
                         }
                     ]
                 }
@@ -3741,31 +4709,43 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idTable"
+        layout: [
+            ["idOrganismsTable"],
+            ["organismsTableData"],
+            ["organismsTableSettings"],
+            ["organismsTableMobileBreakpoint"],
+            ["organismsTableDuration"],
+            ["organismsTableDataRows"],
+            ["organismsTableChildren"]
+        ],
+        titleFieldId: "idOrganismsTable"
     }),
     new CmsModelPlugin({
-        name: "Wizard",
-        modelId: "wizard",
+        name: "Organisms Wizard",
+        modelId: "OrganismsWizard",
         description: "",
         fields: [
             {
-                fieldId: "idWizard",
-                id: "idWizard",
-                label: "Wizard Id",
-                type: "text"
+                fieldId: "idOrganismsWizard",
+                id: "idOrganismsWizard",
+                label: "Organisms Wizard Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "step_count",
-                id: "step_count",
+                fieldId: "organismsWizardStepCount",
+                id: "organismsWizardStepCount",
                 label: "stepCount",
-                type: "number"
+                type: "number",
+                renderer: {
+                    name: "number-input"
+                }
             },
             {
-                fieldId: "__CHILDREN__",
-                id: "__CHILDREN__",
+                fieldId: "organismsWizardChildren",
+                id: "organismsWizardChildren",
                 label: "Nested elements",
                 type: "ref",
                 helpText: "Choose one or more nested models",
@@ -3773,13 +4753,13 @@ export default [
                 settings: {
                     models: [
                         {
-                            modelId: "breadcrumb"
+                            modelId: "AtomsProgressBar"
                         },
                         {
-                            modelId: "form"
+                            modelId: "MoleculesBreadcrumb"
                         },
                         {
-                            modelId: "progress_bar"
+                            modelId: "OrganismsForm"
                         }
                     ]
                 }
@@ -3789,28 +4769,38 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWizard"
+        layout: [["idOrganismsWizard"], ["organismsWizardStepCount"], ["organismsWizardChildren"]],
+        titleFieldId: "idOrganismsWizard"
     }),
-
+    new CmsGroupPlugin({
+        id: "templates",
+        name: "Templates",
+        slug: "templates",
+        icon: "fas/id-card-alt",
+        description: ""
+    }),
     new CmsModelPlugin({
-        name: "BuyHomepage",
-        modelId: "buy_homepage",
+        name: "Templates Buy Homepage",
+        modelId: "TemplatesBuyHomepage",
         description: "",
         fields: [
             {
-                fieldId: "idBuyHomepage",
-                id: "idBuyHomepage",
-                label: "Buy Homepage Id",
-                type: "text"
+                fieldId: "idTemplatesBuyHomepage",
+                id: "idTemplatesBuyHomepage",
+                label: "Templates Buy Homepage Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesBuyHomepageIsLoading",
+                id: "templatesBuyHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3824,37 +4814,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesBuyHomepageIsError",
+                id: "templatesBuyHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idBuyHomepage"
+        layout: [
+            ["idTemplatesBuyHomepage"],
+            ["templatesBuyHomepageIsLoading"],
+            ["templatesBuyHomepageIsError"]
+        ],
+        titleFieldId: "idTemplatesBuyHomepage"
     }),
     new CmsModelPlugin({
-        name: "Default",
-        modelId: "default",
+        name: "Templates Default",
+        modelId: "TemplatesDefault",
         description: "",
         fields: [
             {
-                fieldId: "idDefault",
-                id: "idDefault",
-                label: "Default Id",
-                type: "text"
+                fieldId: "idTemplatesDefault",
+                id: "idTemplatesDefault",
+                label: "Templates Default Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesDefaultIsLoading",
+                id: "templatesDefaultIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3868,37 +4869,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesDefaultIsError",
+                id: "templatesDefaultIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDefault"
+        layout: [
+            ["idTemplatesDefault"],
+            ["templatesDefaultIsLoading"],
+            ["templatesDefaultIsError"]
+        ],
+        titleFieldId: "idTemplatesDefault"
     }),
     new CmsModelPlugin({
-        name: "DevopsCentered",
-        modelId: "devops_centered",
+        name: "Templates Devops Centered",
+        modelId: "TemplatesDevopsCentered",
         description: "",
         fields: [
             {
-                fieldId: "idDevopsCentered",
-                id: "idDevopsCentered",
-                label: "Devops Centered Id",
-                type: "text"
+                fieldId: "idTemplatesDevopsCentered",
+                id: "idTemplatesDevopsCentered",
+                label: "Templates Devops Centered Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesDevopsCenteredIsLoading",
+                id: "templatesDevopsCenteredIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3912,37 +4924,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesDevopsCenteredIsError",
+                id: "templatesDevopsCenteredIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDevopsCentered"
+        layout: [
+            ["idTemplatesDevopsCentered"],
+            ["templatesDevopsCenteredIsLoading"],
+            ["templatesDevopsCenteredIsError"]
+        ],
+        titleFieldId: "idTemplatesDevopsCentered"
     }),
     new CmsModelPlugin({
-        name: "DevopsDashboard",
-        modelId: "devops_dashboard",
+        name: "Templates Devops Dashboard",
+        modelId: "TemplatesDevopsDashboard",
         description: "",
         fields: [
             {
-                fieldId: "idDevopsDashboard",
-                id: "idDevopsDashboard",
-                label: "Devops Dashboard Id",
-                type: "text"
+                fieldId: "idTemplatesDevopsDashboard",
+                id: "idTemplatesDevopsDashboard",
+                label: "Templates Devops Dashboard Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesDevopsDashboardIsLoading",
+                id: "templatesDevopsDashboardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -3956,37 +4979,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesDevopsDashboardIsError",
+                id: "templatesDevopsDashboardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idDevopsDashboard"
+        layout: [
+            ["idTemplatesDevopsDashboard"],
+            ["templatesDevopsDashboardIsLoading"],
+            ["templatesDevopsDashboardIsError"]
+        ],
+        titleFieldId: "idTemplatesDevopsDashboard"
     }),
     new CmsModelPlugin({
-        name: "ExplorerCharts",
-        modelId: "explorer_charts",
+        name: "Templates Explorer Charts",
+        modelId: "TemplatesExplorerCharts",
         description: "",
         fields: [
             {
-                fieldId: "idExplorerCharts",
-                id: "idExplorerCharts",
-                label: "Explorer Charts Id",
-                type: "text"
+                fieldId: "idTemplatesExplorerCharts",
+                id: "idTemplatesExplorerCharts",
+                label: "Templates Explorer Charts Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesExplorerChartsIsLoading",
+                id: "templatesExplorerChartsIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4000,37 +5034,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesExplorerChartsIsError",
+                id: "templatesExplorerChartsIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idExplorerCharts"
+        layout: [
+            ["idTemplatesExplorerCharts"],
+            ["templatesExplorerChartsIsLoading"],
+            ["templatesExplorerChartsIsError"]
+        ],
+        titleFieldId: "idTemplatesExplorerCharts"
     }),
     new CmsModelPlugin({
-        name: "ExplorerDetail",
-        modelId: "explorer_detail",
+        name: "Templates Explorer Detail",
+        modelId: "TemplatesExplorerDetail",
         description: "",
         fields: [
             {
-                fieldId: "idExplorerDetail",
-                id: "idExplorerDetail",
-                label: "Explorer Detail Id",
-                type: "text"
+                fieldId: "idTemplatesExplorerDetail",
+                id: "idTemplatesExplorerDetail",
+                label: "Templates Explorer Detail Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesExplorerDetailIsLoading",
+                id: "templatesExplorerDetailIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4044,37 +5089,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesExplorerDetailIsError",
+                id: "templatesExplorerDetailIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idExplorerDetail"
+        layout: [
+            ["idTemplatesExplorerDetail"],
+            ["templatesExplorerDetailIsLoading"],
+            ["templatesExplorerDetailIsError"]
+        ],
+        titleFieldId: "idTemplatesExplorerDetail"
     }),
     new CmsModelPlugin({
-        name: "ExplorerHomepage",
-        modelId: "explorer_homepage",
+        name: "Templates Explorer Homepage",
+        modelId: "TemplatesExplorerHomepage",
         description: "",
         fields: [
             {
-                fieldId: "idExplorerHomepage",
-                id: "idExplorerHomepage",
-                label: "Explorer Homepage Id",
-                type: "text"
+                fieldId: "idTemplatesExplorerHomepage",
+                id: "idTemplatesExplorerHomepage",
+                label: "Templates Explorer Homepage Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesExplorerHomepageIsLoading",
+                id: "templatesExplorerHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4088,37 +5144,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesExplorerHomepageIsError",
+                id: "templatesExplorerHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idExplorerHomepage"
+        layout: [
+            ["idTemplatesExplorerHomepage"],
+            ["templatesExplorerHomepageIsLoading"],
+            ["templatesExplorerHomepageIsError"]
+        ],
+        titleFieldId: "idTemplatesExplorerHomepage"
     }),
     new CmsModelPlugin({
-        name: "ExplorerList",
-        modelId: "explorer_list",
+        name: "Templates Explorer List",
+        modelId: "TemplatesExplorerList",
         description: "",
         fields: [
             {
-                fieldId: "idExplorerList",
-                id: "idExplorerList",
-                label: "Explorer List Id",
-                type: "text"
+                fieldId: "idTemplatesExplorerList",
+                id: "idTemplatesExplorerList",
+                label: "Templates Explorer List Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesExplorerListIsLoading",
+                id: "templatesExplorerListIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4132,37 +5199,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesExplorerListIsError",
+                id: "templatesExplorerListIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idExplorerList"
+        layout: [
+            ["idTemplatesExplorerList"],
+            ["templatesExplorerListIsLoading"],
+            ["templatesExplorerListIsError"]
+        ],
+        titleFieldId: "idTemplatesExplorerList"
     }),
     new CmsModelPlugin({
-        name: "ExtensionDefault",
-        modelId: "extension_default",
+        name: "Templates Extension Default",
+        modelId: "TemplatesExtensionDefault",
         description: "",
         fields: [
             {
-                fieldId: "idExtensionDefault",
-                id: "idExtensionDefault",
-                label: "Extension Default Id",
-                type: "text"
+                fieldId: "idTemplatesExtensionDefault",
+                id: "idTemplatesExtensionDefault",
+                label: "Templates Extension Default Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesExtensionDefaultIsLoading",
+                id: "templatesExtensionDefaultIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4176,37 +5254,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesExtensionDefaultIsError",
+                id: "templatesExtensionDefaultIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idExtensionDefault"
+        layout: [
+            ["idTemplatesExtensionDefault"],
+            ["templatesExtensionDefaultIsLoading"],
+            ["templatesExtensionDefaultIsError"]
+        ],
+        titleFieldId: "idTemplatesExtensionDefault"
     }),
     new CmsModelPlugin({
-        name: "WalletDashboard",
-        modelId: "wallet_dashboard",
+        name: "Templates Wallet Dashboard",
+        modelId: "TemplatesWalletDashboard",
         description: "",
         fields: [
             {
-                fieldId: "idWalletDashboard",
-                id: "idWalletDashboard",
-                label: "Wallet Dashboard Id",
-                type: "text"
+                fieldId: "idTemplatesWalletDashboard",
+                id: "idTemplatesWalletDashboard",
+                label: "Templates Wallet Dashboard Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesWalletDashboardIsLoading",
+                id: "templatesWalletDashboardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4220,37 +5309,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesWalletDashboardIsError",
+                id: "templatesWalletDashboardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWalletDashboard"
+        layout: [
+            ["idTemplatesWalletDashboard"],
+            ["templatesWalletDashboardIsLoading"],
+            ["templatesWalletDashboardIsError"]
+        ],
+        titleFieldId: "idTemplatesWalletDashboard"
     }),
     new CmsModelPlugin({
-        name: "WalletHomepage",
-        modelId: "wallet_homepage",
+        name: "Templates Wallet Homepage",
+        modelId: "TemplatesWalletHomepage",
         description: "",
         fields: [
             {
-                fieldId: "idWalletHomepage",
-                id: "idWalletHomepage",
-                label: "Wallet Homepage Id",
-                type: "text"
+                fieldId: "idTemplatesWalletHomepage",
+                id: "idTemplatesWalletHomepage",
+                label: "Templates Wallet Homepage Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesWalletHomepageIsLoading",
+                id: "templatesWalletHomepageIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4264,37 +5364,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesWalletHomepageIsError",
+                id: "templatesWalletHomepageIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWalletHomepage"
+        layout: [
+            ["idTemplatesWalletHomepage"],
+            ["templatesWalletHomepageIsLoading"],
+            ["templatesWalletHomepageIsError"]
+        ],
+        titleFieldId: "idTemplatesWalletHomepage"
     }),
     new CmsModelPlugin({
-        name: "WalletOption",
-        modelId: "wallet_option",
+        name: "Templates Wallet Option",
+        modelId: "TemplatesWalletOption",
         description: "",
         fields: [
             {
-                fieldId: "idWalletOption",
-                id: "idWalletOption",
-                label: "Wallet Option Id",
-                type: "text"
+                fieldId: "idTemplatesWalletOption",
+                id: "idTemplatesWalletOption",
+                label: "Templates Wallet Option Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesWalletOptionIsLoading",
+                id: "templatesWalletOptionIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4308,37 +5419,48 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesWalletOptionIsError",
+                id: "templatesWalletOptionIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWalletOption"
+        layout: [
+            ["idTemplatesWalletOption"],
+            ["templatesWalletOptionIsLoading"],
+            ["templatesWalletOptionIsError"]
+        ],
+        titleFieldId: "idTemplatesWalletOption"
     }),
     new CmsModelPlugin({
-        name: "WalletWizard",
-        modelId: "wallet_wizard",
+        name: "Templates Wallet Wizard",
+        modelId: "TemplatesWalletWizard",
         description: "",
         fields: [
             {
-                fieldId: "idWalletWizard",
-                id: "idWalletWizard",
-                label: "Wallet Wizard Id",
-                type: "text"
+                fieldId: "idTemplatesWalletWizard",
+                id: "idTemplatesWalletWizard",
+                label: "Templates Wallet Wizard Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
             },
             {
-                fieldId: "is_loading",
-                id: "is_loading",
+                fieldId: "templatesWalletWizardIsLoading",
+                id: "templatesWalletWizardIsLoading",
                 label: "isLoading",
                 type: "text",
+                renderer: {
+                    name: "select-box"
+                },
                 multipleValues: true,
                 predefinedValues: {
                     enabled: true,
@@ -4352,19 +5474,24 @@ export default [
                 }
             },
             {
-                fieldId: "is_error",
-                id: "is_error",
+                fieldId: "templatesWalletWizardIsError",
+                id: "templatesWalletWizardIsError",
                 label: "isError",
-                type: "boolean"
+                type: "boolean",
+                renderer: {
+                    name: "boolean-input"
+                }
             }
         ],
         group: {
             id: "templates",
             name: "Templates"
         },
-        layout: [],
-        locale: "en-US",
-        tenant: "emanuele.c@dusk.network",
-        titleFieldId: "idWalletWizard"
+        layout: [
+            ["idTemplatesWalletWizard"],
+            ["templatesWalletWizardIsLoading"],
+            ["templatesWalletWizardIsError"]
+        ],
+        titleFieldId: "idTemplatesWalletWizard"
     })
 ];

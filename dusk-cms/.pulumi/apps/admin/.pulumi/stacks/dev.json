@@ -1,0 +1,366 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "dev",
+        "latest": {
+            "manifest": {
+                "time": "2022-07-20T16:32:50.33212+02:00",
+                "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
+                "version": "v3.35.3"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:Zzt4N8wchlI=:v1:wtY/5Zoz/ol8t45w:hLKC842L/YEEixkYxKZ2n+W4fAP6jA=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "appDomain": "d3k5xpuqyfupvy.cloudfront.net",
+                        "appStorage": "admin-app-ee3312a",
+                        "appUrl": "https://d3k5xpuqyfupvy.cloudfront.net"
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2",
+                    "custom": true,
+                    "id": "a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "version": "5.9.2"
+                    },
+                    "outputs": {
+                        "version": "5.9.2"
+                    },
+                    "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app",
+                    "custom": true,
+                    "id": "admin-app-ee3312a",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "bucket"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "admin-app-ee3312a",
+                        "forceDestroy": true,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "website": {
+                            "__defaults": [],
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::admin-app-ee3312a",
+                        "bucket": "admin-app-ee3312a",
+                        "bucketDomainName": "admin-app-ee3312a.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "admin-app-ee3312a.s3.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": true,
+                        "grants": [],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "admin-app-ee3312a",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "us-east-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "_NOT_FOUND_PAGE_/index.html",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website-us-east-1.amazonaws.com",
+                        "websiteEndpoint": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
+                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2::a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "forceDestroy": null,
+                        "tags": null,
+                        "website": null
+                    },
+                    "sequenceNumber": 1
+                },
+                {
+                    "urn": "urn:pulumi:dev::admin::aws:cloudfront/distribution:Distribution::admin-app-cdn",
+                    "custom": true,
+                    "id": "E3RIDLK6215EDY",
+                    "type": "aws:cloudfront/distribution:Distribution",
+                    "inputs": {
+                        "__defaults": [
+                            "httpVersion",
+                            "isIpv6Enabled",
+                            "retainOnDelete"
+                        ],
+                        "customErrorResponses": [
+                            {
+                                "__defaults": [],
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "__defaults": [],
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 600,
+                            "forwardedValues": {
+                                "__defaults": [],
+                                "cookies": {
+                                    "__defaults": [],
+                                    "forward": "none"
+                                },
+                                "queryString": false
+                            },
+                            "maxTtl": 600,
+                            "minTtl": 0,
+                            "targetOriginId": "arn:aws:s3:::admin-app-ee3312a",
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "enabled": true,
+                        "httpVersion": "http2",
+                        "isIpv6Enabled": false,
+                        "origins": [
+                            {
+                                "__defaults": [
+                                    "connectionAttempts",
+                                    "connectionTimeout",
+                                    "originPath"
+                                ],
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customOriginConfig": {
+                                    "__defaults": [
+                                        "originKeepaliveTimeout",
+                                        "originReadTimeout"
+                                    ],
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::admin-app-ee3312a",
+                                "originPath": ""
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "__defaults": [],
+                            "geoRestriction": {
+                                "__defaults": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms",
+                            "__defaults": []
+                        },
+                        "viewerCertificate": {
+                            "__defaults": [
+                                "minimumProtocolVersion"
+                            ],
+                            "cloudfrontDefaultCertificate": true,
+                            "minimumProtocolVersion": "TLSv1"
+                        },
+                        "waitForDeployment": false
+                    },
+                    "outputs": {
+                        "__meta": "{\"schema_version\":\"1\"}",
+                        "aliases": [],
+                        "arn": "arn:aws:cloudfront::932784301473:distribution/E3RIDLK6215EDY",
+                        "callerReference": "terraform-20220715081942645000000001",
+                        "customErrorResponses": [
+                            {
+                                "errorCachingMinTtl": 0,
+                                "errorCode": 404,
+                                "responseCode": 404,
+                                "responsePagePath": "/index.html"
+                            }
+                        ],
+                        "defaultCacheBehavior": {
+                            "allowedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "cachePolicyId": "",
+                            "cachedMethods": [
+                                "GET",
+                                "HEAD",
+                                "OPTIONS"
+                            ],
+                            "compress": true,
+                            "defaultTtl": 600,
+                            "fieldLevelEncryptionId": "",
+                            "forwardedValues": {
+                                "cookies": {
+                                    "forward": "none",
+                                    "whitelistedNames": []
+                                },
+                                "headers": [],
+                                "queryString": false,
+                                "queryStringCacheKeys": []
+                            },
+                            "functionAssociations": [],
+                            "lambdaFunctionAssociations": [],
+                            "maxTtl": 600,
+                            "minTtl": 0,
+                            "originRequestPolicyId": "",
+                            "realtimeLogConfigArn": "",
+                            "responseHeadersPolicyId": "",
+                            "smoothStreaming": false,
+                            "targetOriginId": "arn:aws:s3:::admin-app-ee3312a",
+                            "trustedKeyGroups": [],
+                            "trustedSigners": [],
+                            "viewerProtocolPolicy": "redirect-to-https"
+                        },
+                        "defaultRootObject": "index.html",
+                        "domainName": "d3k5xpuqyfupvy.cloudfront.net",
+                        "enabled": true,
+                        "etag": "E19G4R2LDK5SVD",
+                        "hostedZoneId": "Z2FDTNDATAQYW2",
+                        "httpVersion": "http2",
+                        "id": "E3RIDLK6215EDY",
+                        "inProgressValidationBatches": 0,
+                        "isIpv6Enabled": false,
+                        "lastModifiedTime": "2022-07-15 08:19:47.46 +0000 UTC",
+                        "loggingConfig": null,
+                        "orderedCacheBehaviors": [],
+                        "origins": [
+                            {
+                                "connectionAttempts": 3,
+                                "connectionTimeout": 10,
+                                "customHeaders": [],
+                                "customOriginConfig": {
+                                    "httpPort": 80,
+                                    "httpsPort": 443,
+                                    "originKeepaliveTimeout": 5,
+                                    "originProtocolPolicy": "http-only",
+                                    "originReadTimeout": 30,
+                                    "originSslProtocols": [
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "domainName": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::admin-app-ee3312a",
+                                "originPath": "",
+                                "originShield": null,
+                                "s3OriginConfig": null
+                            }
+                        ],
+                        "priceClass": "PriceClass_100",
+                        "restrictions": {
+                            "geoRestriction": {
+                                "locations": [],
+                                "restrictionType": "none"
+                            }
+                        },
+                        "retainOnDelete": false,
+                        "status": "InProgress",
+                        "tags": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "tagsAll": {
+                            "WbyEnvironment": "dev",
+                            "WbyProjectName": "dusk-cms"
+                        },
+                        "trustedKeyGroups": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "trustedSigners": [
+                            {
+                                "enabled": false,
+                                "items": []
+                            }
+                        ],
+                        "viewerCertificate": {
+                            "acmCertificateArn": "",
+                            "cloudfrontDefaultCertificate": true,
+                            "iamCertificateId": "",
+                            "minimumProtocolVersion": "TLSv1",
+                            "sslSupportMethod": ""
+                        },
+                        "waitForDeployment": false,
+                        "webAclId": ""
+                    },
+                    "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app"
+                    ],
+                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2::a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "propertyDependencies": {
+                        "customErrorResponses": null,
+                        "defaultCacheBehavior": [
+                            "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app"
+                        ],
+                        "defaultRootObject": null,
+                        "enabled": null,
+                        "origins": [
+                            "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app"
+                        ],
+                        "priceClass": null,
+                        "restrictions": null,
+                        "tags": null,
+                        "viewerCertificate": null,
+                        "waitForDeployment": null
+                    },
+                    "sequenceNumber": 1
+                }
+            ]
+        }
+    }
+}
