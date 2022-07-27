@@ -1956,7 +1956,6 @@ export default [
                     name: "text-inputs"
                 },
                 multipleValues: false,
-                name: "text-inputs",
                 predefinedValues: {
                     enabled: true,
                     values: []
