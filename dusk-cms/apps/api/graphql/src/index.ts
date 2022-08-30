@@ -36,6 +36,8 @@ import scaffoldsPlugins from "./plugins/scaffolds";
 
 const debug = process.env.DEBUG === "true";
 
+console.log(process.env.HEADLESS_CMS_GRAPHQL_INPUT_REQUIRE_ARRAY_ITEM);
+
 const documentClient = new DocumentClient({
     convertEmptyValues: true,
     region: process.env.AWS_REGION

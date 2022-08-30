@@ -3,6 +3,13 @@ import { CmsGroupPlugin } from "@webiny/api-headless-cms/content/plugins/CmsGrou
 
 export default [
     new CmsGroupPlugin({
+        id: "pages",
+        name: "Pages",
+        slug: "pages",
+        icon: "fas/id-card-alt",
+        description: "Dusk website pages models"
+    }),
+    new CmsGroupPlugin({
         id: "atoms",
         name: "Atoms",
         slug: "atoms",
@@ -24,6 +31,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_ADDRESS",
+                id: "RICH_TEXT_BLOCKS_ATOMS_ADDRESS",
+                label: "Rich Text Content Of Atoms Address",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsAddressVariant",
                 id: "atomsAddressVariant",
                 label: "variant",
@@ -31,7 +49,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -73,7 +91,7 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [["idAtomsAddress"], ["atomsAddressVariant"]],
+        layout: [["idAtomsAddress"], ["RICH_TEXT_BLOCKS_ATOMS_ADDRESS"], ["atomsAddressVariant"]],
         titleFieldId: "idAtomsAddress"
     }),
     new CmsModelPlugin({
@@ -89,13 +107,24 @@ export default [
                 renderer: {
                     name: "text-input"
                 }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_BALANCE",
+                id: "RICH_TEXT_BLOCKS_ATOMS_BALANCE",
+                label: "Rich Text Content Of Atoms Balance",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [["idAtomsBalance"]],
+        layout: [["idAtomsBalance"], ["RICH_TEXT_BLOCKS_ATOMS_BALANCE"]],
         titleFieldId: "idAtomsBalance"
     }),
     new CmsModelPlugin({
@@ -113,6 +142,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_CHIP",
+                id: "RICH_TEXT_BLOCKS_ATOMS_CHIP",
+                label: "Rich Text Content Of Atoms Chip",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsChipVariant",
                 id: "atomsChipVariant",
                 label: "variant",
@@ -120,7 +160,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -157,7 +197,7 @@ export default [
             id: "atoms",
             name: "Atoms"
         },
-        layout: [["idAtomsChip"], ["atomsChipVariant"]],
+        layout: [["idAtomsChip"], ["RICH_TEXT_BLOCKS_ATOMS_CHIP"], ["atomsChipVariant"]],
         titleFieldId: "idAtomsChip"
     }),
     new CmsModelPlugin({
@@ -175,10 +215,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_DATE_TEXT",
+                id: "RICH_TEXT_BLOCKS_ATOMS_DATE_TEXT",
+                label: "Rich Text Content Of Atoms Date Text",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsDateTextTime",
                 id: "atomsDateTextTime",
                 label: "time",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -188,6 +240,7 @@ export default [
                 id: "atomsDateTextShowTimestamp",
                 label: "showTimestamp",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -197,6 +250,7 @@ export default [
                 id: "atomsDateTextDatetimeFormat",
                 label: "datetimeFormat",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -208,6 +262,7 @@ export default [
         },
         layout: [
             ["idAtomsDateText"],
+            ["RICH_TEXT_BLOCKS_ATOMS_DATE_TEXT"],
             ["atomsDateTextTime"],
             ["atomsDateTextShowTimestamp"],
             ["atomsDateTextDatetimeFormat"]
@@ -229,12 +284,56 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_DROP_DOWN",
+                id: "RICH_TEXT_BLOCKS_ATOMS_DROP_DOWN",
+                label: "Rich Text Content Of Atoms Drop Down",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsDropDownOptions",
                 id: "atomsDropDownOptions",
                 label: "options",
-                type: "text",
+                type: "object",
+                multipleValues: true,
                 renderer: {
-                    name: "text-input"
+                    name: "objects"
+                },
+                settings: {
+                    fields: [
+                        {
+                            id: "key_f40433f0-2571-48b0-9335-92cadb9fbc28",
+                            helpText: "",
+                            placeholderText: "Key",
+                            label: "Key",
+                            type: "text",
+                            validation: [],
+                            fieldId: "key",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        },
+                        {
+                            id: "value_5088f4e0-081c-492a-bf62-a80c32ed18e2",
+                            helpText: "",
+                            placeholderText: "Value",
+                            label: "Value",
+                            type: "text",
+                            validation: [],
+                            fieldId: "value",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        }
+                    ],
+                    layout: [
+                        ["key_f40433f0-2571-48b0-9335-92cadb9fbc28"],
+                        ["value_5088f4e0-081c-492a-bf62-a80c32ed18e2"]
+                    ]
                 }
             },
             {
@@ -242,6 +341,7 @@ export default [
                 id: "atomsDropDownSelectedIndex",
                 label: "selectedIndex",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -251,6 +351,7 @@ export default [
                 id: "atomsDropDownDropUp",
                 label: "dropUp",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -260,6 +361,7 @@ export default [
                 id: "atomsDropDownDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -271,6 +373,7 @@ export default [
         },
         layout: [
             ["idAtomsDropDown"],
+            ["RICH_TEXT_BLOCKS_ATOMS_DROP_DOWN"],
             ["atomsDropDownOptions"],
             ["atomsDropDownSelectedIndex"],
             ["atomsDropDownDropUp"],
@@ -293,10 +396,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_GAUGE",
+                id: "RICH_TEXT_BLOCKS_ATOMS_GAUGE",
+                label: "Rich Text Content Of Atoms Gauge",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsGaugeMaxValue",
                 id: "atomsGaugeMaxValue",
                 label: "maxValue",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -306,6 +421,7 @@ export default [
                 id: "atomsGaugeMinValue",
                 label: "minValue",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -315,6 +431,7 @@ export default [
                 id: "atomsGaugeValue",
                 label: "value",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -324,6 +441,7 @@ export default [
                 id: "atomsGaugeWidth",
                 label: "width",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -333,6 +451,7 @@ export default [
                 id: "atomsGaugeTooltip",
                 label: "tooltip",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -344,6 +463,7 @@ export default [
         },
         layout: [
             ["idAtomsGauge"],
+            ["RICH_TEXT_BLOCKS_ATOMS_GAUGE"],
             ["atomsGaugeMaxValue"],
             ["atomsGaugeMinValue"],
             ["atomsGaugeValue"],
@@ -367,10 +487,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_ICON",
+                id: "RICH_TEXT_BLOCKS_ATOMS_ICON",
+                label: "Rich Text Content Of Atoms Icon",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsIconName",
                 id: "atomsIconName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -383,7 +515,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -423,7 +555,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -460,6 +592,7 @@ export default [
                 id: "atomsIconTooltip",
                 label: "tooltip",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -469,6 +602,7 @@ export default [
                 id: "atomsIconViewbox",
                 label: "viewbox",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -481,7 +615,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -520,6 +654,7 @@ export default [
         },
         layout: [
             ["idAtomsIcon"],
+            ["RICH_TEXT_BLOCKS_ATOMS_ICON"],
             ["atomsIconName"],
             ["atomsIconSize"],
             ["atomsIconVariant"],
@@ -544,6 +679,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_LOADING_INDICATOR",
+                id: "RICH_TEXT_BLOCKS_ATOMS_LOADING_INDICATOR",
+                label: "Rich Text Content Of Atoms Loading Indicator",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsLoadingIndicatorVariant",
                 id: "atomsLoadingIndicatorVariant",
                 label: "variant",
@@ -551,7 +697,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -588,6 +734,7 @@ export default [
                 id: "atomsLoadingIndicatorDuration",
                 label: "duration",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -599,6 +746,7 @@ export default [
         },
         layout: [
             ["idAtomsLoadingIndicator"],
+            ["RICH_TEXT_BLOCKS_ATOMS_LOADING_INDICATOR"],
             ["atomsLoadingIndicatorVariant"],
             ["atomsLoadingIndicatorDuration"]
         ],
@@ -617,13 +765,24 @@ export default [
                 renderer: {
                     name: "text-input"
                 }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_LOGO",
+                id: "RICH_TEXT_BLOCKS_ATOMS_LOGO",
+                label: "Rich Text Content Of Atoms Logo",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
             }
         ],
         group: {
             id: "atoms",
             name: "Atoms"
         },
-        layout: [["idAtomsLogo"]],
+        layout: [["idAtomsLogo"], ["RICH_TEXT_BLOCKS_ATOMS_LOGO"]],
         titleFieldId: "idAtomsLogo"
     }),
     new CmsModelPlugin({
@@ -641,6 +800,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_PROGRESS_BAR",
+                id: "RICH_TEXT_BLOCKS_ATOMS_PROGRESS_BAR",
+                label: "Rich Text Content Of Atoms Progress Bar",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsProgressBarVariant",
                 id: "atomsProgressBarVariant",
                 label: "variant",
@@ -648,7 +818,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -685,6 +855,7 @@ export default [
                 id: "atomsProgressBarSteps",
                 label: "steps",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -694,6 +865,7 @@ export default [
                 id: "atomsProgressBarStep",
                 label: "step",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -705,6 +877,7 @@ export default [
         },
         layout: [
             ["idAtomsProgressBar"],
+            ["RICH_TEXT_BLOCKS_ATOMS_PROGRESS_BAR"],
             ["atomsProgressBarVariant"],
             ["atomsProgressBarSteps"],
             ["atomsProgressBarStep"]
@@ -726,10 +899,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_QR_CODE",
+                id: "RICH_TEXT_BLOCKS_ATOMS_QR_CODE",
+                label: "Rich Text Content Of Atoms Qr Code",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsQrCodeValue",
                 id: "atomsQrCodeValue",
                 label: "value",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -739,6 +924,7 @@ export default [
                 id: "atomsQrCodeWidth",
                 label: "width",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -748,6 +934,7 @@ export default [
                 id: "atomsQrCodeQrColor",
                 label: "qrColor",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -757,6 +944,7 @@ export default [
                 id: "atomsQrCodeBgColor",
                 label: "bgColor",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -766,6 +954,7 @@ export default [
                 id: "atomsQrCodeAlign",
                 label: "align",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -777,6 +966,7 @@ export default [
         },
         layout: [
             ["idAtomsQrCode"],
+            ["RICH_TEXT_BLOCKS_ATOMS_QR_CODE"],
             ["atomsQrCodeValue"],
             ["atomsQrCodeWidth"],
             ["atomsQrCodeQrColor"],
@@ -800,10 +990,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_RICH_TEXT",
+                id: "RICH_TEXT_BLOCKS_ATOMS_RICH_TEXT",
+                label: "Rich Text Content Of Atoms Rich Text",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsRichTextMarkdown",
                 id: "atomsRichTextMarkdown",
                 label: "markdown",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -816,7 +1018,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -846,7 +1048,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -864,12 +1066,15 @@ export default [
                 }
             },
             {
-                fieldId: "atomsRichTextChildren",
-                id: "atomsRichTextChildren",
-                label: "Nested elements",
+                fieldId: "atomsRichTextSlotDefault",
+                id: "atomsRichTextSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: OrganismsAccordion",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -885,10 +1090,11 @@ export default [
         },
         layout: [
             ["idAtomsRichText"],
+            ["RICH_TEXT_BLOCKS_ATOMS_RICH_TEXT"],
             ["atomsRichTextMarkdown"],
             ["atomsRichTextSize"],
             ["atomsRichTextAlign"],
-            ["atomsRichTextChildren"]
+            ["atomsRichTextSlotDefault"]
         ],
         titleFieldId: "idAtomsRichText"
     }),
@@ -907,6 +1113,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_SKELETON_LOADER",
+                id: "RICH_TEXT_BLOCKS_ATOMS_SKELETON_LOADER",
+                label: "Rich Text Content Of Atoms Skeleton Loader",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsSkeletonLoaderVariant",
                 id: "atomsSkeletonLoaderVariant",
                 label: "variant",
@@ -914,7 +1131,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -956,6 +1173,7 @@ export default [
                 id: "atomsSkeletonLoaderExtraSmallScreenHeight",
                 label: "extraSmallScreenHeight",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -965,6 +1183,7 @@ export default [
                 id: "atomsSkeletonLoaderSmallScreenHeight",
                 label: "smallScreenHeight",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -974,6 +1193,7 @@ export default [
                 id: "atomsSkeletonLoaderMediumScreenHeight",
                 label: "mediumScreenHeight",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -983,6 +1203,7 @@ export default [
                 id: "atomsSkeletonLoaderLargeScreenHeight",
                 label: "largeScreenHeight",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -992,6 +1213,7 @@ export default [
                 id: "atomsSkeletonLoaderExtraLargeScreenHeight",
                 label: "extraLargeScreenHeight",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -1001,6 +1223,7 @@ export default [
                 id: "atomsSkeletonLoaderJumboScreenHeight",
                 label: "jumboScreenHeight",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1010,6 +1233,7 @@ export default [
                 id: "atomsSkeletonLoaderWidth",
                 label: "width",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1019,6 +1243,7 @@ export default [
                 id: "atomsSkeletonLoaderPulse",
                 label: "pulse",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1028,6 +1253,7 @@ export default [
                 id: "atomsSkeletonLoaderRounded",
                 label: "rounded",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1039,6 +1265,7 @@ export default [
         },
         layout: [
             ["idAtomsSkeletonLoader"],
+            ["RICH_TEXT_BLOCKS_ATOMS_SKELETON_LOADER"],
             ["atomsSkeletonLoaderVariant"],
             ["atomsSkeletonLoaderExtraSmallScreenHeight"],
             ["atomsSkeletonLoaderSmallScreenHeight"],
@@ -1067,10 +1294,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_SLIDER",
+                id: "RICH_TEXT_BLOCKS_ATOMS_SLIDER",
+                label: "Rich Text Content Of Atoms Slider",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsSliderMin",
                 id: "atomsSliderMin",
                 label: "min",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -1080,6 +1319,7 @@ export default [
                 id: "atomsSliderMax",
                 label: "max",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -1089,6 +1329,7 @@ export default [
                 id: "atomsSliderValue",
                 label: "value",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -1098,6 +1339,7 @@ export default [
                 id: "atomsSliderId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1109,6 +1351,7 @@ export default [
         },
         layout: [
             ["idAtomsSlider"],
+            ["RICH_TEXT_BLOCKS_ATOMS_SLIDER"],
             ["atomsSliderMin"],
             ["atomsSliderMax"],
             ["atomsSliderValue"],
@@ -1131,10 +1374,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_TEXT_FIELD",
+                id: "RICH_TEXT_BLOCKS_ATOMS_TEXT_FIELD",
+                label: "Rich Text Content Of Atoms Text Field",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsTextFieldValue",
                 id: "atomsTextFieldValue",
                 label: "value",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1144,6 +1399,7 @@ export default [
                 id: "atomsTextFieldDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1153,6 +1409,7 @@ export default [
                 id: "atomsTextFieldMultiline",
                 label: "multiline",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1162,6 +1419,7 @@ export default [
                 id: "atomsTextFieldPlaceholder",
                 label: "placeholder",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1174,7 +1432,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1196,6 +1454,7 @@ export default [
                 id: "atomsTextFieldId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1205,6 +1464,7 @@ export default [
                 id: "atomsTextFieldName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1214,6 +1474,7 @@ export default [
                 id: "atomsTextFieldFocused",
                 label: "focused",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1225,6 +1486,7 @@ export default [
         },
         layout: [
             ["idAtomsTextField"],
+            ["RICH_TEXT_BLOCKS_ATOMS_TEXT_FIELD"],
             ["atomsTextFieldValue"],
             ["atomsTextFieldDisabled"],
             ["atomsTextFieldMultiline"],
@@ -1251,6 +1513,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_TOGGLE",
+                id: "RICH_TEXT_BLOCKS_ATOMS_TOGGLE",
+                label: "Rich Text Content Of Atoms Toggle",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsToggleVariant",
                 id: "atomsToggleVariant",
                 label: "variant",
@@ -1258,7 +1531,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1298,7 +1571,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1315,6 +1588,7 @@ export default [
                 id: "atomsToggleName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1324,6 +1598,7 @@ export default [
                 id: "atomsToggleChecked",
                 label: "checked",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1333,6 +1608,7 @@ export default [
                 id: "atomsToggleId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1342,6 +1618,7 @@ export default [
                 id: "atomsToggleValue",
                 label: "value",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1351,6 +1628,7 @@ export default [
                 id: "atomsToggleGroup",
                 label: "group",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1360,6 +1638,7 @@ export default [
                 id: "atomsToggleDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1369,6 +1648,7 @@ export default [
                 id: "atomsToggleSelected",
                 label: "selected",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1378,6 +1658,7 @@ export default [
                 id: "atomsToggleOnIcon",
                 label: "onIcon",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1387,6 +1668,7 @@ export default [
                 id: "atomsToggleOffIcon",
                 label: "offIcon",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1398,6 +1680,7 @@ export default [
         },
         layout: [
             ["idAtomsToggle"],
+            ["RICH_TEXT_BLOCKS_ATOMS_TOGGLE"],
             ["atomsToggleVariant"],
             ["atomsToggleType"],
             ["atomsToggleName"],
@@ -1427,6 +1710,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ATOMS_TRUNCATE_TEXT",
+                id: "RICH_TEXT_BLOCKS_ATOMS_TRUNCATE_TEXT",
+                label: "Rich Text Content Of Atoms Truncate Text",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "atomsTruncateTextWidth",
                 id: "atomsTruncateTextWidth",
                 label: "width",
@@ -1434,7 +1728,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1456,6 +1750,7 @@ export default [
                 id: "atomsTruncateTextTitle",
                 label: "title",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1465,6 +1760,7 @@ export default [
                 id: "atomsTruncateTextText",
                 label: "text",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1476,6 +1772,7 @@ export default [
         },
         layout: [
             ["idAtomsTruncateText"],
+            ["RICH_TEXT_BLOCKS_ATOMS_TRUNCATE_TEXT"],
             ["atomsTruncateTextWidth"],
             ["atomsTruncateTextTitle"],
             ["atomsTruncateTextText"]
@@ -1504,10 +1801,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_ALERT",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_ALERT",
+                label: "Rich Text Content Of Molecules Alert",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesAlertValue",
                 id: "moleculesAlertValue",
                 label: "value",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1517,6 +1826,7 @@ export default [
                 id: "moleculesAlertId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1526,6 +1836,7 @@ export default [
                 id: "moleculesAlertDismissable",
                 label: "dismissable",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1538,7 +1849,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1560,17 +1871,75 @@ export default [
                 id: "moleculesAlertModal",
                 label: "modal",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
             },
             {
-                fieldId: "moleculesAlertChildren",
-                id: "moleculesAlertChildren",
-                label: "Nested elements",
+                fieldId: "moleculesAlertSlotDefault",
+                id: "moleculesAlertSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsIcon",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesAlertSlotActions",
+                id: "moleculesAlertSlotActions",
+                label: "actions",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesAlertSlotIcon",
+                id: "moleculesAlertSlotIcon",
+                label: "icon",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesAlertSlotTitle",
+                id: "moleculesAlertSlotTitle",
+                label: "title",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -1586,12 +1955,16 @@ export default [
         },
         layout: [
             ["idMoleculesAlert"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_ALERT"],
             ["moleculesAlertValue"],
             ["moleculesAlertId"],
             ["moleculesAlertDismissable"],
             ["moleculesAlertVariant"],
             ["moleculesAlertModal"],
-            ["moleculesAlertChildren"]
+            ["moleculesAlertSlotDefault"],
+            ["moleculesAlertSlotActions"],
+            ["moleculesAlertSlotIcon"],
+            ["moleculesAlertSlotTitle"]
         ],
         titleFieldId: "idMoleculesAlert"
     }),
@@ -1610,10 +1983,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_BREADCRUMB",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_BREADCRUMB",
+                label: "Rich Text Content Of Molecules Breadcrumb",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesBreadcrumbHref",
                 id: "moleculesBreadcrumbHref",
                 label: "href",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1623,7 +2008,11 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesBreadcrumb"], ["moleculesBreadcrumbHref"]],
+        layout: [
+            ["idMoleculesBreadcrumb"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_BREADCRUMB"],
+            ["moleculesBreadcrumbHref"]
+        ],
         titleFieldId: "idMoleculesBreadcrumb"
     }),
     new CmsModelPlugin({
@@ -1641,10 +2030,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_BUTTON",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_BUTTON",
+                label: "Rich Text Content Of Molecules Button",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesButtonId",
                 id: "moleculesButtonId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1654,6 +2055,7 @@ export default [
                 id: "moleculesButtonValue",
                 label: "value",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1666,7 +2068,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1706,7 +2108,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1723,6 +2125,7 @@ export default [
                 id: "moleculesButtonOutline",
                 label: "outline",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1732,6 +2135,7 @@ export default [
                 id: "moleculesButtonCircle",
                 label: "circle",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1741,6 +2145,7 @@ export default [
                 id: "moleculesButtonBlock",
                 label: "block",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1750,6 +2155,7 @@ export default [
                 id: "moleculesButtonHref",
                 label: "href",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1759,6 +2165,7 @@ export default [
                 id: "moleculesButtonActive",
                 label: "active",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1768,6 +2175,7 @@ export default [
                 id: "moleculesButtonDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -1777,17 +2185,63 @@ export default [
                 id: "moleculesButtonLabel",
                 label: "label",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "moleculesButtonChildren",
-                id: "moleculesButtonChildren",
-                label: "Nested elements",
+                fieldId: "moleculesButtonSlotDefault",
+                id: "moleculesButtonSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsIcon,MoleculesLabel",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "MoleculesLabel"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesButtonSlotLabelLeft",
+                id: "moleculesButtonSlotLabelLeft",
+                label: "labelLeft",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon,MoleculesLabel",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "MoleculesLabel"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesButtonSlotLabelRight",
+                id: "moleculesButtonSlotLabelRight",
+                label: "labelRight",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon,MoleculesLabel",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -1806,6 +2260,7 @@ export default [
         },
         layout: [
             ["idMoleculesButton"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_BUTTON"],
             ["moleculesButtonId"],
             ["moleculesButtonValue"],
             ["moleculesButtonVariant"],
@@ -1817,7 +2272,9 @@ export default [
             ["moleculesButtonActive"],
             ["moleculesButtonDisabled"],
             ["moleculesButtonLabel"],
-            ["moleculesButtonChildren"]
+            ["moleculesButtonSlotDefault"],
+            ["moleculesButtonSlotLabelLeft"],
+            ["moleculesButtonSlotLabelRight"]
         ],
         titleFieldId: "idMoleculesButton"
     }),
@@ -1836,10 +2293,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_CHART",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_CHART",
+                label: "Rich Text Content Of Molecules Chart",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesChartType",
                 id: "moleculesChartType",
                 label: "type",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1849,6 +2318,7 @@ export default [
                 id: "moleculesChartData",
                 label: "data",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1858,6 +2328,7 @@ export default [
                 id: "moleculesChartAspectRatio",
                 label: "aspectRatio",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -1869,6 +2340,7 @@ export default [
         },
         layout: [
             ["idMoleculesChart"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_CHART"],
             ["moleculesChartType"],
             ["moleculesChartData"],
             ["moleculesChartAspectRatio"]
@@ -1890,12 +2362,27 @@ export default [
                 }
             },
             {
-                fieldId: "moleculesContentChildren",
-                id: "moleculesContentChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_CONTENT",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_CONTENT",
+                label: "Rich Text Content Of Molecules Content",
+                type: "rich-text",
                 multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
+                fieldId: "moleculesContentSlotDefault",
+                id: "moleculesContentSlotDefault",
+                label: "__default__",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsAddress,AtomsQrCode,AtomsRichText,MoleculesDetailList,MoleculesDisclaimerList,MoleculesGroup,MoleculesHeading,OrganismsForm",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -1930,7 +2417,11 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesContent"], ["moleculesContentChildren"]],
+        layout: [
+            ["idMoleculesContent"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_CONTENT"],
+            ["moleculesContentSlotDefault"]
+        ],
         titleFieldId: "idMoleculesContent"
     }),
     new CmsModelPlugin({
@@ -1948,12 +2439,23 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_CONTROL",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_CONTROL",
+                label: "Rich Text Content Of Molecules Control",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesControlType",
                 id: "moleculesControlType",
                 label: "type",
                 type: "text",
                 renderer: {
-                    name: "text-inputs"
+                    name: "select-box"
                 },
                 multipleValues: false,
                 predefinedValues: {
@@ -1969,7 +2471,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -1991,6 +2493,7 @@ export default [
                 id: "moleculesControlId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2000,6 +2503,7 @@ export default [
                 id: "moleculesControlLabel",
                 label: "label",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2009,6 +2513,7 @@ export default [
                 id: "moleculesControlMessage",
                 label: "message",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2021,7 +2526,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2043,6 +2548,7 @@ export default [
                 id: "moleculesControlName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2052,17 +2558,90 @@ export default [
                 id: "moleculesControlGroup",
                 label: "group",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
             },
             {
-                fieldId: "moleculesControlChildren",
-                id: "moleculesControlChildren",
-                label: "Nested elements",
+                fieldId: "moleculesControlSlotDefault",
+                id: "moleculesControlSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText:
+                    "Allowed components: AtomsDropDown,AtomsIcon,AtomsTextField,AtomsToggle,MoleculesFileUpload,MoleculesPasswordStrength",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsTextField"
+                        },
+                        {
+                            modelId: "AtomsToggle"
+                        },
+                        {
+                            modelId: "MoleculesFileUpload"
+                        },
+                        {
+                            modelId: "MoleculesPasswordStrength"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesControlSlotButtonPostfix",
+                id: "moleculesControlSlotButtonPostfix",
+                label: "buttonPostfix",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsDropDown,AtomsIcon,AtomsTextField,AtomsToggle,MoleculesFileUpload,MoleculesPasswordStrength",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsTextField"
+                        },
+                        {
+                            modelId: "AtomsToggle"
+                        },
+                        {
+                            modelId: "MoleculesFileUpload"
+                        },
+                        {
+                            modelId: "MoleculesPasswordStrength"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesControlSlotButtonPrefix",
+                id: "moleculesControlSlotButtonPrefix",
+                label: "buttonPrefix",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsDropDown,AtomsIcon,AtomsTextField,AtomsToggle,MoleculesFileUpload,MoleculesPasswordStrength",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2093,6 +2672,7 @@ export default [
         },
         layout: [
             ["idMoleculesControl"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_CONTROL"],
             ["moleculesControlType"],
             ["moleculesControlState"],
             ["moleculesControlId"],
@@ -2101,7 +2681,9 @@ export default [
             ["moleculesControlWidth"],
             ["moleculesControlName"],
             ["moleculesControlGroup"],
-            ["moleculesControlChildren"]
+            ["moleculesControlSlotDefault"],
+            ["moleculesControlSlotButtonPostfix"],
+            ["moleculesControlSlotButtonPrefix"]
         ],
         titleFieldId: "idMoleculesControl"
     }),
@@ -2120,6 +2702,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_CTA_LIST",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_CTA_LIST",
+                label: "Rich Text Content Of Molecules Cta List",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesCtaListVariant",
                 id: "moleculesCtaListVariant",
                 label: "variant",
@@ -2127,7 +2720,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2167,7 +2760,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2184,7 +2777,12 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesCtaList"], ["moleculesCtaListVariant"], ["moleculesCtaListType"]],
+        layout: [
+            ["idMoleculesCtaList"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_CTA_LIST"],
+            ["moleculesCtaListVariant"],
+            ["moleculesCtaListType"]
+        ],
         titleFieldId: "idMoleculesCtaList"
     }),
     new CmsModelPlugin({
@@ -2202,21 +2800,36 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_DETAIL_LIST",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_DETAIL_LIST",
+                label: "Rich Text Content Of Molecules Detail List",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesDetailListSplit",
                 id: "moleculesDetailListSplit",
                 label: "split",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "moleculesDetailListChildren",
-                id: "moleculesDetailListChildren",
-                label: "Nested elements",
+                fieldId: "moleculesDetailListSlotDefault",
+                id: "moleculesDetailListSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsChip,AtomsIcon,AtomsRichText,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2241,8 +2854,9 @@ export default [
         },
         layout: [
             ["idMoleculesDetailList"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_DETAIL_LIST"],
             ["moleculesDetailListSplit"],
-            ["moleculesDetailListChildren"]
+            ["moleculesDetailListSlotDefault"]
         ],
         titleFieldId: "idMoleculesDetailList"
     }),
@@ -2261,12 +2875,44 @@ export default [
                 }
             },
             {
-                fieldId: "moleculesDisclaimerListChildren",
-                id: "moleculesDisclaimerListChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_DISCLAIMER_LIST",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_DISCLAIMER_LIST",
+                label: "Rich Text Content Of Molecules Disclaimer List",
+                type: "rich-text",
                 multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
+                fieldId: "moleculesDisclaimerListSlotDefault",
+                id: "moleculesDisclaimerListSlotDefault",
+                label: "__default__",
+                type: "ref",
+                helpText: "Allowed components: MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "MoleculesHeading"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesDisclaimerListSlotHeading",
+                id: "moleculesDisclaimerListSlotHeading",
+                label: "heading",
+                type: "ref",
+                helpText: "Allowed components: MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2280,7 +2926,12 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesDisclaimerList"], ["moleculesDisclaimerListChildren"]],
+        layout: [
+            ["idMoleculesDisclaimerList"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_DISCLAIMER_LIST"],
+            ["moleculesDisclaimerListSlotDefault"],
+            ["moleculesDisclaimerListSlotHeading"]
+        ],
         titleFieldId: "idMoleculesDisclaimerList"
     }),
     new CmsModelPlugin({
@@ -2298,10 +2949,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_FILE_UPLOAD",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_FILE_UPLOAD",
+                label: "Rich Text Content Of Molecules File Upload",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesFileUploadId",
                 id: "moleculesFileUploadId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2311,6 +2974,7 @@ export default [
                 id: "moleculesFileUploadName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2320,6 +2984,7 @@ export default [
                 id: "moleculesFileUploadUploaded",
                 label: "uploaded",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -2331,6 +2996,7 @@ export default [
         },
         layout: [
             ["idMoleculesFileUpload"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_FILE_UPLOAD"],
             ["moleculesFileUploadId"],
             ["moleculesFileUploadName"],
             ["moleculesFileUploadUploaded"]
@@ -2352,6 +3018,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_GROUP",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_GROUP",
+                label: "Rich Text Content Of Molecules Group",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesGroupAlign",
                 id: "moleculesGroupAlign",
                 label: "align",
@@ -2359,7 +3036,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2396,17 +3073,69 @@ export default [
                 id: "moleculesGroupGrid",
                 label: "grid",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
             },
             {
-                fieldId: "moleculesGroupChildren",
-                id: "moleculesGroupChildren",
-                label: "Nested elements",
+                fieldId: "moleculesGroupSlotDefault",
+                id: "moleculesGroupSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsIcon,MoleculesButton,OrganismsCard",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "OrganismsCard"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesGroupSlotLabelLeft",
+                id: "moleculesGroupSlotLabelLeft",
+                label: "labelLeft",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon,MoleculesButton,OrganismsCard",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "OrganismsCard"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesGroupSlotLabelRight",
+                id: "moleculesGroupSlotLabelRight",
+                label: "labelRight",
+                type: "ref",
+                helpText: "Allowed components: AtomsIcon,MoleculesButton,OrganismsCard",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2428,9 +3157,12 @@ export default [
         },
         layout: [
             ["idMoleculesGroup"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_GROUP"],
             ["moleculesGroupAlign"],
             ["moleculesGroupGrid"],
-            ["moleculesGroupChildren"]
+            ["moleculesGroupSlotDefault"],
+            ["moleculesGroupSlotLabelLeft"],
+            ["moleculesGroupSlotLabelRight"]
         ],
         titleFieldId: "idMoleculesGroup"
     }),
@@ -2449,6 +3181,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_HEADING",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_HEADING",
+                label: "Rich Text Content Of Molecules Heading",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesHeadingSize",
                 id: "moleculesHeadingSize",
                 label: "size",
@@ -2456,7 +3199,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2476,7 +3219,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2501,7 +3244,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2519,12 +3262,100 @@ export default [
                 }
             },
             {
-                fieldId: "moleculesHeadingChildren",
-                id: "moleculesHeadingChildren",
-                label: "Nested elements",
+                fieldId: "moleculesHeadingSlotDefault",
+                id: "moleculesHeadingSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText:
+                    "Allowed components: AtomsIcon,AtomsLoadingIndicator,MoleculesButton,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsLoadingIndicator"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesHeadingSlotButton",
+                id: "moleculesHeadingSlotButton",
+                label: "button",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsIcon,AtomsLoadingIndicator,MoleculesButton,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsLoadingIndicator"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesHeadingSlotHelp",
+                id: "moleculesHeadingSlotHelp",
+                label: "help",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsIcon,AtomsLoadingIndicator,MoleculesButton,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsLoadingIndicator"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesHeadingSlotIcon",
+                id: "moleculesHeadingSlotIcon",
+                label: "icon",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsIcon,AtomsLoadingIndicator,MoleculesButton,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2549,10 +3380,14 @@ export default [
         },
         layout: [
             ["idMoleculesHeading"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_HEADING"],
             ["moleculesHeadingSize"],
             ["moleculesHeadingVariant"],
             ["moleculesHeadingAlign"],
-            ["moleculesHeadingChildren"]
+            ["moleculesHeadingSlotDefault"],
+            ["moleculesHeadingSlotButton"],
+            ["moleculesHeadingSlotHelp"],
+            ["moleculesHeadingSlotIcon"]
         ],
         titleFieldId: "idMoleculesHeading"
     }),
@@ -2571,10 +3406,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_ITEM",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_ITEM",
+                label: "Rich Text Content Of Molecules Item",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesItemIconName",
                 id: "moleculesItemIconName",
                 label: "iconName",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2584,6 +3431,7 @@ export default [
                 id: "moleculesItemIconViewbox",
                 label: "iconViewbox",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2593,7 +3441,12 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesItem"], ["moleculesItemIconName"], ["moleculesItemIconViewbox"]],
+        layout: [
+            ["idMoleculesItem"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_ITEM"],
+            ["moleculesItemIconName"],
+            ["moleculesItemIconViewbox"]
+        ],
         titleFieldId: "idMoleculesItem"
     }),
     new CmsModelPlugin({
@@ -2609,13 +3462,24 @@ export default [
                 renderer: {
                     name: "text-input"
                 }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_LABEL",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_LABEL",
+                label: "Rich Text Content Of Molecules Label",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
             }
         ],
         group: {
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesLabel"]],
+        layout: [["idMoleculesLabel"], ["RICH_TEXT_BLOCKS_MOLECULES_LABEL"]],
         titleFieldId: "idMoleculesLabel"
     }),
     new CmsModelPlugin({
@@ -2633,10 +3497,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_MEDIA_CONTENT",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_MEDIA_CONTENT",
+                label: "Rich Text Content Of Molecules Media Content",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesMediaContentReverse",
                 id: "moleculesMediaContentReverse",
                 label: "reverse",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -2649,7 +3525,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2674,7 +3550,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2692,12 +3568,44 @@ export default [
                 }
             },
             {
-                fieldId: "moleculesMediaContentChildren",
-                id: "moleculesMediaContentChildren",
-                label: "Nested elements",
+                fieldId: "moleculesMediaContentSlotMedia",
+                id: "moleculesMediaContentSlotMedia",
+                label: "media",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesDetailList,MoleculesGroup,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsRichText"
+                        },
+                        {
+                            modelId: "MoleculesDetailList"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        },
+                        {
+                            modelId: "MoleculesHeading"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesMediaContentSlotText",
+                id: "moleculesMediaContentSlotText",
+                label: "text",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesDetailList,MoleculesGroup,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2722,10 +3630,12 @@ export default [
         },
         layout: [
             ["idMoleculesMediaContent"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_MEDIA_CONTENT"],
             ["moleculesMediaContentReverse"],
             ["moleculesMediaContentAlign"],
             ["moleculesMediaContentValign"],
-            ["moleculesMediaContentChildren"]
+            ["moleculesMediaContentSlotMedia"],
+            ["moleculesMediaContentSlotText"]
         ],
         titleFieldId: "idMoleculesMediaContent"
     }),
@@ -2744,6 +3654,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_MENU",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_MENU",
+                label: "Rich Text Content Of Molecules Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesMenuOrientation",
                 id: "moleculesMenuOrientation",
                 label: "orientation",
@@ -2751,7 +3672,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2768,6 +3689,7 @@ export default [
                 id: "moleculesMenuId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2777,17 +3699,39 @@ export default [
                 id: "moleculesMenuName",
                 label: "name",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "moleculesMenuChildren",
-                id: "moleculesMenuChildren",
-                label: "Nested elements",
+                fieldId: "moleculesMenuSlotDefault",
+                id: "moleculesMenuSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsDropDown",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesMenuSlotTitle",
+                id: "moleculesMenuSlotTitle",
+                label: "title",
+                type: "ref",
+                helpText: "Allowed components: AtomsDropDown",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -2803,10 +3747,12 @@ export default [
         },
         layout: [
             ["idMoleculesMenu"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_MENU"],
             ["moleculesMenuOrientation"],
             ["moleculesMenuId"],
             ["moleculesMenuName"],
-            ["moleculesMenuChildren"]
+            ["moleculesMenuSlotDefault"],
+            ["moleculesMenuSlotTitle"]
         ],
         titleFieldId: "idMoleculesMenu"
     }),
@@ -2825,10 +3771,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_MNEMONIC",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_MNEMONIC",
+                label: "Rich Text Content Of Molecules Mnemonic",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesMnemonicSeed",
                 id: "moleculesMnemonicSeed",
                 label: "seed",
                 type: "text",
+                multipleValues: true,
                 renderer: {
                     name: "text-input"
                 }
@@ -2841,7 +3799,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -2863,6 +3821,7 @@ export default [
                 id: "moleculesMnemonicLength",
                 label: "length",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -2872,26 +3831,9 @@ export default [
                 id: "moleculesMnemonicDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
-                }
-            },
-            {
-                fieldId: "moleculesMnemonicChildren",
-                id: "moleculesMnemonicChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
-                settings: {
-                    models: [
-                        {
-                            modelId: "AtomsTextField"
-                        },
-                        {
-                            modelId: "MoleculesButton"
-                        }
-                    ]
                 }
             }
         ],
@@ -2901,11 +3843,11 @@ export default [
         },
         layout: [
             ["idMoleculesMnemonic"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_MNEMONIC"],
             ["moleculesMnemonicSeed"],
             ["moleculesMnemonicType"],
             ["moleculesMnemonicLength"],
-            ["moleculesMnemonicDisabled"],
-            ["moleculesMnemonicChildren"]
+            ["moleculesMnemonicDisabled"]
         ],
         titleFieldId: "idMoleculesMnemonic"
     }),
@@ -2924,10 +3866,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_PAGINATION",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_PAGINATION",
+                label: "Rich Text Content Of Molecules Pagination",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesPaginationRef",
                 id: "moleculesPaginationRef",
                 label: "ref",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -2937,6 +3891,7 @@ export default [
                 id: "moleculesPaginationItems",
                 label: "items",
                 type: "text",
+                multipleValues: true,
                 renderer: {
                     name: "text-input"
                 }
@@ -2946,6 +3901,7 @@ export default [
                 id: "moleculesPaginationItemsPerPage",
                 label: "itemsPerPage",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -2955,23 +3911,9 @@ export default [
                 id: "moleculesPaginationPageNumber",
                 label: "pageNumber",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
-                }
-            },
-            {
-                fieldId: "moleculesPaginationChildren",
-                id: "moleculesPaginationChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
-                settings: {
-                    models: [
-                        {
-                            modelId: "MoleculesMenu"
-                        }
-                    ]
                 }
             }
         ],
@@ -2981,11 +3923,11 @@ export default [
         },
         layout: [
             ["idMoleculesPagination"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_PAGINATION"],
             ["moleculesPaginationRef"],
             ["moleculesPaginationItems"],
             ["moleculesPaginationItemsPerPage"],
-            ["moleculesPaginationPageNumber"],
-            ["moleculesPaginationChildren"]
+            ["moleculesPaginationPageNumber"]
         ],
         titleFieldId: "idMoleculesPagination"
     }),
@@ -3004,21 +3946,36 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_PASSWORD_STRENGTH",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_PASSWORD_STRENGTH",
+                label: "Rich Text Content Of Molecules Password Strength",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesPasswordStrengthPassword",
                 id: "moleculesPasswordStrengthPassword",
                 label: "password",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "moleculesPasswordStrengthChildren",
-                id: "moleculesPasswordStrengthChildren",
-                label: "Nested elements",
+                fieldId: "moleculesPasswordStrengthSlotDefault",
+                id: "moleculesPasswordStrengthSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsProgressBar",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3034,8 +3991,9 @@ export default [
         },
         layout: [
             ["idMoleculesPasswordStrength"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_PASSWORD_STRENGTH"],
             ["moleculesPasswordStrengthPassword"],
-            ["moleculesPasswordStrengthChildren"]
+            ["moleculesPasswordStrengthSlotDefault"]
         ],
         titleFieldId: "idMoleculesPasswordStrength"
     }),
@@ -3054,21 +4012,54 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_STATISTIC",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_STATISTIC",
+                label: "Rich Text Content Of Molecules Statistic",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesStatisticTitle",
                 id: "moleculesStatisticTitle",
                 label: "title",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "moleculesStatisticChildren",
-                id: "moleculesStatisticChildren",
-                label: "Nested elements",
+                fieldId: "moleculesStatisticSlotDefault",
+                id: "moleculesStatisticSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsChip",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsChip"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "moleculesStatisticSlotIcon",
+                id: "moleculesStatisticSlotIcon",
+                label: "icon",
+                type: "ref",
+                helpText: "Allowed components: AtomsChip",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3084,8 +4075,10 @@ export default [
         },
         layout: [
             ["idMoleculesStatistic"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_STATISTIC"],
             ["moleculesStatisticTitle"],
-            ["moleculesStatisticChildren"]
+            ["moleculesStatisticSlotDefault"],
+            ["moleculesStatisticSlotIcon"]
         ],
         titleFieldId: "idMoleculesStatistic"
     }),
@@ -3104,6 +4097,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_STEP_LIST",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_STEP_LIST",
+                label: "Rich Text Content Of Molecules Step List",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesStepListVariant",
                 id: "moleculesStepListVariant",
                 label: "variant",
@@ -3111,7 +4115,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -3148,7 +4152,11 @@ export default [
             id: "molecules",
             name: "Molecules"
         },
-        layout: [["idMoleculesStepList"], ["moleculesStepListVariant"]],
+        layout: [
+            ["idMoleculesStepList"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_STEP_LIST"],
+            ["moleculesStepListVariant"]
+        ],
         titleFieldId: "idMoleculesStepList"
     }),
     new CmsModelPlugin({
@@ -3166,10 +4174,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_MOLECULES_WORD",
+                id: "RICH_TEXT_BLOCKS_MOLECULES_WORD",
+                label: "Rich Text Content Of Molecules Word",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "moleculesWordValue",
                 id: "moleculesWordValue",
                 label: "value",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3179,6 +4199,7 @@ export default [
                 id: "moleculesWordIndex",
                 label: "index",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3188,6 +4209,7 @@ export default [
                 id: "moleculesWordDisabled",
                 label: "disabled",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3197,6 +4219,7 @@ export default [
                 id: "moleculesWordId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3208,6 +4231,7 @@ export default [
         },
         layout: [
             ["idMoleculesWord"],
+            ["RICH_TEXT_BLOCKS_MOLECULES_WORD"],
             ["moleculesWordValue"],
             ["moleculesWordIndex"],
             ["moleculesWordDisabled"],
@@ -3237,21 +4261,36 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_ACCORDION",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_ACCORDION",
+                label: "Rich Text Content Of Organisms Accordion",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsAccordionMultiselect",
                 id: "organismsAccordionMultiselect",
                 label: "multiselect",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
             },
             {
-                fieldId: "organismsAccordionChildren",
-                id: "organismsAccordionChildren",
-                label: "Nested elements",
+                fieldId: "organismsAccordionSlotDefault",
+                id: "organismsAccordionSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: MoleculesButton",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3267,8 +4306,9 @@ export default [
         },
         layout: [
             ["idOrganismsAccordion"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_ACCORDION"],
             ["organismsAccordionMultiselect"],
-            ["organismsAccordionChildren"]
+            ["organismsAccordionSlotDefault"]
         ],
         titleFieldId: "idOrganismsAccordion"
     }),
@@ -3285,13 +4325,24 @@ export default [
                 renderer: {
                     name: "text-input"
                 }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_ACTIONS",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_ACTIONS",
+                label: "Rich Text Content Of Organisms Actions",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsActions"]],
+        layout: [["idOrganismsActions"], ["RICH_TEXT_BLOCKS_ORGANISMS_ACTIONS"]],
         titleFieldId: "idOrganismsActions"
     }),
     new CmsModelPlugin({
@@ -3309,10 +4360,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_APPS_MENU",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_APPS_MENU",
+                label: "Rich Text Content Of Organisms Apps Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsAppsMenuApps",
                 id: "organismsAppsMenuApps",
                 label: "apps",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3322,6 +4385,7 @@ export default [
                 id: "organismsAppsMenuAppName",
                 label: "appName",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3331,7 +4395,12 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsAppsMenu"], ["organismsAppsMenuApps"], ["organismsAppsMenuAppName"]],
+        layout: [
+            ["idOrganismsAppsMenu"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_APPS_MENU"],
+            ["organismsAppsMenuApps"],
+            ["organismsAppsMenuAppName"]
+        ],
         titleFieldId: "idOrganismsAppsMenu"
     }),
     new CmsModelPlugin({
@@ -3349,6 +4418,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_CARD",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_CARD",
+                label: "Rich Text Content Of Organisms Card",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsCardVariant",
                 id: "organismsCardVariant",
                 label: "variant",
@@ -3356,7 +4436,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -3396,7 +4476,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -3418,6 +4498,7 @@ export default [
                 id: "organismsCardHref",
                 label: "href",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3427,6 +4508,7 @@ export default [
                 id: "organismsCardDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -3436,17 +4518,22 @@ export default [
                 id: "organismsCardOverflow",
                 label: "overflow",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
             },
             {
-                fieldId: "organismsCardChildren",
-                id: "organismsCardChildren",
-                label: "Nested elements",
+                fieldId: "organismsCardSlotDefault",
+                id: "organismsCardSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesBreadcrumb,MoleculesContent,MoleculesDetailList,MoleculesDisclaimerList,MoleculesHeading,MoleculesMediaContent,MoleculesMnemonic,OrganismsAccordion,OrganismsWizard",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3489,12 +4576,13 @@ export default [
         },
         layout: [
             ["idOrganismsCard"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_CARD"],
             ["organismsCardVariant"],
             ["organismsCardState"],
             ["organismsCardHref"],
             ["organismsCardDisabled"],
             ["organismsCardOverflow"],
-            ["organismsCardChildren"]
+            ["organismsCardSlotDefault"]
         ],
         titleFieldId: "idOrganismsCard"
     }),
@@ -3513,10 +4601,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_CATEGORY_MENU",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_CATEGORY_MENU",
+                label: "Rich Text Content Of Organisms Category Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsCategoryMenuCategory",
                 id: "organismsCategoryMenuCategory",
                 label: "category",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3526,7 +4626,11 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsCategoryMenu"], ["organismsCategoryMenuCategory"]],
+        layout: [
+            ["idOrganismsCategoryMenu"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_CATEGORY_MENU"],
+            ["organismsCategoryMenuCategory"]
+        ],
         titleFieldId: "idOrganismsCategoryMenu"
     }),
     new CmsModelPlugin({
@@ -3544,10 +4648,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_COOKIE_BANNER",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_COOKIE_BANNER",
+                label: "Rich Text Content Of Organisms Cookie Banner",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsCookieBannerId",
                 id: "organismsCookieBannerId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3557,6 +4673,7 @@ export default [
                 id: "organismsCookieBannerCookieName",
                 label: "cookieName",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3566,6 +4683,7 @@ export default [
                 id: "organismsCookieBannerDarkModeCookieName",
                 label: "darkModeCookieName",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3574,9 +4692,27 @@ export default [
                 fieldId: "organismsCookieBannerCookieConfig",
                 id: "organismsCookieBannerCookieConfig",
                 label: "cookieConfig",
-                type: "text",
+                type: "object",
+                multipleValues: false,
                 renderer: {
-                    name: "text-input"
+                    name: "object"
+                },
+                settings: {
+                    fields: [
+                        {
+                            id: "expires_15876dec-f933-4d4d-a322-3327a9fcff0d",
+                            helpText: "",
+                            placeholderText: "Expires",
+                            label: "Expires",
+                            type: "number",
+                            validation: [],
+                            fieldId: "expires",
+                            renderer: {
+                                name: "number-input"
+                            }
+                        }
+                    ],
+                    layout: [["expires_15876dec-f933-4d4d-a322-3327a9fcff0d"]]
                 }
             },
             {
@@ -3584,6 +4720,7 @@ export default [
                 id: "organismsCookieBannerAcceptLabel",
                 label: "acceptLabel",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3593,6 +4730,7 @@ export default [
                 id: "organismsCookieBannerSettingsLabel",
                 label: "settingsLabel",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3602,6 +4740,7 @@ export default [
                 id: "organismsCookieBannerShowBanner",
                 label: "showBanner",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -3611,6 +4750,7 @@ export default [
                 id: "organismsCookieBannerShowSettings",
                 label: "showSettings",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -3620,6 +4760,7 @@ export default [
                 id: "organismsCookieBannerCloseScrim",
                 label: "closeScrim",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -3631,6 +4772,7 @@ export default [
         },
         layout: [
             ["idOrganismsCookieBanner"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_COOKIE_BANNER"],
             ["organismsCookieBannerId"],
             ["organismsCookieBannerCookieName"],
             ["organismsCookieBannerDarkModeCookieName"],
@@ -3658,10 +4800,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_DATUM",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_DATUM",
+                label: "Rich Text Content Of Organisms Datum",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsDatumVariant",
                 id: "organismsDatumVariant",
                 label: "variant",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3671,6 +4825,7 @@ export default [
                 id: "organismsDatumDataKey",
                 label: "dataKey",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3680,6 +4835,7 @@ export default [
                 id: "organismsDatumHidden",
                 label: "hidden",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -3689,6 +4845,7 @@ export default [
                 id: "organismsDatumColspan",
                 label: "colspan",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3698,17 +4855,22 @@ export default [
                 id: "organismsDatumId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsDatumChildren",
-                id: "organismsDatumChildren",
-                label: "Nested elements",
+                fieldId: "organismsDatumSlotDefault",
+                id: "organismsDatumSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText:
+                    "Allowed components: AtomsChip,AtomsLoadingIndicator,AtomsTruncateText,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3733,12 +4895,13 @@ export default [
         },
         layout: [
             ["idOrganismsDatum"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_DATUM"],
             ["organismsDatumVariant"],
             ["organismsDatumDataKey"],
             ["organismsDatumHidden"],
             ["organismsDatumColspan"],
             ["organismsDatumId"],
-            ["organismsDatumChildren"]
+            ["organismsDatumSlotDefault"]
         ],
         titleFieldId: "idOrganismsDatum"
     }),
@@ -3757,10 +4920,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_ERROR_BLOCK",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_ERROR_BLOCK",
+                label: "Rich Text Content Of Organisms Error Block",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsErrorBlockCode",
                 id: "organismsErrorBlockCode",
                 label: "code",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -3770,6 +4945,7 @@ export default [
                 id: "organismsErrorBlockMessage",
                 label: "message",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3779,6 +4955,7 @@ export default [
                 id: "organismsErrorBlockStack",
                 label: "stack",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3788,6 +4965,7 @@ export default [
                 id: "organismsErrorBlockDev",
                 label: "dev",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3799,6 +4977,7 @@ export default [
         },
         layout: [
             ["idOrganismsErrorBlock"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_ERROR_BLOCK"],
             ["organismsErrorBlockCode"],
             ["organismsErrorBlockMessage"],
             ["organismsErrorBlockStack"],
@@ -3821,6 +5000,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_FOOTER",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_FOOTER",
+                label: "Rich Text Content Of Organisms Footer",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsFooterType",
                 id: "organismsFooterType",
                 label: "type",
@@ -3828,7 +5018,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -3845,6 +5035,7 @@ export default [
                 id: "organismsFooterSocial",
                 label: "social",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3854,29 +5045,9 @@ export default [
                 id: "organismsFooterCategories",
                 label: "categories",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
-                }
-            },
-            {
-                fieldId: "organismsFooterChildren",
-                id: "organismsFooterChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
-                settings: {
-                    models: [
-                        {
-                            modelId: "AtomsIcon"
-                        },
-                        {
-                            modelId: "AtomsLogo"
-                        },
-                        {
-                            modelId: "MoleculesMenu"
-                        }
-                    ]
                 }
             }
         ],
@@ -3886,10 +5057,10 @@ export default [
         },
         layout: [
             ["idOrganismsFooter"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_FOOTER"],
             ["organismsFooterType"],
             ["organismsFooterSocial"],
-            ["organismsFooterCategories"],
-            ["organismsFooterChildren"]
+            ["organismsFooterCategories"]
         ],
         titleFieldId: "idOrganismsFooter"
     }),
@@ -3908,10 +5079,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_FORM",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_FORM",
+                label: "Rich Text Content Of Organisms Form",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsFormSubmitHandler",
                 id: "organismsFormSubmitHandler",
                 label: "submitHandler",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3921,6 +5104,7 @@ export default [
                 id: "organismsFormSchema",
                 label: "schema",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3930,6 +5114,7 @@ export default [
                 id: "organismsFormFields",
                 label: "fields",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -3939,17 +5124,21 @@ export default [
                 id: "organismsFormSubmitted",
                 label: "submitted",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsFormChildren",
-                id: "organismsFormChildren",
-                label: "Nested elements",
+                fieldId: "organismsFormSlotDefault",
+                id: "organismsFormSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: MoleculesFileUpload,MoleculesGroup",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -3968,11 +5157,12 @@ export default [
         },
         layout: [
             ["idOrganismsForm"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_FORM"],
             ["organismsFormSubmitHandler"],
             ["organismsFormSchema"],
             ["organismsFormFields"],
             ["organismsFormSubmitted"],
-            ["organismsFormChildren"]
+            ["organismsFormSlotDefault"]
         ],
         titleFieldId: "idOrganismsForm"
     }),
@@ -3991,12 +5181,83 @@ export default [
                 }
             },
             {
-                fieldId: "organismsHeroChildren",
-                id: "organismsHeroChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_HERO",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_HERO",
+                label: "Rich Text Content Of Organisms Hero",
+                type: "rich-text",
                 multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
+                fieldId: "organismsHeroSlotCta",
+                id: "organismsHeroSlotCta",
+                label: "cta",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesAlert,MoleculesButton,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsRichText"
+                        },
+                        {
+                            modelId: "MoleculesAlert"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesHeading"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsHeroSlotImage",
+                id: "organismsHeroSlotImage",
+                label: "image",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesAlert,MoleculesButton,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsRichText"
+                        },
+                        {
+                            modelId: "MoleculesAlert"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesHeading"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsHeroSlotIntroduction",
+                id: "organismsHeroSlotIntroduction",
+                label: "introduction",
+                type: "ref",
+                helpText:
+                    "Allowed components: AtomsRichText,MoleculesAlert,MoleculesButton,MoleculesHeading",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4019,7 +5280,13 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsHero"], ["organismsHeroChildren"]],
+        layout: [
+            ["idOrganismsHero"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_HERO"],
+            ["organismsHeroSlotCta"],
+            ["organismsHeroSlotImage"],
+            ["organismsHeroSlotIntroduction"]
+        ],
         titleFieldId: "idOrganismsHero"
     }),
     new CmsModelPlugin({
@@ -4037,10 +5304,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_ITEM",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_ITEM",
+                label: "Rich Text Content Of Organisms Item",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsItemId",
                 id: "organismsItemId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4050,6 +5329,7 @@ export default [
                 id: "organismsItemTitle",
                 label: "title",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4059,6 +5339,7 @@ export default [
                 id: "organismsItemExpanded",
                 label: "expanded",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4068,6 +5349,7 @@ export default [
                 id: "organismsItemDisabled",
                 label: "disabled",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4077,6 +5359,7 @@ export default [
                 id: "organismsItemRef",
                 label: "ref",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4088,6 +5371,7 @@ export default [
         },
         layout: [
             ["idOrganismsItem"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_ITEM"],
             ["organismsItemId"],
             ["organismsItemTitle"],
             ["organismsItemExpanded"],
@@ -4111,10 +5395,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_LEGAL_MENU",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_LEGAL_MENU",
+                label: "Rich Text Content Of Organisms Legal Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsLegalMenuOrientation",
                 id: "organismsLegalMenuOrientation",
                 label: "orientation",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4124,7 +5420,11 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsLegalMenu"], ["organismsLegalMenuOrientation"]],
+        layout: [
+            ["idOrganismsLegalMenu"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_LEGAL_MENU"],
+            ["organismsLegalMenuOrientation"]
+        ],
         titleFieldId: "idOrganismsLegalMenu"
     }),
     new CmsModelPlugin({
@@ -4142,10 +5442,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_LINKS_MENU",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_LINKS_MENU",
+                label: "Rich Text Content Of Organisms Links Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsLinksMenuLinks",
                 id: "organismsLinksMenuLinks",
                 label: "links",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4155,7 +5467,11 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsLinksMenu"], ["organismsLinksMenuLinks"]],
+        layout: [
+            ["idOrganismsLinksMenu"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_LINKS_MENU"],
+            ["organismsLinksMenuLinks"]
+        ],
         titleFieldId: "idOrganismsLinksMenu"
     }),
     new CmsModelPlugin({
@@ -4173,10 +5489,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_MAXIMAL",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_MAXIMAL",
+                label: "Rich Text Content Of Organisms Maximal",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsMaximalCategories",
                 id: "organismsMaximalCategories",
                 label: "categories",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4186,8 +5514,133 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsMaximal"], ["organismsMaximalCategories"]],
+        layout: [
+            ["idOrganismsMaximal"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_MAXIMAL"],
+            ["organismsMaximalCategories"]
+        ],
         titleFieldId: "idOrganismsMaximal"
+    }),
+    new CmsModelPlugin({
+        name: "Organisms Message Banner",
+        modelId: "OrganismsMessageBanner",
+        description: "",
+        fields: [
+            {
+                fieldId: "idOrganismsMessageBanner",
+                id: "idOrganismsMessageBanner",
+                label: "Organisms Message Banner Id",
+                type: "text",
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_MESSAGE_BANNER",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_MESSAGE_BANNER",
+                label: "Rich Text Content Of Organisms Message Banner",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
+                fieldId: "organismsMessageBannerIcon",
+                id: "organismsMessageBannerIcon",
+                label: "icon",
+                type: "text",
+                multipleValues: false,
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsMessageBannerIconSize",
+                id: "organismsMessageBannerIconSize",
+                label: "iconSize",
+                type: "text",
+                renderer: {
+                    name: "select-box"
+                },
+                multipleValues: false,
+                predefinedValues: {
+                    enabled: true,
+                    values: [
+                        {
+                            label: "sm",
+                            value: "sm",
+                            selected: true
+                        },
+                        {
+                            label: "lg",
+                            value: "lg",
+                            selected: false
+                        },
+                        {
+                            label: "xl",
+                            value: "xl",
+                            selected: false
+                        },
+                        {
+                            label: "xxl",
+                            value: "xxl",
+                            selected: false
+                        },
+                        {
+                            label: "xxxl",
+                            value: "xxxl",
+                            selected: false
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsMessageBannerButtonLabel",
+                id: "organismsMessageBannerButtonLabel",
+                label: "buttonLabel",
+                type: "text",
+                multipleValues: false,
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsMessageBannerVariant",
+                id: "organismsMessageBannerVariant",
+                label: "variant",
+                type: "text",
+                multipleValues: false,
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsMessageBannerShowBanner",
+                id: "organismsMessageBannerShowBanner",
+                label: "showBanner",
+                type: "boolean",
+                multipleValues: false,
+                renderer: {
+                    name: "boolean-input"
+                }
+            }
+        ],
+        group: {
+            id: "organisms",
+            name: "Organisms"
+        },
+        layout: [
+            ["idOrganismsMessageBanner"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_MESSAGE_BANNER"],
+            ["organismsMessageBannerIcon"],
+            ["organismsMessageBannerIconSize"],
+            ["organismsMessageBannerButtonLabel"],
+            ["organismsMessageBannerVariant"],
+            ["organismsMessageBannerShowBanner"]
+        ],
+        titleFieldId: "idOrganismsMessageBanner"
     }),
     new CmsModelPlugin({
         name: "Organisms Minimal",
@@ -4204,10 +5657,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_MINIMAL",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_MINIMAL",
+                label: "Rich Text Content Of Organisms Minimal",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsMinimalCopyright",
                 id: "organismsMinimalCopyright",
                 label: "copyright",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4217,6 +5682,7 @@ export default [
                 id: "organismsMinimalSocial",
                 label: "social",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4226,7 +5692,12 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsMinimal"], ["organismsMinimalCopyright"], ["organismsMinimalSocial"]],
+        layout: [
+            ["idOrganismsMinimal"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_MINIMAL"],
+            ["organismsMinimalCopyright"],
+            ["organismsMinimalSocial"]
+        ],
         titleFieldId: "idOrganismsMinimal"
     }),
     new CmsModelPlugin({
@@ -4244,10 +5715,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_NAVBAR",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_NAVBAR",
+                label: "Rich Text Content Of Organisms Navbar",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsNavbarTitle",
                 id: "organismsNavbarTitle",
                 label: "title",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4256,18 +5739,97 @@ export default [
                 fieldId: "organismsNavbarApps",
                 id: "organismsNavbarApps",
                 label: "apps",
-                type: "text",
+                type: "object",
+                multipleValues: true,
                 renderer: {
-                    name: "text-input"
+                    name: "objects"
+                },
+                settings: {
+                    fields: [
+                        {
+                            id: "title_b7a7cdf0-b91f-404e-9482-a4f16a9976eb",
+                            helpText: "",
+                            placeholderText: "Title",
+                            label: "Title",
+                            type: "text",
+                            validation: [],
+                            fieldId: "title",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        },
+                        {
+                            id: "url_639cac26-3c51-440c-9abc-378ddcc54740",
+                            helpText: "",
+                            placeholderText: "Url",
+                            label: "Url",
+                            type: "text",
+                            validation: [],
+                            fieldId: "url",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        }
+                    ],
+                    layout: [
+                        ["title_b7a7cdf0-b91f-404e-9482-a4f16a9976eb"],
+                        ["url_639cac26-3c51-440c-9abc-378ddcc54740"]
+                    ]
                 }
             },
             {
                 fieldId: "organismsNavbarLinks",
                 id: "organismsNavbarLinks",
                 label: "links",
-                type: "text",
+                type: "object",
+                multipleValues: true,
                 renderer: {
-                    name: "text-input"
+                    name: "objects"
+                },
+                settings: {
+                    fields: [
+                        {
+                            id: "title_8b382f8c-9268-4ca8-b27d-b6ab478851df",
+                            helpText: "",
+                            placeholderText: "Title",
+                            label: "Title",
+                            type: "text",
+                            validation: [],
+                            fieldId: "title",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        },
+                        {
+                            id: "url_260bef22-59e4-4667-a76b-a0a8b3c063f1",
+                            helpText: "",
+                            placeholderText: "Url",
+                            label: "Url",
+                            type: "text",
+                            validation: [],
+                            fieldId: "url",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        },
+                        {
+                            id: "icon_df0229f9-fb75-4cad-b539-77f8ae002a4d",
+                            helpText: "",
+                            placeholderText: "Icon",
+                            label: "Icon",
+                            type: "text",
+                            validation: [],
+                            fieldId: "icon",
+                            renderer: {
+                                name: "text-input"
+                            }
+                        }
+                    ],
+                    layout: [
+                        ["title_8b382f8c-9268-4ca8-b27d-b6ab478851df"],
+                        ["url_260bef22-59e4-4667-a76b-a0a8b3c063f1"],
+                        ["icon_df0229f9-fb75-4cad-b539-77f8ae002a4d"]
+                    ]
                 }
             },
             {
@@ -4275,6 +5837,7 @@ export default [
                 id: "organismsNavbarAppName",
                 label: "appName",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4283,9 +5846,27 @@ export default [
                 fieldId: "organismsNavbarCookieConfig",
                 id: "organismsNavbarCookieConfig",
                 label: "cookieConfig",
-                type: "text",
+                type: "object",
+                multipleValues: false,
                 renderer: {
-                    name: "text-input"
+                    name: "object"
+                },
+                settings: {
+                    fields: [
+                        {
+                            id: "expires_116fbaab-1e7a-41c6-b281-8560fb4a798b",
+                            helpText: "",
+                            placeholderText: "Expires",
+                            label: "Expires",
+                            type: "number",
+                            validation: [],
+                            fieldId: "expires",
+                            renderer: {
+                                name: "number-input"
+                            }
+                        }
+                    ],
+                    layout: [["expires_116fbaab-1e7a-41c6-b281-8560fb4a798b"]]
                 }
             },
             {
@@ -4293,17 +5874,126 @@ export default [
                 id: "organismsNavbarId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsNavbarChildren",
-                id: "organismsNavbarChildren",
-                label: "Nested elements",
+                fieldId: "organismsNavbarSlotA11y",
+                id: "organismsNavbarSlotA11y",
+                label: "a11y",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsNavbarSlotApps",
+                id: "organismsNavbarSlotApps",
+                label: "apps",
+                type: "ref",
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsNavbarSlotLinks",
+                id: "organismsNavbarSlotLinks",
+                label: "links",
+                type: "ref",
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsNavbarSlotLogo",
+                id: "organismsNavbarSlotLogo",
+                label: "logo",
+                type: "ref",
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsNavbarSlotNavigation",
+                id: "organismsNavbarSlotNavigation",
+                label: "navigation",
+                type: "ref",
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsNavbarSlotNetworks",
+                id: "organismsNavbarSlotNetworks",
+                label: "networks",
+                type: "ref",
+                helpText: "Allowed components: AtomsLogo,MoleculesMenu",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4322,13 +6012,19 @@ export default [
         },
         layout: [
             ["idOrganismsNavbar"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_NAVBAR"],
             ["organismsNavbarTitle"],
             ["organismsNavbarApps"],
             ["organismsNavbarLinks"],
             ["organismsNavbarAppName"],
             ["organismsNavbarCookieConfig"],
             ["organismsNavbarId"],
-            ["organismsNavbarChildren"]
+            ["organismsNavbarSlotA11y"],
+            ["organismsNavbarSlotApps"],
+            ["organismsNavbarSlotLinks"],
+            ["organismsNavbarSlotLogo"],
+            ["organismsNavbarSlotNavigation"],
+            ["organismsNavbarSlotNetworks"]
         ],
         titleFieldId: "idOrganismsNavbar"
     }),
@@ -4345,13 +6041,24 @@ export default [
                 renderer: {
                     name: "text-input"
                 }
+            },
+            {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_NEWSLETTER",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_NEWSLETTER",
+                label: "Rich Text Content Of Organisms Newsletter",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
             }
         ],
         group: {
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsNewsletter"]],
+        layout: [["idOrganismsNewsletter"], ["RICH_TEXT_BLOCKS_ORGANISMS_NEWSLETTER"]],
         titleFieldId: "idOrganismsNewsletter"
     }),
     new CmsModelPlugin({
@@ -4369,10 +6076,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_ROW",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_ROW",
+                label: "Rich Text Content Of Organisms Row",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsRowType",
                 id: "organismsRowType",
                 label: "type",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4382,6 +6101,7 @@ export default [
                 id: "organismsRowHidden",
                 label: "hidden",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4391,6 +6111,7 @@ export default [
                 id: "organismsRowVariant",
                 label: "variant",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4400,17 +6121,51 @@ export default [
                 id: "organismsRowId",
                 label: "id",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsRowChildren",
-                id: "organismsRowChildren",
-                label: "Nested elements",
+                fieldId: "organismsRowData",
+                id: "organismsRowData",
+                label: "data",
+                type: "text",
+                multipleValues: false,
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsRowInfo",
+                id: "organismsRowInfo",
+                label: "info",
+                type: "boolean",
+                multipleValues: false,
+                renderer: {
+                    name: "boolean-input"
+                }
+            },
+            {
+                fieldId: "organismsRowActive",
+                id: "organismsRowActive",
+                label: "active",
+                type: "text",
+                multipleValues: false,
+                renderer: {
+                    name: "text-input"
+                }
+            },
+            {
+                fieldId: "organismsRowSlotDefault",
+                id: "organismsRowSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: OrganismsDatum",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4426,11 +6181,15 @@ export default [
         },
         layout: [
             ["idOrganismsRow"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_ROW"],
             ["organismsRowType"],
             ["organismsRowHidden"],
             ["organismsRowVariant"],
             ["organismsRowId"],
-            ["organismsRowChildren"]
+            ["organismsRowData"],
+            ["organismsRowInfo"],
+            ["organismsRowActive"],
+            ["organismsRowSlotDefault"]
         ],
         titleFieldId: "idOrganismsRow"
     }),
@@ -4449,10 +6208,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_SEARCH_LIST",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_SEARCH_LIST",
+                label: "Rich Text Content Of Organisms Search List",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsSearchListData",
                 id: "organismsSearchListData",
                 label: "data",
                 type: "text",
+                multipleValues: true,
                 renderer: {
                     name: "text-input"
                 }
@@ -4462,6 +6233,7 @@ export default [
                 id: "organismsSearchListFieldButton",
                 label: "fieldButton",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4471,17 +6243,21 @@ export default [
                 id: "organismsSearchListDataSearchResults",
                 label: "dataSearchResults",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsSearchListChildren",
-                id: "organismsSearchListChildren",
-                label: "Nested elements",
+                fieldId: "organismsSearchListSlotDefault",
+                id: "organismsSearchListSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: MoleculesControl,MoleculesDetailList",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4500,10 +6276,11 @@ export default [
         },
         layout: [
             ["idOrganismsSearchList"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_SEARCH_LIST"],
             ["organismsSearchListData"],
             ["organismsSearchListFieldButton"],
             ["organismsSearchListDataSearchResults"],
-            ["organismsSearchListChildren"]
+            ["organismsSearchListSlotDefault"]
         ],
         titleFieldId: "idOrganismsSearchList"
     }),
@@ -4522,10 +6299,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_SOCIAL_MEDIA_MENU",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_SOCIAL_MEDIA_MENU",
+                label: "Rich Text Content Of Organisms Social Media Menu",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsSocialMediaMenuOrientation",
                 id: "organismsSocialMediaMenuOrientation",
                 label: "orientation",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
@@ -4535,26 +6324,9 @@ export default [
                 id: "organismsSocialMediaMenuSocial",
                 label: "social",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
-                }
-            },
-            {
-                fieldId: "organismsSocialMediaMenuChildren",
-                id: "organismsSocialMediaMenuChildren",
-                label: "Nested elements",
-                type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
-                settings: {
-                    models: [
-                        {
-                            modelId: "MoleculesMenu"
-                        },
-                        {
-                            modelId: "OrganismsFooter"
-                        }
-                    ]
                 }
             }
         ],
@@ -4564,9 +6336,9 @@ export default [
         },
         layout: [
             ["idOrganismsSocialMediaMenu"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_SOCIAL_MEDIA_MENU"],
             ["organismsSocialMediaMenuOrientation"],
-            ["organismsSocialMediaMenuSocial"],
-            ["organismsSocialMediaMenuChildren"]
+            ["organismsSocialMediaMenuSocial"]
         ],
         titleFieldId: "idOrganismsSocialMediaMenu"
     }),
@@ -4585,10 +6357,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_STEP",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_STEP",
+                label: "Rich Text Content Of Organisms Step",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsStepNumber",
                 id: "organismsStepNumber",
                 label: "number",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -4598,7 +6382,7 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsStep"], ["organismsStepNumber"]],
+        layout: [["idOrganismsStep"], ["RICH_TEXT_BLOCKS_ORGANISMS_STEP"], ["organismsStepNumber"]],
         titleFieldId: "idOrganismsStep"
     }),
     new CmsModelPlugin({
@@ -4616,19 +6400,22 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_TABLE",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_TABLE",
+                label: "Rich Text Content Of Organisms Table",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsTableData",
                 id: "organismsTableData",
                 label: "data",
                 type: "text",
-                renderer: {
-                    name: "text-input"
-                }
-            },
-            {
-                fieldId: "organismsTableSettings",
-                id: "organismsTableSettings",
-                label: "settings",
-                type: "text",
+                multipleValues: true,
                 renderer: {
                     name: "text-input"
                 }
@@ -4641,7 +6428,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -4673,6 +6460,7 @@ export default [
                 id: "organismsTableDuration",
                 label: "duration",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
@@ -4682,17 +6470,105 @@ export default [
                 id: "organismsTableDataRows",
                 label: "dataRows",
                 type: "text",
+                multipleValues: false,
                 renderer: {
                     name: "text-input"
                 }
             },
             {
-                fieldId: "organismsTableChildren",
-                id: "organismsTableChildren",
-                label: "Nested elements",
+                fieldId: "organismsTableSlotDefault",
+                id: "organismsTableSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsDropDown,MoleculesPagination",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "MoleculesPagination"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsTableSlotActions",
+                id: "organismsTableSlotActions",
+                label: "actions",
+                type: "ref",
+                helpText: "Allowed components: AtomsDropDown,MoleculesPagination",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "MoleculesPagination"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsTableSlotFoot",
+                id: "organismsTableSlotFoot",
+                label: "foot",
+                type: "ref",
+                helpText: "Allowed components: AtomsDropDown,MoleculesPagination",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "MoleculesPagination"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsTableSlotHead",
+                id: "organismsTableSlotHead",
+                label: "head",
+                type: "ref",
+                helpText: "Allowed components: AtomsDropDown,MoleculesPagination",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "MoleculesPagination"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsTableSlotTitle",
+                id: "organismsTableSlotTitle",
+                label: "title",
+                type: "ref",
+                helpText: "Allowed components: AtomsDropDown,MoleculesPagination",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4711,12 +6587,16 @@ export default [
         },
         layout: [
             ["idOrganismsTable"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_TABLE"],
             ["organismsTableData"],
-            ["organismsTableSettings"],
             ["organismsTableMobileBreakpoint"],
             ["organismsTableDuration"],
             ["organismsTableDataRows"],
-            ["organismsTableChildren"]
+            ["organismsTableSlotDefault"],
+            ["organismsTableSlotActions"],
+            ["organismsTableSlotFoot"],
+            ["organismsTableSlotHead"],
+            ["organismsTableSlotTitle"]
         ],
         titleFieldId: "idOrganismsTable"
     }),
@@ -4735,21 +6615,84 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_ORGANISMS_WIZARD",
+                id: "RICH_TEXT_BLOCKS_ORGANISMS_WIZARD",
+                label: "Rich Text Content Of Organisms Wizard",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "organismsWizardStepCount",
                 id: "organismsWizardStepCount",
                 label: "stepCount",
                 type: "number",
+                multipleValues: false,
                 renderer: {
                     name: "number-input"
                 }
             },
             {
-                fieldId: "organismsWizardChildren",
-                id: "organismsWizardChildren",
-                label: "Nested elements",
+                fieldId: "organismsWizardSlotDefault",
+                id: "organismsWizardSlotDefault",
+                label: "__default__",
                 type: "ref",
-                helpText: "Choose one or more nested models",
-                multipleValues: true,
+                helpText: "Allowed components: AtomsProgressBar,MoleculesBreadcrumb,OrganismsForm",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsProgressBar"
+                        },
+                        {
+                            modelId: "MoleculesBreadcrumb"
+                        },
+                        {
+                            modelId: "OrganismsForm"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsWizardSlotProgressBar",
+                id: "organismsWizardSlotProgressBar",
+                label: "progress-bar",
+                type: "ref",
+                helpText: "Allowed components: AtomsProgressBar,MoleculesBreadcrumb,OrganismsForm",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsProgressBar"
+                        },
+                        {
+                            modelId: "MoleculesBreadcrumb"
+                        },
+                        {
+                            modelId: "OrganismsForm"
+                        }
+                    ]
+                }
+            },
+            {
+                fieldId: "organismsWizardSlotTitle",
+                id: "organismsWizardSlotTitle",
+                label: "title",
+                type: "ref",
+                helpText: "Allowed components: AtomsProgressBar,MoleculesBreadcrumb,OrganismsForm",
+                multipleValues: false,
+                renderer: {
+                    name: "ref-input"
+                },
                 settings: {
                     models: [
                         {
@@ -4769,7 +6712,14 @@ export default [
             id: "organisms",
             name: "Organisms"
         },
-        layout: [["idOrganismsWizard"], ["organismsWizardStepCount"], ["organismsWizardChildren"]],
+        layout: [
+            ["idOrganismsWizard"],
+            ["RICH_TEXT_BLOCKS_ORGANISMS_WIZARD"],
+            ["organismsWizardStepCount"],
+            ["organismsWizardSlotDefault"],
+            ["organismsWizardSlotProgressBar"],
+            ["organismsWizardSlotTitle"]
+        ],
         titleFieldId: "idOrganismsWizard"
     }),
     new CmsGroupPlugin({
@@ -4794,6 +6744,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_BUY_HOMEPAGE",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_BUY_HOMEPAGE",
+                label: "Rich Text Content Of Templates Buy Homepage",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesBuyHomepageIsLoading",
                 id: "templatesBuyHomepageIsLoading",
                 label: "isLoading",
@@ -4801,7 +6762,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -4818,6 +6779,7 @@ export default [
                 id: "templatesBuyHomepageIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4829,6 +6791,7 @@ export default [
         },
         layout: [
             ["idTemplatesBuyHomepage"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_BUY_HOMEPAGE"],
             ["templatesBuyHomepageIsLoading"],
             ["templatesBuyHomepageIsError"]
         ],
@@ -4849,6 +6812,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_DEFAULT",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_DEFAULT",
+                label: "Rich Text Content Of Templates Default",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesDefaultIsLoading",
                 id: "templatesDefaultIsLoading",
                 label: "isLoading",
@@ -4856,7 +6830,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -4873,6 +6847,7 @@ export default [
                 id: "templatesDefaultIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4884,6 +6859,7 @@ export default [
         },
         layout: [
             ["idTemplatesDefault"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_DEFAULT"],
             ["templatesDefaultIsLoading"],
             ["templatesDefaultIsError"]
         ],
@@ -4904,6 +6880,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_CENTERED",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_CENTERED",
+                label: "Rich Text Content Of Templates Devops Centered",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesDevopsCenteredIsLoading",
                 id: "templatesDevopsCenteredIsLoading",
                 label: "isLoading",
@@ -4911,7 +6898,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -4928,6 +6915,7 @@ export default [
                 id: "templatesDevopsCenteredIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4939,6 +6927,7 @@ export default [
         },
         layout: [
             ["idTemplatesDevopsCentered"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_CENTERED"],
             ["templatesDevopsCenteredIsLoading"],
             ["templatesDevopsCenteredIsError"]
         ],
@@ -4959,6 +6948,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_DASHBOARD",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_DASHBOARD",
+                label: "Rich Text Content Of Templates Devops Dashboard",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesDevopsDashboardIsLoading",
                 id: "templatesDevopsDashboardIsLoading",
                 label: "isLoading",
@@ -4966,7 +6966,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -4983,6 +6983,7 @@ export default [
                 id: "templatesDevopsDashboardIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -4994,6 +6995,7 @@ export default [
         },
         layout: [
             ["idTemplatesDevopsDashboard"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_DEVOPS_DASHBOARD"],
             ["templatesDevopsDashboardIsLoading"],
             ["templatesDevopsDashboardIsError"]
         ],
@@ -5014,6 +7016,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_CHARTS",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_CHARTS",
+                label: "Rich Text Content Of Templates Explorer Charts",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesExplorerChartsIsLoading",
                 id: "templatesExplorerChartsIsLoading",
                 label: "isLoading",
@@ -5021,7 +7034,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5038,6 +7051,7 @@ export default [
                 id: "templatesExplorerChartsIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5049,6 +7063,7 @@ export default [
         },
         layout: [
             ["idTemplatesExplorerCharts"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_CHARTS"],
             ["templatesExplorerChartsIsLoading"],
             ["templatesExplorerChartsIsError"]
         ],
@@ -5069,6 +7084,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_DETAIL",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_DETAIL",
+                label: "Rich Text Content Of Templates Explorer Detail",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesExplorerDetailIsLoading",
                 id: "templatesExplorerDetailIsLoading",
                 label: "isLoading",
@@ -5076,7 +7102,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5093,6 +7119,7 @@ export default [
                 id: "templatesExplorerDetailIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5104,6 +7131,7 @@ export default [
         },
         layout: [
             ["idTemplatesExplorerDetail"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_DETAIL"],
             ["templatesExplorerDetailIsLoading"],
             ["templatesExplorerDetailIsError"]
         ],
@@ -5124,6 +7152,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_HOMEPAGE",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_HOMEPAGE",
+                label: "Rich Text Content Of Templates Explorer Homepage",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesExplorerHomepageIsLoading",
                 id: "templatesExplorerHomepageIsLoading",
                 label: "isLoading",
@@ -5131,7 +7170,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5148,6 +7187,7 @@ export default [
                 id: "templatesExplorerHomepageIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5159,6 +7199,7 @@ export default [
         },
         layout: [
             ["idTemplatesExplorerHomepage"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_HOMEPAGE"],
             ["templatesExplorerHomepageIsLoading"],
             ["templatesExplorerHomepageIsError"]
         ],
@@ -5179,6 +7220,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_LIST",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_LIST",
+                label: "Rich Text Content Of Templates Explorer List",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesExplorerListIsLoading",
                 id: "templatesExplorerListIsLoading",
                 label: "isLoading",
@@ -5186,7 +7238,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5203,6 +7255,7 @@ export default [
                 id: "templatesExplorerListIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5214,6 +7267,7 @@ export default [
         },
         layout: [
             ["idTemplatesExplorerList"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_EXPLORER_LIST"],
             ["templatesExplorerListIsLoading"],
             ["templatesExplorerListIsError"]
         ],
@@ -5234,6 +7288,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_EXTENSION_DEFAULT",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_EXTENSION_DEFAULT",
+                label: "Rich Text Content Of Templates Extension Default",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesExtensionDefaultIsLoading",
                 id: "templatesExtensionDefaultIsLoading",
                 label: "isLoading",
@@ -5241,7 +7306,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5258,6 +7323,7 @@ export default [
                 id: "templatesExtensionDefaultIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5269,6 +7335,7 @@ export default [
         },
         layout: [
             ["idTemplatesExtensionDefault"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_EXTENSION_DEFAULT"],
             ["templatesExtensionDefaultIsLoading"],
             ["templatesExtensionDefaultIsError"]
         ],
@@ -5289,6 +7356,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_DASHBOARD",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_DASHBOARD",
+                label: "Rich Text Content Of Templates Wallet Dashboard",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesWalletDashboardIsLoading",
                 id: "templatesWalletDashboardIsLoading",
                 label: "isLoading",
@@ -5296,7 +7374,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5313,6 +7391,7 @@ export default [
                 id: "templatesWalletDashboardIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5324,6 +7403,7 @@ export default [
         },
         layout: [
             ["idTemplatesWalletDashboard"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_WALLET_DASHBOARD"],
             ["templatesWalletDashboardIsLoading"],
             ["templatesWalletDashboardIsError"]
         ],
@@ -5344,6 +7424,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_HOMEPAGE",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_HOMEPAGE",
+                label: "Rich Text Content Of Templates Wallet Homepage",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesWalletHomepageIsLoading",
                 id: "templatesWalletHomepageIsLoading",
                 label: "isLoading",
@@ -5351,7 +7442,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5368,6 +7459,7 @@ export default [
                 id: "templatesWalletHomepageIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5379,6 +7471,7 @@ export default [
         },
         layout: [
             ["idTemplatesWalletHomepage"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_WALLET_HOMEPAGE"],
             ["templatesWalletHomepageIsLoading"],
             ["templatesWalletHomepageIsError"]
         ],
@@ -5399,6 +7492,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_OPTION",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_OPTION",
+                label: "Rich Text Content Of Templates Wallet Option",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesWalletOptionIsLoading",
                 id: "templatesWalletOptionIsLoading",
                 label: "isLoading",
@@ -5406,7 +7510,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5423,6 +7527,7 @@ export default [
                 id: "templatesWalletOptionIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5434,6 +7539,7 @@ export default [
         },
         layout: [
             ["idTemplatesWalletOption"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_WALLET_OPTION"],
             ["templatesWalletOptionIsLoading"],
             ["templatesWalletOptionIsError"]
         ],
@@ -5454,6 +7560,17 @@ export default [
                 }
             },
             {
+                fieldId: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_WIZARD",
+                id: "RICH_TEXT_BLOCKS_TEMPLATES_WALLET_WIZARD",
+                label: "Rich Text Content Of Templates Wallet Wizard",
+                type: "rich-text",
+                multipleValues: true,
+                helpText: "Add any number of rich text blocks for every component",
+                renderer: {
+                    name: "rich-text-inputs"
+                }
+            },
+            {
                 fieldId: "templatesWalletWizardIsLoading",
                 id: "templatesWalletWizardIsLoading",
                 label: "isLoading",
@@ -5461,7 +7578,7 @@ export default [
                 renderer: {
                     name: "select-box"
                 },
-                multipleValues: true,
+                multipleValues: false,
                 predefinedValues: {
                     enabled: true,
                     values: [
@@ -5478,6 +7595,7 @@ export default [
                 id: "templatesWalletWizardIsError",
                 label: "isError",
                 type: "boolean",
+                multipleValues: false,
                 renderer: {
                     name: "boolean-input"
                 }
@@ -5489,9 +7607,294 @@ export default [
         },
         layout: [
             ["idTemplatesWalletWizard"],
+            ["RICH_TEXT_BLOCKS_TEMPLATES_WALLET_WIZARD"],
             ["templatesWalletWizardIsLoading"],
             ["templatesWalletWizardIsError"]
         ],
         titleFieldId: "idTemplatesWalletWizard"
+    }),
+    new CmsModelPlugin({
+        name: "DuskPageModel",
+        titleFieldId: "duskPageTitle",
+        description: "Dusk Website page model",
+        group: {
+            id: "pages",
+            name: "Pages"
+        },
+        modelId: "DuskPageModel",
+        fields: [
+            {
+                fieldId: "duskPageTitle",
+                id: "duskPageTitle",
+                label: "Page title",
+                type: "text",
+                helpText: "Web page title",
+                multipleValues: false,
+                placeholderText: "Dusk web page",
+                renderer: {
+                    name: "text-input"
+                },
+                validation: [
+                    {
+                        name: "required",
+                        message: "Page title is required"
+                    }
+                ]
+            },
+            {
+                fieldId: "duskPageDescription",
+                id: "duskPageDescription",
+                label: "Page description",
+                type: "long-text",
+                helpText: "Page description for meta tags",
+                multipleValues: false,
+                placeholderText: "Dusk web page",
+                renderer: {
+                    name: "long-text-text-area"
+                }
+            },
+            {
+                fieldId: "duskPagePath",
+                id: "duskPagePath",
+                label: "Webpage path",
+                type: "text",
+                helpText: "Page path without hostname",
+                multipleValues: false,
+                placeholderText: "ex: /wallet/info",
+                renderer: {
+                    name: "text-input"
+                },
+                validation: [
+                    {
+                        name: "unique",
+                        message: "Page ID must be unique!"
+                    }
+                ]
+            },
+            {
+                fieldId: "duskPageEnabled",
+                id: "duskPageEnabled",
+                label: "Page active",
+                type: "boolean",
+                helpText: "Whether page is ready to be used or not",
+                multipleValues: false,
+                renderer: {
+                    name: "boolean-input"
+                }
+            },
+            {
+                id: "duskPageUIKitComponents",
+                fieldId: "duskPageUIKitComponents",
+                label: "Select as many UI Kit components you need to build the page",
+                type: "ref",
+                multipleValues: true,
+                renderer: {
+                    name: "ref-inputs"
+                },
+                settings: {
+                    models: [
+                        {
+                            modelId: "AtomsAddress"
+                        },
+                        {
+                            modelId: "AtomsBalance"
+                        },
+                        {
+                            modelId: "AtomsChip"
+                        },
+                        {
+                            modelId: "AtomsDateText"
+                        },
+                        {
+                            modelId: "AtomsDropDown"
+                        },
+                        {
+                            modelId: "AtomsGauge"
+                        },
+                        {
+                            modelId: "AtomsIcon"
+                        },
+                        {
+                            modelId: "AtomsLoadingIndicator"
+                        },
+                        {
+                            modelId: "AtomsLogo"
+                        },
+                        {
+                            modelId: "AtomsProgressBar"
+                        },
+                        {
+                            modelId: "AtomsQrCode"
+                        },
+                        {
+                            modelId: "AtomsRichText"
+                        },
+                        {
+                            modelId: "AtomsSkeletonLoader"
+                        },
+                        {
+                            modelId: "AtomsSlider"
+                        },
+                        {
+                            modelId: "AtomsTextField"
+                        },
+                        {
+                            modelId: "AtomsToggle"
+                        },
+                        {
+                            modelId: "AtomsTruncateText"
+                        },
+                        {
+                            modelId: "MoleculesAlert"
+                        },
+                        {
+                            modelId: "MoleculesBreadcrumb"
+                        },
+                        {
+                            modelId: "MoleculesButton"
+                        },
+                        {
+                            modelId: "MoleculesChart"
+                        },
+                        {
+                            modelId: "MoleculesContent"
+                        },
+                        {
+                            modelId: "MoleculesControl"
+                        },
+                        {
+                            modelId: "MoleculesCtaList"
+                        },
+                        {
+                            modelId: "MoleculesDetailList"
+                        },
+                        {
+                            modelId: "MoleculesDisclaimerList"
+                        },
+                        {
+                            modelId: "MoleculesFileUpload"
+                        },
+                        {
+                            modelId: "MoleculesGroup"
+                        },
+                        {
+                            modelId: "MoleculesHeading"
+                        },
+                        {
+                            modelId: "MoleculesItem"
+                        },
+                        {
+                            modelId: "MoleculesLabel"
+                        },
+                        {
+                            modelId: "MoleculesMediaContent"
+                        },
+                        {
+                            modelId: "MoleculesMenu"
+                        },
+                        {
+                            modelId: "MoleculesMnemonic"
+                        },
+                        {
+                            modelId: "MoleculesPagination"
+                        },
+                        {
+                            modelId: "MoleculesPasswordStrength"
+                        },
+                        {
+                            modelId: "MoleculesStatistic"
+                        },
+                        {
+                            modelId: "MoleculesStepList"
+                        },
+                        {
+                            modelId: "MoleculesWord"
+                        },
+                        {
+                            modelId: "OrganismsAccordion"
+                        },
+                        {
+                            modelId: "OrganismsActions"
+                        },
+                        {
+                            modelId: "OrganismsAppsMenu"
+                        },
+                        {
+                            modelId: "OrganismsCard"
+                        },
+                        {
+                            modelId: "OrganismsCategoryMenu"
+                        },
+                        {
+                            modelId: "OrganismsCookieBanner"
+                        },
+                        {
+                            modelId: "OrganismsDatum"
+                        },
+                        {
+                            modelId: "OrganismsErrorBlock"
+                        },
+                        {
+                            modelId: "OrganismsFooter"
+                        },
+                        {
+                            modelId: "OrganismsForm"
+                        },
+                        {
+                            modelId: "OrganismsHero"
+                        },
+                        {
+                            modelId: "OrganismsItem"
+                        },
+                        {
+                            modelId: "OrganismsLegalMenu"
+                        },
+                        {
+                            modelId: "OrganismsLinksMenu"
+                        },
+                        {
+                            modelId: "OrganismsMaximal"
+                        },
+                        {
+                            modelId: "OrganismsMessageBanner"
+                        },
+                        {
+                            modelId: "OrganismsMinimal"
+                        },
+                        {
+                            modelId: "OrganismsNavbar"
+                        },
+                        {
+                            modelId: "OrganismsNewsletter"
+                        },
+                        {
+                            modelId: "OrganismsRow"
+                        },
+                        {
+                            modelId: "OrganismsSearchList"
+                        },
+                        {
+                            modelId: "OrganismsSocialMediaMenu"
+                        },
+                        {
+                            modelId: "OrganismsStep"
+                        },
+                        {
+                            modelId: "OrganismsTable"
+                        },
+                        {
+                            modelId: "OrganismsWizard"
+                        }
+                    ]
+                }
+            }
+        ],
+        layout: [
+            ["duskPageTitle"],
+            ["duskPageDescription"],
+            ["duskPagePath"],
+            ["duskPageEnabled"],
+            ["duskPageUIKitComponents"]
+        ]
     })
 ];

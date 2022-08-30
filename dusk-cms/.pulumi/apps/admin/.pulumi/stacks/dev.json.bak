@@ -4,53 +4,46 @@
         "stack": "dev",
         "latest": {
             "manifest": {
-                "time": "2022-07-20T16:19:26.663417+02:00",
-                "magic": "219c33cb7a5ca68262f234b59851e7854710786e8e27f8b664a3c2097b87d734",
-                "version": "v3.35.3"
+                "time": "2022-08-22T18:20:19.704018+02:00",
+                "magic": "0ed7606e6acb5b370078e9e1a4b22051c351075d7f4f5fa6ce66e0d04bfb5ec2",
+                "version": "v3.38.0"
             },
             "secrets_providers": {
                 "type": "passphrase",
                 "state": {
-                    "salt": "v1:0bh5KSB2cPU=:v1:9XRU8mWFNVYTIDrG:oaCr6f1UA+aqEyzGAMjOdbJn3+qnqQ=="
+                    "salt": "v1:wjEZazmB3Gc=:v1:bOCQ7yFfaLnCTQcm:8eV6eA7SN017GTb9XQcVegKTmYLVSw=="
                 }
             },
             "resources": [
                 {
                     "urn": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
                     "custom": false,
-                    "type": "pulumi:pulumi:Stack",
-                    "outputs": {
-                        "appDomain": "d3k5xpuqyfupvy.cloudfront.net",
-                        "appStorage": "admin-app-ee3312a",
-                        "appUrl": "https://d3k5xpuqyfupvy.cloudfront.net"
-                    },
-                    "sequenceNumber": 1
+                    "type": "pulumi:pulumi:Stack"
                 },
                 {
-                    "urn": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2",
+                    "urn": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_11_0",
                     "custom": true,
-                    "id": "a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "id": "4a10f01c-55fc-484c-b4a8-24259484f113",
                     "type": "pulumi:providers:aws",
                     "inputs": {
-                        "version": "5.9.2"
+                        "version": "5.11.0"
                     },
                     "outputs": {
-                        "version": "5.9.2"
+                        "version": "5.11.0"
                     },
-                    "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
-                    "sequenceNumber": 1
+                    "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev"
                 },
                 {
                     "urn": "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app",
                     "custom": true,
-                    "id": "admin-app-ee3312a",
+                    "id": "admin-app-91db9a7",
                     "type": "aws:s3/bucket:Bucket",
                     "inputs": {
                         "__defaults": [
                             "bucket"
                         ],
                         "acl": "public-read",
-                        "bucket": "admin-app-ee3312a",
+                        "bucket": "admin-app-91db9a7",
                         "forceDestroy": true,
                         "tags": {
                             "WbyEnvironment": "dev",
@@ -66,19 +59,19 @@
                     "outputs": {
                         "accelerationStatus": "",
                         "acl": "public-read",
-                        "arn": "arn:aws:s3:::admin-app-ee3312a",
-                        "bucket": "admin-app-ee3312a",
-                        "bucketDomainName": "admin-app-ee3312a.s3.amazonaws.com",
-                        "bucketRegionalDomainName": "admin-app-ee3312a.s3.amazonaws.com",
+                        "arn": "arn:aws:s3:::admin-app-91db9a7",
+                        "bucket": "admin-app-91db9a7",
+                        "bucketDomainName": "admin-app-91db9a7.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "admin-app-91db9a7.s3.eu-central-1.amazonaws.com",
                         "corsRules": [],
                         "forceDestroy": true,
                         "grants": [],
-                        "hostedZoneId": "Z3AQBSTGFYJSTF",
-                        "id": "admin-app-ee3312a",
+                        "hostedZoneId": "Z21DNDUVLTQW6Q",
+                        "id": "admin-app-91db9a7",
                         "lifecycleRules": [],
                         "loggings": [],
                         "objectLockConfiguration": null,
-                        "region": "us-east-1",
+                        "region": "eu-central-1",
                         "replicationConfiguration": null,
                         "requestPayer": "BucketOwner",
                         "serverSideEncryptionConfiguration": null,
@@ -100,23 +93,22 @@
                             "redirectAllRequestsTo": "",
                             "routingRules": ""
                         },
-                        "websiteDomain": "s3-website-us-east-1.amazonaws.com",
-                        "websiteEndpoint": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com"
+                        "websiteDomain": "s3-website.eu-central-1.amazonaws.com",
+                        "websiteEndpoint": "admin-app-91db9a7.s3-website.eu-central-1.amazonaws.com"
                     },
                     "parent": "urn:pulumi:dev::admin::pulumi:pulumi:Stack::admin-dev",
-                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2::a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_11_0::4a10f01c-55fc-484c-b4a8-24259484f113",
                     "propertyDependencies": {
                         "acl": null,
                         "forceDestroy": null,
                         "tags": null,
                         "website": null
-                    },
-                    "sequenceNumber": 1
+                    }
                 },
                 {
                     "urn": "urn:pulumi:dev::admin::aws:cloudfront/distribution:Distribution::admin-app-cdn",
                     "custom": true,
-                    "id": "E3RIDLK6215EDY",
+                    "id": "E1CDM6FCCKWI96",
                     "type": "aws:cloudfront/distribution:Distribution",
                     "inputs": {
                         "__defaults": [
@@ -156,7 +148,7 @@
                             },
                             "maxTtl": 600,
                             "minTtl": 0,
-                            "targetOriginId": "arn:aws:s3:::admin-app-ee3312a",
+                            "targetOriginId": "arn:aws:s3:::admin-app-91db9a7",
                             "viewerProtocolPolicy": "redirect-to-https"
                         },
                         "defaultRootObject": "index.html",
@@ -186,8 +178,8 @@
                                         "TLSv1.2"
                                     ]
                                 },
-                                "domainName": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com",
-                                "originId": "arn:aws:s3:::admin-app-ee3312a",
+                                "domainName": "admin-app-91db9a7.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::admin-app-91db9a7",
                                 "originPath": ""
                             }
                         ],
@@ -217,8 +209,8 @@
                     "outputs": {
                         "__meta": "{\"schema_version\":\"1\"}",
                         "aliases": [],
-                        "arn": "arn:aws:cloudfront::932784301473:distribution/E3RIDLK6215EDY",
-                        "callerReference": "terraform-20220715081942645000000001",
+                        "arn": "arn:aws:cloudfront::932784301473:distribution/E1CDM6FCCKWI96",
+                        "callerReference": "terraform-20220822162017770100000001",
                         "customErrorResponses": [
                             {
                                 "errorCachingMinTtl": 0,
@@ -259,21 +251,21 @@
                             "realtimeLogConfigArn": "",
                             "responseHeadersPolicyId": "",
                             "smoothStreaming": false,
-                            "targetOriginId": "arn:aws:s3:::admin-app-ee3312a",
+                            "targetOriginId": "arn:aws:s3:::admin-app-91db9a7",
                             "trustedKeyGroups": [],
                             "trustedSigners": [],
                             "viewerProtocolPolicy": "redirect-to-https"
                         },
                         "defaultRootObject": "index.html",
-                        "domainName": "d3k5xpuqyfupvy.cloudfront.net",
+                        "domainName": "d38b57km8yuzjr.cloudfront.net",
                         "enabled": true,
-                        "etag": "E19G4R2LDK5SVD",
+                        "etag": "E243FWHUHC5T46",
                         "hostedZoneId": "Z2FDTNDATAQYW2",
                         "httpVersion": "http2",
-                        "id": "E3RIDLK6215EDY",
+                        "id": "E1CDM6FCCKWI96",
                         "inProgressValidationBatches": 0,
                         "isIpv6Enabled": false,
-                        "lastModifiedTime": "2022-07-15 08:19:47.46 +0000 UTC",
+                        "lastModifiedTime": "2022-08-22 16:20:19.024 +0000 UTC",
                         "loggingConfig": null,
                         "orderedCacheBehaviors": [],
                         "origins": [
@@ -291,8 +283,8 @@
                                         "TLSv1.2"
                                     ]
                                 },
-                                "domainName": "admin-app-ee3312a.s3-website-us-east-1.amazonaws.com",
-                                "originId": "arn:aws:s3:::admin-app-ee3312a",
+                                "domainName": "admin-app-91db9a7.s3-website.eu-central-1.amazonaws.com",
+                                "originId": "arn:aws:s3:::admin-app-91db9a7",
                                 "originPath": "",
                                 "originShield": null,
                                 "s3OriginConfig": null
@@ -341,7 +333,7 @@
                     "dependencies": [
                         "urn:pulumi:dev::admin::aws:s3/bucket:Bucket::admin-app"
                     ],
-                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_9_2::a2143720-81d3-4673-a404-b0d4dddf328b",
+                    "provider": "urn:pulumi:dev::admin::pulumi:providers:aws::default_5_11_0::4a10f01c-55fc-484c-b4a8-24259484f113",
                     "propertyDependencies": {
                         "customErrorResponses": null,
                         "defaultCacheBehavior": [
@@ -357,8 +349,7 @@
                         "tags": null,
                         "viewerCertificate": null,
                         "waitForDeployment": null
-                    },
-                    "sequenceNumber": 1
+                    }
                 }
             ]
         }

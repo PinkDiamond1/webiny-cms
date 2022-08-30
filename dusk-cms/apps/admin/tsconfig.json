@@ -2,6 +2,7 @@
   "extends": "../../tsconfig",
   "include": ["src"],
   "compilerOptions": {
-    "composite": false
+    "composite": false,
+    "sourceMap": true
   }
 }
